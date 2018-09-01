@@ -1,7 +1,7 @@
 <?php
 
 return array (
-  'name' => 'FastAdmin',
+  'name' => '大山早餐',
   'beian' => '',
   'cdnurl' => '',
   'version' => '1.0.1',
@@ -15,18 +15,13 @@ return array (
   'fixedpage' => 'dashboard',
   'categorytype' => 
   array (
-    'default' => 'Default',
-    'page' => 'Page',
-    'article' => 'Article',
-    'test' => 'Test',
+    'dish' => '餐品分类',
+    'goods' => '快捷通道',
   ),
   'configgroup' => 
   array (
     'basic' => 'Basic',
-    'email' => 'Email',
     'dictionary' => 'Dictionary',
-    'user' => 'User',
-    'example' => 'Example',
   ),
   'mail_type' => '1',
   'mail_smtp_host' => 'smtp.qq.com',
@@ -35,4 +30,5 @@ return array (
   'mail_smtp_pass' => 'password',
   'mail_verify_type' => '2',
   'mail_from' => '10000@qq.com',
+  'setting' => '0431-83343033',
 );
