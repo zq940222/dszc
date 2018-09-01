@@ -1,0 +1,349 @@
+---------------------------------------------------------------
+[ 2018-09-01T11:04:18+08:00 ] 127.0.0.1 GET /index.php/admin/auth/rule?ref=addtabs
+[ sql ] [ DB ] CONNECT:[ UseTime:0.051251s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.013055s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.013891s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.013784s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.017111s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:04:19+08:00 ] 127.0.0.1 GET /index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.025106s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.012407s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.013105s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.016736s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.017663s ]
+[ sql ] [ SQL ] SELECT * FROM `dszc_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 1 ORDER BY `weigh`  desc [ RunTime:0.015225s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:04:19+08:00 ] 127.0.0.1 GET /index.php/admin/dashboard?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.018208s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.005939s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.007958s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.008227s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.010249s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `dszc_auth_rule` WHERE  `name` = 'dashboard' LIMIT 1 [ RunTime:0.008438s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:04:20+08:00 ] 127.0.0.1 GET /index.php/admin/auth/rule?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.034407s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.013441s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.014729s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.012979s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.015996s ]
+[ sql ] [ SQL ] SELECT * FROM `dszc_auth_rule` ORDER BY `weigh`  desc [ RunTime:0.024737s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `dszc_auth_rule` WHERE  `name` = 'auth/rule' LIMIT 1 [ RunTime:0.014522s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:04:21+08:00 ] 127.0.0.1 GET /index.php/admin/auth/rule/index?sort=weigh&order=desc&_=1535771060740
+[ sql ] [ DB ] CONNECT:[ UseTime:0.021849s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.010164s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.011297s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.007941s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.011077s ]
+[ sql ] [ SQL ] SELECT * FROM `dszc_auth_rule` ORDER BY `weigh`  desc [ RunTime:0.015138s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:15:21+08:00 ] 127.0.0.1 GET /index.php/admin/dashboard?ref=addtabs
+[ sql ] [ DB ] CONNECT:[ UseTime:0.026173s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.014444s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.013659s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.014136s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.016370s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:15:21+08:00 ] 127.0.0.1 GET /index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.017063s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.009819s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.009402s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.007745s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.009146s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:15:22+08:00 ] 127.0.0.1 GET /index.php/admin/dashboard?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.027994s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.016302s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.015052s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.017316s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.015674s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `dszc_auth_rule` WHERE  `name` = 'dashboard' LIMIT 1 [ RunTime:0.013647s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:15:23+08:00 ] 127.0.0.1 GET /index.php/admin/dashboard?ref=addtabs
+[ sql ] [ DB ] CONNECT:[ UseTime:0.016859s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.011100s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.011409s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.008785s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.009452s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:15:23+08:00 ] 127.0.0.1 GET /index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.017361s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.009986s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.007569s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.008569s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.009944s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:15:24+08:00 ] 127.0.0.1 GET /index.php/admin/dashboard?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.022369s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.010693s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.010125s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.008944s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.010829s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `dszc_auth_rule` WHERE  `name` = 'dashboard' LIMIT 1 [ RunTime:0.010269s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:15:27+08:00 ] 127.0.0.1 GET /index.php/admin/dashboard?ref=addtabs
+[ sql ] [ DB ] CONNECT:[ UseTime:0.023480s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.012638s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.013262s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.014763s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.015743s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:15:28+08:00 ] 127.0.0.1 GET /index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.025544s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.009078s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.010403s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.008776s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.009419s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:15:28+08:00 ] 127.0.0.1 GET /index.php/admin/dashboard?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.028135s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.013575s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.016784s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.014878s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.015202s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `dszc_auth_rule` WHERE  `name` = 'dashboard' LIMIT 1 [ RunTime:0.014243s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:17:27+08:00 ] 127.0.0.1 GET /index.php/admin/dashboard?ref=addtabs
+[ sql ] [ DB ] CONNECT:[ UseTime:0.024172s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.013215s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.014251s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.014127s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.015007s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:17:27+08:00 ] 127.0.0.1 GET /index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.018399s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.007629s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.007484s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.011420s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.011205s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:17:28+08:00 ] 127.0.0.1 GET /index.php/admin/dashboard?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.024799s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.013624s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.013447s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.015235s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.016508s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `dszc_auth_rule` WHERE  `name` = 'dashboard' LIMIT 1 [ RunTime:0.014376s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:19:01+08:00 ] 127.0.0.1 GET /index.php/admin/auth/rule?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.026612s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.012835s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.010926s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.013945s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.016514s ]
+[ sql ] [ SQL ] SELECT * FROM `dszc_auth_rule` ORDER BY `weigh`  desc [ RunTime:0.013639s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `dszc_auth_rule` WHERE  `name` = 'auth/rule' LIMIT 1 [ RunTime:0.013809s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:19:02+08:00 ] 127.0.0.1 GET /index.php/admin/auth/rule/index?sort=weigh&order=desc&_=1535771941780
+[ sql ] [ DB ] CONNECT:[ UseTime:0.023187s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.007287s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.007384s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.008484s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.011550s ]
+[ sql ] [ SQL ] SELECT * FROM `dszc_auth_rule` ORDER BY `weigh`  desc [ RunTime:0.010330s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:19:13+08:00 ] 127.0.0.1 GET /index.php/admin/auth/rule?ref=addtabs
+[ sql ] [ DB ] CONNECT:[ UseTime:0.018987s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.008836s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.010572s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.009659s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.011407s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:19:13+08:00 ] 127.0.0.1 GET /index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.033646s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.013543s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.015702s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.015171s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.016349s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:19:13+08:00 ] 127.0.0.1 GET /index.php/admin/dashboard?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.046076s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.013658s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.014486s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.016757s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.018313s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `dszc_auth_rule` WHERE  `name` = 'dashboard' LIMIT 1 [ RunTime:0.013884s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:19:14+08:00 ] 127.0.0.1 GET /index.php/admin/auth/rule?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.014579s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.008760s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.008791s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.008374s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.016555s ]
+[ sql ] [ SQL ] SELECT * FROM `dszc_auth_rule` ORDER BY `weigh`  desc [ RunTime:0.020706s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `dszc_auth_rule` WHERE  `name` = 'auth/rule' LIMIT 1 [ RunTime:0.022264s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:19:14+08:00 ] 127.0.0.1 GET /index.php/admin/auth/rule/index?sort=weigh&order=desc&_=1535771954224
+[ sql ] [ DB ] CONNECT:[ UseTime:0.017617s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.009376s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.009228s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.009104s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.009141s ]
+[ sql ] [ SQL ] SELECT * FROM `dszc_auth_rule` ORDER BY `weigh`  desc [ RunTime:0.009830s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:20:15+08:00 ] 127.0.0.1 POST /index.php/admin/auth/rule/del/ids/66
+[ sql ] [ DB ] CONNECT:[ UseTime:0.022475s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.011977s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.009307s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.008091s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.010400s ]
+[ sql ] [ SQL ] SELECT * FROM `dszc_auth_rule` ORDER BY `weigh`  desc [ RunTime:0.010985s ]
+[ sql ] [ SQL ] DELETE FROM `dszc_auth_rule`    WHERE  `id` IN (66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84) [ RunTime:0.012675s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_admin_log` [ RunTime:0.007646s ]
+[ sql ] [ SQL ] INSERT INTO `dszc_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('权限管理 规则管理 删除' , '{\"action\":\"del\",\"ids\":\"66\",\"params\":\"\"}' , '/index.php/admin/auth/rule/del/ids/66' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36' , '127.0.0.1' , 1535772014) [ RunTime:0.613820s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:20:15+08:00 ] 127.0.0.1 POST /index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.025758s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.014468s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.013692s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.013377s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.014658s ]
+[ sql ] [ SQL ] SELECT * FROM `dszc_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 1 ORDER BY `weigh`  desc [ RunTime:0.014751s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_admin_log` [ RunTime:0.017404s ]
+[ sql ] [ SQL ] INSERT INTO `dszc_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('' , '{\"action\":\"refreshmenu\"}' , '/index.php/admin/index/index' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36' , '127.0.0.1' , 1535772015) [ RunTime:0.016716s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:20:15+08:00 ] 127.0.0.1 GET /index.php/admin/auth/rule/index?sort=weigh&order=desc&_=1535771954225
+[ sql ] [ DB ] CONNECT:[ UseTime:0.023634s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.008674s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.009186s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.008905s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.008387s ]
+[ sql ] [ SQL ] SELECT * FROM `dszc_auth_rule` ORDER BY `weigh`  desc [ RunTime:0.011690s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:21:22+08:00 ] 127.0.0.1 GET /index.php/admin/auth/rule?ref=addtabs
+[ sql ] [ DB ] CONNECT:[ UseTime:0.024897s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.012796s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.011861s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.014432s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.014195s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:21:22+08:00 ] 127.0.0.1 GET /index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.016382s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.008210s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.008812s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.008246s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.010055s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:21:23+08:00 ] 127.0.0.1 GET /index.php/admin/dashboard?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.023028s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.007252s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.008989s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.008090s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.010074s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `dszc_auth_rule` WHERE  `name` = 'dashboard' LIMIT 1 [ RunTime:0.008392s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:21:23+08:00 ] 127.0.0.1 GET /index.php/admin/auth/rule?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.029843s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.013061s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.012264s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.014260s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.013972s ]
+[ sql ] [ SQL ] SELECT * FROM `dszc_auth_rule` ORDER BY `weigh`  desc [ RunTime:0.014700s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `dszc_auth_rule` WHERE  `name` = 'auth/rule' LIMIT 1 [ RunTime:0.013570s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:21:23+08:00 ] 127.0.0.1 GET /index.php/admin/auth/rule/index?sort=weigh&order=desc&_=1535772083340
+[ sql ] [ DB ] CONNECT:[ UseTime:0.022005s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.010753s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.008692s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.007667s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.010482s ]
+[ sql ] [ SQL ] SELECT * FROM `dszc_auth_rule` ORDER BY `weigh`  desc [ RunTime:0.009274s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:21:31+08:00 ] 127.0.0.1 GET /index.php/admin/auth/rule?ref=addtabs
+[ sql ] [ DB ] CONNECT:[ UseTime:0.015831s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.007301s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.006911s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.008729s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.010359s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:21:31+08:00 ] 127.0.0.1 GET /index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.022129s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.013481s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.013731s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.013574s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.014603s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:21:32+08:00 ] 127.0.0.1 GET /index.php/admin/dashboard?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.016544s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.007709s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.007768s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.008211s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.009944s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `dszc_auth_rule` WHERE  `name` = 'dashboard' LIMIT 1 [ RunTime:0.007968s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:21:32+08:00 ] 127.0.0.1 GET /index.php/admin/auth/rule?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.026749s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.014359s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.013025s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.013700s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.014561s ]
+[ sql ] [ SQL ] SELECT * FROM `dszc_auth_rule` ORDER BY `weigh`  desc [ RunTime:0.015516s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `dszc_auth_rule` WHERE  `name` = 'auth/rule' LIMIT 1 [ RunTime:0.012868s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:21:33+08:00 ] 127.0.0.1 GET /index.php/admin/auth/rule/index?sort=weigh&order=desc&_=1535772092722
+[ sql ] [ DB ] CONNECT:[ UseTime:0.021752s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.007748s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.008758s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.008331s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.010074s ]
+[ sql ] [ SQL ] SELECT * FROM `dszc_auth_rule` ORDER BY `weigh`  desc [ RunTime:0.008433s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:22:38+08:00 ] 127.0.0.1 GET /index.php/admin/auth/rule?ref=addtabs
+[ sql ] [ DB ] CONNECT:[ UseTime:0.016284s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.008707s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.007853s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.009901s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.010600s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:22:38+08:00 ] 127.0.0.1 GET /index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.027673s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.013325s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.015127s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.014391s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.015518s ]
+[ sql ] [ SQL ] SELECT * FROM `dszc_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 1 ORDER BY `weigh`  desc [ RunTime:0.014548s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:22:39+08:00 ] 127.0.0.1 GET /index.php/admin/dashboard?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.022665s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.009211s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.009367s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.009319s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.010683s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `dszc_auth_rule` WHERE  `name` = 'dashboard' LIMIT 1 [ RunTime:0.009211s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:22:39+08:00 ] 127.0.0.1 GET /index.php/admin/auth/rule?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.027245s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.013690s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.013944s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.014184s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.016374s ]
+[ sql ] [ SQL ] SELECT * FROM `dszc_auth_rule` ORDER BY `weigh`  desc [ RunTime:0.015546s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `dszc_auth_rule` WHERE  `name` = 'auth/rule' LIMIT 1 [ RunTime:0.014414s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:22:40+08:00 ] 127.0.0.1 GET /index.php/admin/auth/rule/index?sort=weigh&order=desc&_=1535772159890
+[ sql ] [ DB ] CONNECT:[ UseTime:0.016508s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.006954s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.008740s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.008271s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.010907s ]
+[ sql ] [ SQL ] SELECT * FROM `dszc_auth_rule` ORDER BY `weigh`  desc [ RunTime:0.010384s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:22:41+08:00 ] 127.0.0.1 GET /index.php/admin/user/user?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.049931s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.012685s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.013323s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.013912s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.014416s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `dszc_auth_rule` WHERE  `name` = 'user/user' LIMIT 1 [ RunTime:0.011526s ]
+---------------------------------------------------------------
+[ 2018-09-01T11:22:42+08:00 ] 127.0.0.1 GET /index.php/admin/user/user/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1535772161983
+[ sql ] [ DB ] CONNECT:[ UseTime:0.029619s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_group_access` [ RunTime:0.013232s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `dszc_auth_group_access` `aga` LEFT JOIN `dszc_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.014181s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.015929s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `dszc_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.016089s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_user` [ RunTime:0.013991s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `dszc_user` ORDER BY `id`  desc LIMIT 1 [ RunTime:0.015089s ]
+[ sql ] [ SQL ] SELECT * FROM `dszc_user` ORDER BY `id`  desc LIMIT 0,10 [ RunTime:0.015675s ]

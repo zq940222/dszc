@@ -1,0 +1,27 @@
+[ 2018-09-01T11:21:12+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.028881s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ 2018-09-01T11:21:12+08:00 ][ sql ] [ SQL ] SHOW TABLE STATUS LIKE 'user' [ RunTime:0.007974s ]
+[ 2018-09-01T11:21:12+08:00 ][ sql ] [ SQL ] SHOW TABLE STATUS LIKE 'dszc_user' [ RunTime:0.009364s ]
+[ 2018-09-01T11:21:18+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.038379s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ 2018-09-01T11:21:18+08:00 ][ sql ] [ SQL ] SHOW TABLE STATUS LIKE 'user' [ RunTime:0.013636s ]
+[ 2018-09-01T11:21:18+08:00 ][ sql ] [ SQL ] SHOW TABLE STATUS LIKE 'dszc_user' [ RunTime:0.014353s ]
+[ 2018-09-01T11:21:18+08:00 ][ sql ] [ SQL ] SELECT * FROM `information_schema`.`columns` WHERE TABLE_SCHEMA = 'dszc' AND table_name = 'dszc_user' ORDER BY ORDINAL_POSITION [ RunTime:0.016172s ]
+[ 2018-09-01T11:22:34+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.038325s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ 2018-09-01T11:22:34+08:00 ][ sql ] [ SQL ] SHOW TABLE STATUS LIKE 'user' [ RunTime:0.014118s ]
+[ 2018-09-01T11:22:34+08:00 ][ sql ] [ SQL ] SHOW TABLE STATUS LIKE 'dszc_user' [ RunTime:0.014097s ]
+[ 2018-09-01T11:22:34+08:00 ][ sql ] [ SQL ] SELECT * FROM `information_schema`.`columns` WHERE TABLE_SCHEMA = 'dszc' AND table_name = 'dszc_user' ORDER BY ORDINAL_POSITION [ RunTime:0.017035s ]
+[ 2018-09-01T11:22:35+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.041759s ] mysql:host=47.99.89.219;port=3306;dbname=dszc;charset=utf8
+[ 2018-09-01T11:22:35+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dszc_auth_rule` [ RunTime:0.012954s ]
+[ 2018-09-01T11:22:35+08:00 ][ sql ] [ SQL ] SELECT * FROM `dszc_auth_rule` WHERE  `name` = 'user' LIMIT 1 [ RunTime:0.013457s ]
+[ 2018-09-01T11:22:35+08:00 ][ sql ] [ SQL ] INSERT INTO `dszc_auth_rule` (`pid` , `name` , `title` , `icon` , `remark` , `ismenu` , `status` , `createtime` , `updatetime`) VALUES (0 , 'user' , 'user' , 'fa fa-list' , '' , 1 , 'normal' , 1535772155 , 1535772155) [ RunTime:0.017382s ]
+[ 2018-09-01T11:22:35+08:00 ][ sql ] [ SQL ] SELECT * FROM `dszc_auth_rule` WHERE  `name` = 'user/user' LIMIT 1 [ RunTime:0.018780s ]
+[ 2018-09-01T11:22:35+08:00 ][ sql ] [ SQL ] INSERT INTO `dszc_auth_rule` (`pid` , `name` , `title` , `icon` , `remark` , `ismenu` , `status` , `createtime` , `updatetime`) VALUES (85 , 'user/user' , '会员管理' , 'fa fa-user' , '' , 1 , 'normal' , 1535772155 , 1535772155) [ RunTime:0.017230s ]
+[ 2018-09-01T11:22:35+08:00 ][ sql ] [ SQL ] SELECT `id` FROM `dszc_auth_rule` WHERE  `name` = 'user/user/index' LIMIT 1 [ RunTime:0.013597s ]
+[ 2018-09-01T11:22:35+08:00 ][ sql ] [ SQL ] SELECT `id` FROM `dszc_auth_rule` WHERE  `name` = 'user/user/add' LIMIT 1 [ RunTime:0.015084s ]
+[ 2018-09-01T11:22:35+08:00 ][ sql ] [ SQL ] SELECT `id` FROM `dszc_auth_rule` WHERE  `name` = 'user/user/edit' LIMIT 1 [ RunTime:0.013921s ]
+[ 2018-09-01T11:22:35+08:00 ][ sql ] [ SQL ] SELECT `id` FROM `dszc_auth_rule` WHERE  `name` = 'user/user/del' LIMIT 1 [ RunTime:0.015445s ]
+[ 2018-09-01T11:22:35+08:00 ][ sql ] [ SQL ] SELECT `id` FROM `dszc_auth_rule` WHERE  `name` = 'user/user/multi' LIMIT 1 [ RunTime:0.013411s ]
+[ 2018-09-01T11:22:35+08:00 ][ sql ] [ SQL ] INSERT INTO `dszc_auth_rule` (`id` , `pid` , `name` , `icon` , `title` , `ismenu` , `status` , `createtime` , `updatetime`) VALUES (NULL , 86 , 'user/user/index' , 'fa fa-circle-o' , '查看' , 0 , 'normal' , 1535772155 , 1535772155) [ RunTime:0.014071s ]
+[ 2018-09-01T11:22:35+08:00 ][ sql ] [ SQL ] INSERT INTO `dszc_auth_rule` (`id` , `pid` , `name` , `icon` , `title` , `ismenu` , `status` , `createtime` , `updatetime`) VALUES (NULL , 86 , 'user/user/add' , 'fa fa-circle-o' , '添加' , 0 , 'normal' , 1535772155 , 1535772155) [ RunTime:0.006642s ]
+[ 2018-09-01T11:22:35+08:00 ][ sql ] [ SQL ] INSERT INTO `dszc_auth_rule` (`id` , `pid` , `name` , `icon` , `title` , `ismenu` , `status` , `createtime` , `updatetime`) VALUES (NULL , 86 , 'user/user/edit' , 'fa fa-circle-o' , '编辑' , 0 , 'normal' , 1535772155 , 1535772155) [ RunTime:0.006879s ]
+[ 2018-09-01T11:22:35+08:00 ][ sql ] [ SQL ] INSERT INTO `dszc_auth_rule` (`id` , `pid` , `name` , `icon` , `title` , `ismenu` , `status` , `createtime` , `updatetime`) VALUES (NULL , 86 , 'user/user/del' , 'fa fa-circle-o' , '删除' , 0 , 'normal' , 1535772155 , 1535772155) [ RunTime:0.007488s ]
+[ 2018-09-01T11:22:35+08:00 ][ sql ] [ SQL ] INSERT INTO `dszc_auth_rule` (`id` , `pid` , `name` , `icon` , `title` , `ismenu` , `status` , `createtime` , `updatetime`) VALUES (NULL , 86 , 'user/user/multi' , 'fa fa-circle-o' , '批量更新' , 0 , 'normal' , 1535772155 , 1535772155) [ RunTime:0.006727s ]
