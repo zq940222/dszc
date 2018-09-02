@@ -1,0 +1,112 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label for="c-order_sn" class="control-label col-xs-12 col-sm-2">{:__('Order_sn')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-order_sn" data-rule="required" class="form-control" name="row[order_sn]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-status" class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            {foreach name="statusList" item="vo"}
+            <label for="row[status]-{$key}"><input id="row[status]-{$key}" name="row[status]" type="radio" value="{$key}" {in name="key" value="1"}checked{/in} /> {$vo}</label> 
+            {/foreach}
+            </div>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-user_id" class="control-label col-xs-12 col-sm-2">{:__('User_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-user_id" data-rule="required" data-source="user/index" data-field="nickname" class="form-control selectpage" name="row[user_id]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-product_count" class="control-label col-xs-12 col-sm-2">{:__('Product_count')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-product_count" data-rule="required" class="form-control" name="row[product_count]" type="number" value="1">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-total_price" class="control-label col-xs-12 col-sm-2">{:__('Total_price')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-total_price" data-rule="required" class="form-control" step="0.01" name="row[total_price]" type="number" value="0.00">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-pay_price" class="control-label col-xs-12 col-sm-2">{:__('Pay_price')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-pay_price" data-rule="required" class="form-control" step="0.01" name="row[pay_price]" type="number" value="0.00">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-coupon_id" class="control-label col-xs-12 col-sm-2">{:__('Coupon_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-coupon_id" data-rule="required" data-source="coupon/index" class="form-control selectpage" name="row[coupon_id]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-coupon_price" class="control-label col-xs-12 col-sm-2">{:__('Coupon_price')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-coupon_price" data-rule="required" class="form-control" step="0.01" name="row[coupon_price]" type="number" value="0.00">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-consignee" class="control-label col-xs-12 col-sm-2">{:__('Consignee')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-consignee" data-rule="required" class="form-control" name="row[consignee]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-province" class="control-label col-xs-12 col-sm-2">{:__('Province')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-province" data-rule="required" class="form-control" name="row[province]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-city" class="control-label col-xs-12 col-sm-2">{:__('City')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class='control-relative'><input id="c-city" data-rule="required" class="form-control" data-toggle="city-picker" name="row[city]" type="text" value=""></div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-district" class="control-label col-xs-12 col-sm-2">{:__('District')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-district" data-rule="required" class="form-control" name="row[district]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-detail_address" class="control-label col-xs-12 col-sm-2">{:__('Detail_address')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-detail_address" data-rule="required" class="form-control" name="row[detail_address]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-mobile" class="control-label col-xs-12 col-sm-2">{:__('Mobile')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-mobile" data-rule="required" class="form-control" name="row[mobile]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-pay_time" class="control-label col-xs-12 col-sm-2">{:__('Pay_time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-pay_time" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[pay_time]" type="text" value="{:date('Y-m-d H:i:s')}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-prepay_id" class="control-label col-xs-12 col-sm-2">{:__('Prepay_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-prepay_id" data-rule="required" data-source="prepay/index" class="form-control selectpage" name="row[prepay_id]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

@@ -19,10 +19,6 @@ class User extends Model
     // 追加属性
     protected $append = [
         'gender_text',
-        'prevtime_text',
-        'logintime_text',
-        'loginfailure_text',
-        'jointime_text',
         'status_text'
     ];
     
@@ -31,11 +27,6 @@ class User extends Model
     public function getGenderList()
     {
         return ['0' => __('Gender 0'),'1' => __('Gender 1'),'2' => __('Gender 2')];
-    }     
-
-    public function getLoginfailureList()
-    {
-        return ['1) unsigne' => __('1) unsigne')];
     }     
 
     public function getStatusList()
@@ -52,35 +43,6 @@ class User extends Model
     }
 
 
-    public function getPrevtimeTextAttr($value, $data)
-    {
-        $value = $value ? $value : $data['prevtime'];
-        return is_numeric($value) ? date("Y-m-d H:i:s", $value) : $value;
-    }
-
-
-    public function getLogintimeTextAttr($value, $data)
-    {
-        $value = $value ? $value : $data['logintime'];
-        return is_numeric($value) ? date("Y-m-d H:i:s", $value) : $value;
-    }
-
-
-    public function getLoginfailureTextAttr($value, $data)
-    {        
-        $value = $value ? $value : $data['loginfailure'];
-        $list = $this->getLoginfailureList();
-        return isset($list[$value]) ? $list[$value] : '';
-    }
-
-
-    public function getJointimeTextAttr($value, $data)
-    {
-        $value = $value ? $value : $data['jointime'];
-        return is_numeric($value) ? date("Y-m-d H:i:s", $value) : $value;
-    }
-
-
     public function getStatusTextAttr($value, $data)
     {        
         $value = $value ? $value : $data['status'];
@@ -88,20 +50,7 @@ class User extends Model
         return isset($list[$value]) ? $list[$value] : '';
     }
 
-    protected function setPrevtimeAttr($value)
-    {
-        return $value && !is_numeric($value) ? strtotime($value) : $value;
-    }
 
-    protected function setLogintimeAttr($value)
-    {
-        return $value && !is_numeric($value) ? strtotime($value) : $value;
-    }
-
-    protected function setJointimeAttr($value)
-    {
-        return $value && !is_numeric($value) ? strtotime($value) : $value;
-    }
 
 
 }

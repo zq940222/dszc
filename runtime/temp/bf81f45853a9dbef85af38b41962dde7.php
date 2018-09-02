@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:81:"C:\Users\22923\Desktop\dszc\public/../application/admin\view\user\user\index.html";i:1535772154;s:70:"C:\Users\22923\Desktop\dszc\application\admin\view\layout\default.html";i:1523111343;s:67:"C:\Users\22923\Desktop\dszc\application\admin\view\common\meta.html";i:1523111343;s:69:"C:\Users\22923\Desktop\dszc\application\admin\view\common\script.html";i:1523111343;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:81:"C:\Users\22923\Desktop\dszc\public/../application/admin\view\user\user\index.html";i:1535787875;s:70:"C:\Users\22923\Desktop\dszc\application\admin\view\layout\default.html";i:1523111343;s:67:"C:\Users\22923\Desktop\dszc\application\admin\view\common\meta.html";i:1523111343;s:69:"C:\Users\22923\Desktop\dszc\application\admin\view\common\script.html";i:1523111343;}*/ ?>
 <!DOCTYPE html>
 <html lang="<?php echo $config['language']; ?>">
     <head>

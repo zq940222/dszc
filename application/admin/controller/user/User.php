@@ -22,7 +22,6 @@ class User extends Backend
         parent::_initialize();
         $this->model = model('User');
         $this->view->assign("genderList", $this->model->getGenderList());
-        $this->view->assign("loginfailureList", $this->model->getLoginfailureList());
         $this->view->assign("statusList", $this->model->getStatusList());
     }
     

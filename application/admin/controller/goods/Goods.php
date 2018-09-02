@@ -22,7 +22,6 @@ class Goods extends Backend
         parent::_initialize();
         $this->model = model('Goods');
         $this->view->assign("isRecommendList", $this->model->getIsRecommendList());
-        $this->view->assign("isFreeShippingList", $this->model->getIsFreeShippingList());
         $this->view->assign("isOnSaleList", $this->model->getIsOnSaleList());
         $this->view->assign("statusList", $this->model->getStatusList());
     }

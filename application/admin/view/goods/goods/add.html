@@ -77,15 +77,9 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="c-is_free_shipping" class="control-label col-xs-12 col-sm-2">{:__('Is_free_shipping')}:</label>
+        <label for="c-freight" class="control-label col-xs-12 col-sm-2">{:__('Freight')}:</label>
         <div class="col-xs-12 col-sm-8">
-                        
-            <select  id="c-is_free_shipping" data-rule="required" class="form-control selectpicker" name="row[is_free_shipping]">
-                {foreach name="isFreeShippingList" item="vo"}
-                    <option value="{$key}" {in name="key" value="1"}selected{/in}>{$vo}</option>
-                {/foreach}
-            </select>
-
+            <input id="c-freight" data-rule="required" class="form-control" step="0.01" name="row[freight]" type="number" value="0.00">
         </div>
     </div>
     <div class="form-group">
