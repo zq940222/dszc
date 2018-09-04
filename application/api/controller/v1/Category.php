@@ -15,9 +15,9 @@ use app\api\model\Category as CategoryModel;
 
 class Category extends BaseController
 {
-    public function getAllCategories()
+    public function getAllDish()
     {
-        $categories = CategoryModel::all([],'img');
+        $categories = CategoryModel::getDish();
         if (!$categories) {
             throw new ApiException();
         }
