@@ -20,6 +20,15 @@ class DishSpec extends BaseModel
 
     public function getItemAttr($value)
     {
-        return json_decode($value,true);
+
+        $array = json_decode($value,true);
+        foreach ($array as $v)
+        {
+            $data[] = [
+                'name' => $v,
+                'num' => 0
+            ];
+        }
+        return $data;
     }
 }

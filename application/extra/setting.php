@@ -6,6 +6,6 @@
  * Time: 15:29
  */
 return [
-    'img_prefix' => 'http://ds.sharexwd.top/uploads',
+    'img_prefix' => 'http://ds.sharexwd.top/',
     'token_expire_in' => 7200
 ];

@@ -32,4 +32,13 @@ class Category extends BaseModel
             ->select();
         return $data;
     }
+
+    public static function getGoodsCategoryList()
+    {
+        $data = self::order('weigh asc')
+            ->where('type','goods')
+            ->where('status','normal')
+            ->select();
+        return $data;
+    }
 }
