@@ -9,6 +9,8 @@
 namespace app\api\model;
 
 
+use app\api\service\GoodsService;
+
 class Goods extends BaseModel
 {
     protected $hidden = ['updatetime','createtime','status','is_on_sale','is_recommend','keywords','weigh'];
@@ -26,6 +28,21 @@ class Goods extends BaseModel
             $v = $this->prefixImgUrl($v);
         }
         return $array;
+    }
+
+    public function getDetailImagesAttr($value)
+    {
+        $array = explode(',',$value);
+        foreach ($array as &$v)
+        {
+            $v = $this->prefixImgUrl($v);
+        }
+        return $array;
+    }
+
+    public function specGoodsPrice()
+    {
+        return $this->hasMany('SpecGoodsPrice','goods_id','id')->where('status',1);
     }
 
     public static function getGoods($page, $size, $is_recommend = 0, $category_id = 0, $keywords = '', $sort = 0)
@@ -59,5 +76,17 @@ class Goods extends BaseModel
             ->where($where)
             ->paginate($size,true,['page'=> $page]);
         return $data;
+    }
+
+    public static function detail($id)
+    {
+        $dataArray = self::with(['specGoodsPrice'])
+            ->find($id);
+
+        $goodsService = new GoodsService();
+        $spec = $goodsService->get_spec($id);
+
+        $dataArray['spec'] = $spec;
+        return $dataArray;
     }
 }

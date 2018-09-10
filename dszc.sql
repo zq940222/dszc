@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50636
 File Encoding         : 65001
 
-Date: 2018-09-01 10:52:35
+Date: 2018-09-07 16:31:35
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -53,7 +53,7 @@ CREATE TABLE `dszc_admin_log` (
   `createtime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '操作时间',
   PRIMARY KEY (`id`),
   KEY `name` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=964 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='管理员日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=1032 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='管理员日志表';
 
 -- ----------------------------
 -- Table structure for dszc_apply_goods
@@ -108,7 +108,7 @@ CREATE TABLE `dszc_attachment` (
   `storage` enum('local','upyun','qiniu') NOT NULL DEFAULT 'local' COMMENT '存储位置',
   `sha1` varchar(40) NOT NULL DEFAULT '' COMMENT '文件 sha1编码',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='附件表';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='附件表';
 
 -- ----------------------------
 -- Table structure for dszc_auth_group
@@ -159,7 +159,7 @@ CREATE TABLE `dszc_auth_rule` (
   UNIQUE KEY `name` (`name`) USING BTREE,
   KEY `pid` (`pid`),
   KEY `weigh` (`weigh`)
-) ENGINE=InnoDB AUTO_INCREMENT=280 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='节点表';
+) ENGINE=InnoDB AUTO_INCREMENT=175 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='节点表';
 
 -- ----------------------------
 -- Table structure for dszc_banner
@@ -223,6 +223,7 @@ CREATE TABLE `dszc_comment` (
   `user_id` int(11) NOT NULL DEFAULT '0' COMMENT '用户ID',
   `nickname` varchar(255) NOT NULL DEFAULT '' COMMENT '用户昵称',
   `avatar` varchar(255) NOT NULL COMMENT '头像',
+  `goods_id` int(11) NOT NULL DEFAULT '0' COMMENT '商品ID',
   `details` varchar(255) NOT NULL DEFAULT '' COMMENT '评论内容',
   `images` varchar(255) NOT NULL DEFAULT '' COMMENT '图片',
   `score` enum('5','4','3','2','1') NOT NULL DEFAULT '5' COMMENT '评分:1=1分,2=2分,3=3分,4=4分,5=5分',
@@ -268,6 +269,29 @@ CREATE TABLE `dszc_coupon` (
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+-- Table structure for dszc_crontab
+-- ----------------------------
+DROP TABLE IF EXISTS `dszc_crontab`;
+CREATE TABLE `dszc_crontab` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `type` varchar(10) NOT NULL DEFAULT '' COMMENT '事件类型',
+  `title` varchar(100) NOT NULL DEFAULT '' COMMENT '事件标题',
+  `content` text NOT NULL COMMENT '事件内容',
+  `schedule` varchar(100) NOT NULL DEFAULT '' COMMENT 'Crontab格式',
+  `sleep` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '延迟秒数执行',
+  `maximums` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '最大执行次数 0为不限',
+  `executes` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '已经执行的次数',
+  `createtime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '创建时间',
+  `updatetime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '更新时间',
+  `begintime` int(10) NOT NULL DEFAULT '0' COMMENT '开始时间',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '结束时间',
+  `executetime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '最后执行时间',
+  `weigh` int(10) NOT NULL DEFAULT '0' COMMENT '权重',
+  `status` enum('completed','expired','hidden','normal') NOT NULL DEFAULT 'normal' COMMENT '状态',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='定时任务表';
+
+-- ----------------------------
 -- Table structure for dszc_dish
 -- ----------------------------
 DROP TABLE IF EXISTS `dszc_dish`;
@@ -280,6 +304,7 @@ CREATE TABLE `dszc_dish` (
   `price` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '价格',
   `dish_image` varchar(255) NOT NULL DEFAULT '' COMMENT '餐品图片',
   `status` enum('1','0') NOT NULL DEFAULT '1' COMMENT '状态:0=隐藏,1=正常',
+  `num` int(11) NOT NULL DEFAULT '0' COMMENT '默认选择数量',
   `createtime` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
   `updatetime` int(11) NOT NULL DEFAULT '0' COMMENT '更新时间',
   PRIMARY KEY (`id`)
@@ -328,21 +353,6 @@ CREATE TABLE `dszc_dish_order_item` (
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for dszc_dish_price
--- ----------------------------
-DROP TABLE IF EXISTS `dszc_dish_price`;
-CREATE TABLE `dszc_dish_price` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `dish_id` int(11) NOT NULL COMMENT '菜品id',
-  `dish_spec_item_ids` varchar(255) NOT NULL DEFAULT '' COMMENT 'key键名',
-  `key_name` varchar(50) NOT NULL COMMENT '键名名称',
-  `status` enum('1','0') NOT NULL DEFAULT '1' COMMENT '状态:0=隐藏,1=正常',
-  `createtime` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `updatetime` int(11) NOT NULL DEFAULT '0' COMMENT '更新时间',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
--- ----------------------------
 -- Table structure for dszc_dish_spec
 -- ----------------------------
 DROP TABLE IF EXISTS `dszc_dish_spec`;
@@ -388,7 +398,7 @@ CREATE TABLE `dszc_goods` (
   `sales_sum` int(11) NOT NULL DEFAULT '0' COMMENT '销量',
   `is_recommend` enum('1','0') NOT NULL DEFAULT '0' COMMENT '是否人气推荐:0=否,1=是',
   `category_id` int(11) NOT NULL DEFAULT '0' COMMENT '分类ID',
-  `is_free_shipping` enum('1','0') NOT NULL DEFAULT '1' COMMENT '是否包邮:0=不包邮,1=包邮',
+  `freight` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '运费',
   `keywords` varchar(255) NOT NULL DEFAULT '' COMMENT '关键字',
   `comment_count` int(11) NOT NULL DEFAULT '0' COMMENT '评论条数',
   `is_on_sale` enum('1','0') NOT NULL DEFAULT '0' COMMENT '是否上架:0=未上架,1=已上架',
@@ -456,20 +466,7 @@ CREATE TABLE `dszc_search` (
   `createtime` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
   `updatetime` int(11) NOT NULL DEFAULT '0' COMMENT '更新时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Table structure for dszc_setting
--- ----------------------------
-DROP TABLE IF EXISTS `dszc_setting`;
-CREATE TABLE `dszc_setting` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID',
-  `name` varchar(50) NOT NULL DEFAULT '' COMMENT '名称',
-  `value` varchar(255) NOT NULL DEFAULT '' COMMENT '值',
-  `createtime` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `updatetime` int(11) NOT NULL DEFAULT '0' COMMENT '更新时间',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for dszc_sms
@@ -509,7 +506,6 @@ CREATE TABLE `dszc_spec_goods_price` (
   `key` varchar(255) DEFAULT NULL COMMENT '规格键名',
   `key_name` varchar(255) DEFAULT NULL COMMENT '规格键名称',
   `price` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '价格',
-  `stock` int(11) NOT NULL DEFAULT '1' COMMENT '库存',
   `image` varchar(255) NOT NULL DEFAULT '' COMMENT '图片',
   `status` enum('1','0') NOT NULL DEFAULT '1' COMMENT '状态:0=隐藏,1=正常',
   `createtime` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
@@ -525,6 +521,7 @@ CREATE TABLE `dszc_spec_item` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `spec_id` int(11) NOT NULL COMMENT '规格ID',
   `name` varchar(20) NOT NULL DEFAULT '' COMMENT '规格项',
+  `isselect` tinyint(1) NOT NULL DEFAULT '0' COMMENT '选择',
   `status` enum('1','0') NOT NULL DEFAULT '1' COMMENT '状态:0=隐藏,1=正常',
   `createtime` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
   `updatetime` int(11) NOT NULL DEFAULT '0' COMMENT '更新时间',
@@ -537,30 +534,16 @@ CREATE TABLE `dszc_spec_item` (
 DROP TABLE IF EXISTS `dszc_user`;
 CREATE TABLE `dszc_user` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID',
-  `username` varchar(32) NOT NULL DEFAULT '' COMMENT '用户名',
+  `openid` varchar(50) NOT NULL DEFAULT '' COMMENT 'openID',
   `nickname` varchar(50) NOT NULL DEFAULT '' COMMENT '昵称',
-  `password` varchar(32) NOT NULL DEFAULT '' COMMENT '密码',
-  `salt` varchar(30) NOT NULL DEFAULT '' COMMENT '密码盐',
-  `email` varchar(100) NOT NULL DEFAULT '' COMMENT '电子邮箱',
   `mobile` varchar(11) NOT NULL DEFAULT '' COMMENT '手机号',
   `avatar` varchar(255) NOT NULL DEFAULT '' COMMENT '头像',
   `gender` enum('2','1','0') NOT NULL DEFAULT '0' COMMENT '性别:0=未知,1=男,2=女',
   `birthday` date DEFAULT NULL COMMENT '生日',
-  `successions` int(10) unsigned NOT NULL DEFAULT '1' COMMENT '连续登录天数',
-  `maxsuccessions` int(10) unsigned NOT NULL DEFAULT '1' COMMENT '最大连续登录天数',
-  `prevtime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '上次登录时间',
-  `logintime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '登录时间',
-  `loginip` varchar(50) NOT NULL DEFAULT '' COMMENT '登录IP',
-  `loginfailure` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '失败次数',
-  `joinip` varchar(50) NOT NULL DEFAULT '' COMMENT '加入IP',
-  `jointime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '加入时间',
   `createtime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '创建时间',
   `updatetime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '更新时间',
-  `token` varchar(50) NOT NULL DEFAULT '' COMMENT 'Token',
   `status` enum('1','0') NOT NULL DEFAULT '1' COMMENT '状态:0=隐藏,1=正常',
   PRIMARY KEY (`id`),
-  KEY `username` (`username`),
-  KEY `email` (`email`),
   KEY `mobile` (`mobile`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='会员表';
 
@@ -600,24 +583,6 @@ CREATE TABLE `dszc_user_coupon` (
   `updatetime` int(11) NOT NULL DEFAULT '0' COMMENT '更新时间',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Table structure for dszc_users
--- ----------------------------
-DROP TABLE IF EXISTS `dszc_users`;
-CREATE TABLE `dszc_users` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '用户ID',
-  `openid` varchar(50) NOT NULL DEFAULT '' COMMENT 'openID',
-  `nickname` varchar(50) NOT NULL DEFAULT '' COMMENT '昵称',
-  `avatar` varchar(255) NOT NULL DEFAULT '' COMMENT '头像',
-  `mobile` varchar(11) NOT NULL DEFAULT '' COMMENT '手机号',
-  `gender` enum('2','1','0') NOT NULL DEFAULT '0' COMMENT '性别:0=未知,1=男,2=女',
-  `birth` date DEFAULT NULL COMMENT '生日',
-  `status` enum('1','0') NOT NULL DEFAULT '1' COMMENT '状态:0=拉黑,1=正常',
-  `createtime` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `updatetime` int(11) NOT NULL DEFAULT '0' COMMENT '更新时间',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for dszc_version
