@@ -26,7 +26,7 @@ class UserCoupon extends Model
     
     public function getTypeList()
     {
-        return ['0' => __('Type 0'),'1' => __('Type 1'),'2' => __('Type 2')];
+        return ['1' => __('Type 1'),'2' => __('Type 2')];
     }     
 
     public function getStatusList()

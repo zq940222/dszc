@@ -9,6 +9,8 @@
 namespace app\api\model;
 
 
+use app\api\controller\v1\Upload;
+
 class Comment extends BaseModel
 {
     protected $hidden = ['updatetime','status'];
@@ -21,6 +23,16 @@ class Comment extends BaseModel
             $v = $this->prefixImgUrl($v);
         }
         return $array;
+    }
+
+    public function setImagesAttr($value)
+    {
+        foreach ($value as &$v)
+        {
+            Upload::move($v);
+            $v = 'uploads/'.$v;
+        }
+        return implode(',',$value);
     }
 
     public static function commentList($goods_id, $page = 1, $size = 10)

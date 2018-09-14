@@ -21,7 +21,6 @@ class Comment extends Backend
     {
         parent::_initialize();
         $this->model = model('Comment');
-        $this->view->assign("scoreList", $this->model->getScoreList());
         $this->view->assign("statusList", $this->model->getStatusList());
     }
     

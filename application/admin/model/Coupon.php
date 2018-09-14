@@ -19,6 +19,7 @@ class Coupon extends Model
     // 追加属性
     protected $append = [
         'type_text',
+        'coupon_type_text',
         'status_text'
     ];
     
@@ -26,7 +27,12 @@ class Coupon extends Model
     
     public function getTypeList()
     {
-        return ['1' => __('Type 1'),'2' => __('Type 2'),'3' => __('Type 3')];
+        return ['1' => __('Type 1'),'2' => __('Type 2')];
+    }     
+
+    public function getCouponTypeList()
+    {
+        return ['1' => __('Coupon_type 1'),'2' => __('Coupon_type 2')];
     }     
 
     public function getStatusList()
@@ -39,6 +45,14 @@ class Coupon extends Model
     {        
         $value = $value ? $value : $data['type'];
         $list = $this->getTypeList();
+        return isset($list[$value]) ? $list[$value] : '';
+    }
+
+
+    public function getCouponTypeTextAttr($value, $data)
+    {        
+        $value = $value ? $value : $data['coupon_type'];
+        $list = $this->getCouponTypeList();
         return isset($list[$value]) ? $list[$value] : '';
     }
 

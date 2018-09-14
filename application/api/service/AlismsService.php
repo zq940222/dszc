@@ -10,7 +10,6 @@ namespace app\api\service;
 
 
 use app\api\library\ApiException;
-use think\Session;
 
 class AlismsService
 {
@@ -20,12 +19,8 @@ class AlismsService
 
     public static function checkCode($mobile,$code)
     {
-        if ($mobile != Session::get('mobile')){
-            throw new ApiException([
-                'msg' => '手机号不一致'
-            ]);
-        }
-        if ($code != Session::get('code')) {
+
+        if ($code != cache($mobile)) {
             throw new ApiException(['msg' => '验证码不正确']);
         }
         return true;

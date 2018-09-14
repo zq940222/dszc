@@ -21,14 +21,14 @@ use app\api\service\Token as TokenService;
 use app\api\validate\GoodsNew;
 use app\api\validate\HorsemanNew;
 use app\api\validate\MobileNumber;
-use think\Session;
+use app\api\validate\UserInfoNew;
 
 class Personal extends BaseController
 {
     public function info()
     {
         $uid = TokenService::getCurrentUid();
-        $data = User::where('status',1)->field(['id','nickname','mobile','avatar','gender','birthday'])->find($uid);
+        $data = User::where('status',1)->field(['id','mobile','birthday'])->find($uid);
         return $data;
     }
 
@@ -71,8 +71,7 @@ class Personal extends BaseController
         $template = 'SMS_144185124';
         $sign = '大山早餐';
         $code = AlismsService::generateCode(6);
-        Session::set('mobile',$mobile);
-        Session::set('code',$code);
+        cache($mobile,$code,30*60);
         $param = ['code' => $code];
         $alisms = new \addons\alisms\library\Alisms();
         $ret = $alisms->mobile($mobile)
@@ -120,7 +119,7 @@ class Personal extends BaseController
     {
         $uid = TokenService::getCurrentUid();
 
-        $data = ApplyHorseman::where('user_id',$uid)->find();
+        $data = ApplyHorseman::where('user_id',$uid)->order('createtime desc')->find();
 
         if (!$data)
         {
@@ -134,9 +133,14 @@ class Personal extends BaseController
         $validate = new HorsemanNew();
         $validate->goCheck();
 
+
         $uid = TokenService::getCurrentUid();
 
         $dataArray = $validate->getDataByRule(input('post.'));
+
+        AlismsService::checkCode($dataArray['mobile'], $dataArray['code']);
+
+        unset($dataArray['code']);
         $dataArray['user_id'] = $uid;
         ApplyHorseman::create($dataArray);
 
@@ -147,7 +151,7 @@ class Personal extends BaseController
     {
         $uid = TokenService::getCurrentUid();
 
-        $data = ApplyGoods::where('user_id',$uid)->find();
+        $data = ApplyGoods::where('user_id',$uid)->order('createtime desc')->find();
 
         if (!$data)
         {
@@ -170,9 +174,22 @@ class Personal extends BaseController
         return json(new Success(['msg' => '申请成功']));
     }
 
-    public function  customerService()
+    public function customerService()
     {
         $data = config('site.customer_service');
         return ['customer_service'=> $data];
+    }
+
+    public function editUserInfo()
+    {
+        $validate = new UserInfoNew();
+        $validate->goCheck();
+
+        $uid = TokenService::getCurrentUid();
+
+        $dataArray = $validate->getDataByRule(input('post.'));
+        $model = new User();
+        $model->save($dataArray,['id' => $uid]);
+        return json(new Success(['msg' => '更新成功']));
     }
 }

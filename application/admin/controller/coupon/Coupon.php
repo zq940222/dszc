@@ -22,6 +22,7 @@ class Coupon extends Backend
         parent::_initialize();
         $this->model = model('Coupon');
         $this->view->assign("typeList", $this->model->getTypeList());
+        $this->view->assign("couponTypeList", $this->model->getCouponTypeList());
         $this->view->assign("statusList", $this->model->getStatusList());
     }
     

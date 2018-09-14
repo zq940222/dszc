@@ -11,5 +11,11 @@ namespace app\api\model;
 
 class ApplyHorseman extends BaseModel
 {
+    protected $autoWriteTimestamp = true;
 
+    protected $createTime = 'createtime';
+
+    protected $updateTime = 'updatetime';
+
+    protected $hidden = ['id','user_id','createtime','updatetime'];
 }

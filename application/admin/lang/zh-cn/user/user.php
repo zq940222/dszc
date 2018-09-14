@@ -2,10 +2,10 @@
 
 return [
     'Id'  =>  'ID',
-    'Openid'  =>  'openID',
     'Nickname'  =>  '昵称',
-    'Mobile'  =>  '手机号',
     'Avatar'  =>  '头像',
+    'Openid'  =>  'openID',
+    'Mobile'  =>  '手机号',
     'Gender'  =>  '性别',
     'Gender 0'  =>  '未知',
     'Gender 1'  =>  '男',
