@@ -53,5 +53,19 @@ class Token
         return $uid;
     }
 
+    public static function isValidOperate($checkedUID)
+    {
+        if (!$checkedUID) {
+            throw new Exception('检测UID不能是NULL');
+        }
+        $currentOperateUID = self::getCurrentUid();
+        if ($currentOperateUID == $checkedUID) {
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
 
 }

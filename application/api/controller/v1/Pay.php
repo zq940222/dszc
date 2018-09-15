@@ -13,7 +13,7 @@ use app\api\service\WxNotify;
 use app\api\service\WxPayService;
 use app\api\validate\IDMustBePostiveInt;
 
-class WxPay
+class Pay
 {
     public function getDishPreOrder($id = '')
     {

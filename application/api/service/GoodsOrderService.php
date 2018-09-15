@@ -66,9 +66,17 @@ class GoodsOrderService extends OrderService
         if ($coupon_id)
         {
             $coupon = UserCoupon::get($coupon_id);
+            if ($coupon['status'] != 1)
+            {
+                throw new ApiException(['msg' => '该优惠券不可用']);
+            }
             if ($coupon['user_id'] != $this->uid)
             {
                 throw new ApiException(['msg' => '你没有该优惠券使用权']);
+            }
+            if ($coupon['type'] != 2)
+            {
+                throw new ApiException(['msg' => '该优惠券不能在此场景使用']);
             }
             $this->couponId = $coupon_id;
             $this->couponPrice = $coupon['price'];
@@ -121,6 +129,9 @@ class GoodsOrderService extends OrderService
             }
             $orderDish = new OrderGoods();
             $orderDish->saveAll($this->products);
+
+            UserCoupon::update(['status'=>2],['id'=> $this->couponId]);
+
             Db::commit();
             return [
                 'order_sn' => $orderSn,

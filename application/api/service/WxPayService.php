@@ -21,7 +21,6 @@ Loader::import('WxPay.WxPay',EXTEND_PATH,'.Api.php');
 class WxPayService
 {
     private $orderID;
-    private $orderNO;
     private $model;
 
     function __construct($orderID)
@@ -56,7 +55,7 @@ class WxPayService
             throw new ApiException(['msg' => '登录已过期']);
         }
         $wxOrderData = new \WxPayUnifiedOrder();
-        $wxOrderData->SetOut_trade_no($this->orderNO);
+        $wxOrderData->SetOut_trade_no($this->model->order_sn);
         $wxOrderData->SetTrade_type('JSAPI');
         $wxOrderData->SetTotal_fee($totalPrice*100);
         $wxOrderData->SetBody('大山早餐');
@@ -71,7 +70,7 @@ class WxPayService
         if ($wxOrder['return_code'] != 'SUCCESS' || $wxOrder['result_code'] != 'SUCCESS'){
             Log::record($wxOrder,'error');
             Log::record('获取预支付订单失败','error');
-//            throw new Exception('获取预支付订单失败');
+            throw new Exception('获取预支付订单失败');
         }
         //prepay_id
         $this->recordPreOrder($wxOrder);
@@ -101,6 +100,11 @@ class WxPayService
         return $rawValues;
     }
 
+    private function recordPreOrder($wxOrder)
+    {
+        $this->model->update(['prepay_id'=>$wxOrder['prepay_id']]);
+    }
+
     private function checkOrderValid()
     {
 
@@ -120,7 +124,6 @@ class WxPayService
                 'code' => 400
             ]);
         }
-        $this->orderNO = $this->model->order_no;
         return true;
     }
 }
