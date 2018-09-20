@@ -82,7 +82,7 @@ class Address extends BaseController
             throw new ApiException(['msg' => '你没有权限这么做']);
         }
 
-        @UserAddress::where('user_id',$uid)->save(['is_default' => 0]);
+        @UserAddress::where('user_id',$uid)->update(['is_default' => 0]);
         $model->save(['is_default' => 1]);
         return json(new Success(['msg' => '已设置']));
     }

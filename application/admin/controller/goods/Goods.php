@@ -2,6 +2,7 @@
 
 namespace app\admin\controller\goods;
 
+use app\admin\logic\GoodsLogic;
 use app\common\controller\Backend;
 
 /**
@@ -16,6 +17,8 @@ class Goods extends Backend
      * Goods模型对象
      */
     protected $model = null;
+
+    protected $noNeedRight = ['ajaxGetGoods'];
 
     public function _initialize()
     {
@@ -32,5 +35,72 @@ class Goods extends Backend
      * 需要将application/admin/library/traits/Backend.php中对应的方法复制到当前控制器,然后进行修改
      */
     
+    public function ajaxGetGoods()
+    {
+        $data = $this->model->where('status',1)->where('is_on_sale',1)->column(['id','name']);
+        return $data;
+    }
 
+    /**
+     * 详情
+     */
+    public function detail($ids = NULL)
+    {
+        $row = $this->model->get($ids);
+        if (!$row)
+            $this->error(__('No Results were found'));
+        $adminIds = $this->getDataLimitAdminIds();
+        if (is_array($adminIds))
+        {
+            if (!in_array($row[$this->dataLimitField], $adminIds))
+            {
+                $this->error(__('You have no permission'));
+            }
+        }
+        $specList = model('Spec')->with(['specItem'])->order('id asc')->select();
+
+        $items_id = model('SpecGoodsPrice')->where('goods_id',$ids)->column('key');
+        $items_id = implode(',',$items_id);
+        $items_ids = explode(',', $items_id);
+
+        if ($this->request->isPost())
+        {
+            $params = $this->request->post("row/a");
+            if ($params)
+            {
+                try
+                {
+                    $files = $this->request->file();
+                    return $files;exit;
+                    if ($result !== false)
+                    {
+                        $this->success();
+                    }
+                    else
+                    {
+                        $this->error($row->getError());
+                    }
+                }
+                catch (\think\exception\PDOException $e)
+                {
+                    $this->error($e->getMessage());
+                }
+            }
+            $this->error(__('Parameter %s can not be empty', ''));
+        }
+        $this->view->assign("row", $row);
+        $this->view->assign('items_ids',$items_ids);
+        $this->view->assign('specList',$specList);
+        return $this->view->fetch();
+    }
+
+    /**
+     * 动态获取商品规格输入框 根据不同的数据返回不同的输入框
+     */
+    public function ajaxGetSpecInput(){
+        $GoodsLogic = new GoodsLogic();
+        $goods_id = input('goods_id/d') ? input('goods_id/d') : 0;
+        $str = $GoodsLogic->getSpecInput($goods_id ,input('post.spec_arr/a',[[]]));
+        return $str;
+    }
 }

@@ -10,6 +10,7 @@ namespace app\api\controller\v1;
 
 
 use app\api\controller\BaseController;
+use app\api\model\DishSpec;
 use app\api\validate\IDMustBePostiveInt;
 use app\api\model\Dish as DishModel;
 
@@ -20,8 +21,13 @@ class Dish extends BaseController
     {
         (new IDMustBePostiveInt())->goCheck();
 
-        $data = DishModel::with(['spec'])
-            ->find($id);
+        $data = DishModel::get($id);
+
+        $specIds = $data['dish_spec_ids'];
+
+        $spec = DishSpec::where('id','in',$specIds)->with(['specItem'])->select();
+
+        $data['spec'] = $spec;
         return $data;
     }
 }

@@ -37,6 +37,9 @@ class Spec extends Model
     }
 
 
-
+    public function specItem()
+    {
+        return $this->hasMany('SpecItem','spec_id','id');
+    }
 
 }

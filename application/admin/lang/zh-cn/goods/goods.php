@@ -7,7 +7,7 @@ return [
     'Cover_image'  =>  '封面图片',
     'Goods_images'  =>  '产品图片',
     'Price'  =>  '默认价格',
-    'Detail_content'  =>  '商品详情',
+    'Detail_images'  =>  '商品详情图',
     'Sales_sum'  =>  '销量',
     'Is_recommend'  =>  '是否人气推荐',
     'Is_recommend 0'  =>  '否',

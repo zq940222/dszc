@@ -24,13 +24,15 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                 columns: [
                     [
                         {checkbox: true},
-                        {field: 'id', title: __('Id')},
-                        {field: 'category_id', title: __('Category_id')},
+                        {field: 'id', title: __('Id'), operate:false},
+                        {field: 'category_id', title: __('Category_id'), visible:false, searchList: $.getJSON('dish/dish/ajaxGetCategory')},
+                        {field: 'category.name', title: __('Category_id'), formatter:Table.api.formatter.search},
                         {field: 'type', title: __('Type'), visible:false, searchList: {"0":__('Type 0'),"1":__('Type 1')}},
                         {field: 'type_text', title: __('Type'), operate:false},
                         {field: 'name', title: __('Name')},
                         {field: 'price', title: __('Price'), operate:'BETWEEN'},
-                        {field: 'dish_image', title: __('Dish_image'), formatter: Table.api.formatter.image},
+                        {field: 'dish_image', title: __('Dish_image'), operate:false, formatter: Table.api.formatter.image},
+                        {field: 'dish_spec_ids', title: __('Dish_spec_ids'), visible:false, operate:false},
                         {field: 'status', title: __('Status'), visible:false, searchList: {"0":__('Status 0'),"1":__('Status 1')}},
                         {field: 'status_text', title: __('Status'), operate:false},
                         {field: 'createtime', title: __('Createtime'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
@@ -55,5 +57,21 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
             }
         }
     };
+
+
+    $("#c-type").on('change',function () {
+        if ($(this).val() == 0){
+            $("#c-dish_spec_ids").val('');
+            $("#c-dish_spec_ids_text").attr('disabled',false);
+            $("#c-dish_spec_ids_text").parent('div').addClass('sp_disabled');
+        } else{
+            $("#c-dish_spec_ids_text").attr('disabled',false);
+            $("#c-dish_spec_ids_text").attr('data-select-only',false);
+            $("#c-dish_spec_ids_text").attr('readonly',false);
+        }
+    });
+
     return Controller;
+
+
 });

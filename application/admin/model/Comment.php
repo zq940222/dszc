@@ -37,6 +37,9 @@ class Comment extends Model
     }
 
 
-
+    public function goods()
+    {
+        return $this->belongsTo('Goods','goods_id','id');
+    }
 
 }

@@ -24,10 +24,10 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                 columns: [
                     [
                         {checkbox: true},
-                        {field: 'id', title: __('Id')},
+                        {field: 'id', title: __('Id'), operate:false},
                         {field: 'nickname', title: __('Nickname')},
-                        {field: 'avatar', title: __('Avatar')},
-                        {field: 'openid', title: __('Openid')},
+                        {field: 'avatar', title: __('Avatar'), operate:false,formatter: Table.api.formatter.image},
+                        {field: 'openid', title: __('Openid'), operate:false},
                         {field: 'mobile', title: __('Mobile')},
                         {field: 'gender', title: __('Gender'), visible:false, searchList: {"0":__('Gender 0'),"1":__('Gender 1'),"2":__('Gender 2')}},
                         {field: 'gender_text', title: __('Gender'), operate:false},

@@ -148,7 +148,7 @@ class GoodsOrderService extends OrderService
     {
         $products = [];
         foreach ($oProducts as $key =>  $item){
-            $goodsModel = Goods::where('status',1)->where('is_on_sale',1)->find($item['product_id']);
+            $goodsModel = model('Goods')->where('status',1)->where('is_on_sale',1)->find($item['product_id']);
             if (!$goodsModel)
             {
                 throw new ApiException(['msg' => '商品ID为'. $item['product_id'] .'的商品不存在']);

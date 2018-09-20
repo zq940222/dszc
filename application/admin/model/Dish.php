@@ -52,5 +52,9 @@ class Dish extends Model
 
 
 
+    public function category()
+    {
+        return $this->belongsTo('Category','category_id','id')->setEagerlyType(0);
+    }
 
 }

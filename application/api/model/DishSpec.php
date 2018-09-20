@@ -13,22 +13,8 @@ class DishSpec extends BaseModel
 {
     protected $hidden = ['status','createtime','updatetime'];
 
-    public function setItemAttr($value)
+    public function specItem()
     {
-        return json_decode($value);
-    }
-
-    public function getItemAttr($value)
-    {
-
-        $array = json_decode($value,true);
-        foreach ($array as $v)
-        {
-            $data[] = [
-                'name' => $v,
-                'num' => 0
-            ];
-        }
-        return $data;
+        return $this->hasMany('DishSpecItem','dish_spec_id','id');
     }
 }

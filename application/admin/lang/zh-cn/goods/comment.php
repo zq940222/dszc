@@ -5,7 +5,7 @@ return [
     'User_id'  =>  '用户ID',
     'Nickname'  =>  '用户昵称',
     'Avatar'  =>  '头像',
-    'Goods_id'  =>  '商品ID',
+    'Goods_id'  =>  '商品',
     'Details'  =>  '评论内容',
     'Images'  =>  '图片',
     'Status'  =>  '状态',
