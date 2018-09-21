@@ -70,6 +70,10 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
         detail: function () {
             ajaxGetSpecInput();
 
+            $(".plupload").data("upload-success", function(data, ret){
+                //这里进行后续操作
+                console.log(data);
+            });
             // 规格按钮切换 class
             $("button[type=button]").click(function(){
                 if($(this).hasClass('btn-success'))

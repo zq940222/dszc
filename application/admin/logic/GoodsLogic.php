@@ -66,12 +66,12 @@ class GoodsLogic extends Model
             if(!array_key_exists($item_key,$keySpecGoodsPrice)) {
                 $keySpecGoodsPrice[$item_key]["price"] = 0;
                 $keySpecGoodsPrice[$item_key]["image"] = '';
-            }else{
-                $keySpecGoodsPrice[$item_key]["image"] = '/public/images/add-button.jpg';
             }
             $str .="<td><input type='text' name='row[item][$item_key][price]' value='{$keySpecGoodsPrice[$item_key]["price"]}' onkeyup='this.value=this.value.replace(/[^\d.]/g,\"\")' onpaste='this.value=this.value.replace(/[^\d.]/g,\"\")' /></td>";
-            $str .="<td><img class='plupload' src='{$keySpecGoodsPrice[$item_key]['image']}' width='35' height='35' id='plupload-image-{$item_key}' data-multiple='false'>
-                <input type='hidden' name='row[item][$item_key][image]' value='' /></td>";
+            $str .="<td><input id='c-image-{$k}' type='hidden' name='row[item][$item_key][image]' value='{$keySpecGoodsPrice[$item_key]["image"]}' />";
+            $str .="<span><button type='button' id='plupload-image-{$k}' class='btn btn-danger plupload list-block' data-input-id='c-image-{$k}' data-mimetype='image/gif,image/jpeg,image/png,image/jpg,image/bmp' data-multiple='false' data-preview-id='p-image-{$k}'><i class='fa fa-upload'></i> 上传</button></span>";
+            $str .="<ul class='row list-inline plupload-preview' id='p-image-{$k}' ></ul></td>";
+
             $str .="<td><button type='button' class='btn btn-danger delete_item'>无效</button></td>";
             $str .="</tr>";
         }

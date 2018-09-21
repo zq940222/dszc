@@ -70,7 +70,7 @@ class Goods extends Backend
             {
                 try
                 {
-                    
+
                     if ($result !== false)
                     {
                         $this->success();
