@@ -36,7 +36,7 @@ class WxPayService
         $this->model = DishOrder::get($this->orderID);
         $this->checkOrderValid();
 
-        return $this->makeWxPreOrder($this->model->pay_price);
+        return $this->makeWxPreOrder($this->model->pay_price,'dish');
     }
 
     public function goodsPay()
@@ -44,10 +44,10 @@ class WxPayService
         $this->model = Order::get($this->orderID);
         $this->checkOrderValid();
 
-        return $this->makeWxPreOrder($this->model->pay_price);
+        return $this->makeWxPreOrder($this->model->pay_price,'goods');
     }
 
-    private function makeWxPreOrder($totalPrice)
+    private function makeWxPreOrder($totalPrice,$type)
     {
         // openid
         $openid = Token::getCurrentTokenVar('openid');
@@ -59,6 +59,7 @@ class WxPayService
         $wxOrderData->SetTrade_type('JSAPI');
         $wxOrderData->SetTotal_fee($totalPrice*100);
         $wxOrderData->SetBody('大山早餐');
+        $wxOrderData->SetAttach($type);
         $wxOrderData->SetOpenid($openid);
         $wxOrderData->SetNotify_url(config('secure.pay_back_url'));
         return $this->getPaySignature($wxOrderData);
@@ -70,6 +71,7 @@ class WxPayService
         if ($wxOrder['return_code'] != 'SUCCESS' || $wxOrder['result_code'] != 'SUCCESS'){
             Log::record($wxOrder,'error');
             Log::record('获取预支付订单失败','error');
+            return $wxOrder;exit;
             throw new Exception('获取预支付订单失败');
         }
         //prepay_id
@@ -102,7 +104,7 @@ class WxPayService
 
     private function recordPreOrder($wxOrder)
     {
-        $this->model->update(['prepay_id'=>$wxOrder['prepay_id']]);
+        $this->model->save(['prepay_id'=>$wxOrder['prepay_id']]);
     }
 
     private function checkOrderValid()

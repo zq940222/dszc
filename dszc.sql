@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-09-20 20:29:50
+Date: 2018-09-20 21:50:03
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -40,7 +40,7 @@ CREATE TABLE `ds_admin` (
 -- ----------------------------
 -- Records of ds_admin
 -- ----------------------------
-INSERT INTO `ds_admin` VALUES ('1', 'admin', 'Admin', 'a4a187a878c3972ffadb1d6de3a185d8', 'bc9cab', '/assets/img/avatar.png', 'admin@admin.com', '0', '1537446421', '1492186163', '1537446421', 'e37a082d-f992-466f-b34a-eb5c337c3acf', 'normal');
+INSERT INTO `ds_admin` VALUES ('1', 'admin', 'Admin', 'a4a187a878c3972ffadb1d6de3a185d8', 'bc9cab', '/assets/img/avatar.png', 'admin@admin.com', '0', '1537448078', '1492186163', '1537448078', '99238d81-33eb-4e41-b40a-9dd0a55da000', 'normal');
 INSERT INTO `ds_admin` VALUES ('2', 'admin2', 'admin2', '9a28ce07ce875fbd14172a9ca5357d3c', '2dHDmj', '/assets/img/avatar.png', 'admin2@fastadmin.net', '0', '1505450906', '1492186163', '1505450906', 'df45fdd5-26f4-45ca-83b3-47e4491a315a', 'normal');
 INSERT INTO `ds_admin` VALUES ('3', 'admin3', 'admin3', '1c11f945dfcd808a130a8c2a8753fe62', 'WOKJEn', '/assets/img/avatar.png', 'admin3@fastadmin.net', '0', '1501980868', '1492186201', '1501982377', '', 'normal');
 INSERT INTO `ds_admin` VALUES ('4', 'admin22', 'admin22', '1c1a0aa0c3c56a8c1a908aab94519648', 'Aybcn5', '/assets/img/avatar.png', 'admin22@fastadmin.net', '0', '0', '1492186240', '1492186240', '', 'normal');
@@ -62,7 +62,7 @@ CREATE TABLE `ds_admin_log` (
   `createtime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '操作时间',
   PRIMARY KEY (`id`),
   KEY `name` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='管理员日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='管理员日志表';
 
 -- ----------------------------
 -- Records of ds_admin_log
@@ -126,6 +126,23 @@ INSERT INTO `ds_admin_log` VALUES ('56', '1', 'admin', '/index.php/admin/categor
 INSERT INTO `ds_admin_log` VALUES ('57', '1', 'admin', '/index.php/admin/ajax/upload', '', '{\"name\":\"product-rice@5.png\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36', '1537446330');
 INSERT INTO `ds_admin_log` VALUES ('58', '1', 'admin', '/index.php/admin/category/add?dialog=1', '分类管理 添加', '{\"dialog\":\"1\",\"row\":{\"type\":\"goods\",\"pid\":\"0\",\"name\":\"\\u5206\\u7c7b\\u56db\",\"nickname\":\"\\u5206\\u7c7b\\u56db\",\"image\":\"\\/uploads\\/20180920\\/e40f3db079e3f4af8004375e032fb1d3.png\",\"keywords\":\"\",\"description\":\"\",\"weigh\":\"0\",\"status\":\"normal\",\"flag\":[\"\"]}}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36', '1537446332');
 INSERT INTO `ds_admin_log` VALUES ('59', '1', 'admin', '/index.php/admin/index/login', '登录', '{\"__token__\":\"0ce497c01dd168dece10f0f4bdfee13e\",\"username\":\"admin\",\"keeplogin\":\"1\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36', '1537446421');
+INSERT INTO `ds_admin_log` VALUES ('60', '1', 'admin', '/index.php/admin/banner/banner/add?dialog=1', '广告管理 广告位 添加', '{\"dialog\":\"1\",\"row\":{\"name\":\"\\u65e9\\u9910\\u8f6e\\u64ad\\u56fe\",\"description\":\"\\u9996\\u9875\\u65e9\\u9910\\u8f6e\\u64ad\\u56fe\",\"status\":\"1\"}}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36', '1537447694');
+INSERT INTO `ds_admin_log` VALUES ('61', '1', 'admin', '/index.php/admin/banner/banner/add?dialog=1', '广告管理 广告位 添加', '{\"dialog\":\"1\",\"row\":{\"name\":\"\\u7cbe\\u9009\\u8f6e\\u64ad\\u56fe\",\"description\":\"\\u5546\\u57ce\\u7cbe\\u9009\\u8f6e\\u64ad\\u56fe\",\"status\":\"1\"}}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36', '1537447722');
+INSERT INTO `ds_admin_log` VALUES ('62', '1', 'admin', '/index.php/admin/addon/install', '插件管理 安装', '{\"name\":\"loginbg\",\"force\":\"0\",\"uid\":\"0\",\"token\":\"\",\"version\":\"1.0.1\",\"faversion\":\"1.0.0.20180911_beta\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36', '1537447874');
+INSERT INTO `ds_admin_log` VALUES ('63', '1', 'admin', '/index.php/admin/index/index', '', '{\"action\":\"refreshmenu\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36', '1537447874');
+INSERT INTO `ds_admin_log` VALUES ('64', '1', 'admin', '/index.php/admin/addon/install', '插件管理 安装', '{\"name\":\"crontab\",\"force\":\"0\",\"uid\":\"0\",\"token\":\"\",\"version\":\"1.0.1\",\"faversion\":\"1.0.0.20180911_beta\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36', '1537447880');
+INSERT INTO `ds_admin_log` VALUES ('65', '1', 'admin', '/index.php/admin/index/index', '', '{\"action\":\"refreshmenu\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36', '1537447880');
+INSERT INTO `ds_admin_log` VALUES ('66', '1', 'admin', '/index.php/admin/addon/install', '插件管理 安装', '{\"name\":\"loginvideo\",\"force\":\"0\",\"uid\":\"0\",\"token\":\"\",\"version\":\"1.0.0\",\"faversion\":\"1.0.0.20180911_beta\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36', '1537447895');
+INSERT INTO `ds_admin_log` VALUES ('67', '1', 'admin', '/index.php/admin/index/index', '', '{\"action\":\"refreshmenu\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36', '1537447895');
+INSERT INTO `ds_admin_log` VALUES ('68', '1', 'admin', '/index.php/admin/addon/install', '插件管理 安装', '{\"name\":\"alisms\",\"force\":\"0\",\"uid\":\"0\",\"token\":\"\",\"version\":\"1.0.2\",\"faversion\":\"1.0.0.20180911_beta\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36', '1537447914');
+INSERT INTO `ds_admin_log` VALUES ('69', '1', 'admin', '/index.php/admin/index/index', '', '{\"action\":\"refreshmenu\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36', '1537447915');
+INSERT INTO `ds_admin_log` VALUES ('70', '1', 'admin', '/index.php/admin/addon/config?name=alisms&dialog=1', '插件管理 配置', '{\"name\":\"alisms\",\"dialog\":\"1\",\"row\":{\"key\":\"LTAIvifKdFyA4SRn\",\"secret\":\"Y6RA86bLpsUw1JBA89BV707Ail5Exo\",\"sign\":\"\\u5927\\u5c71\\u65e9\\u9910\",\"template\":\"{\\\"register\\\":\\\"SMS_144185124\\\"}\"}}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36', '1537448030');
+INSERT INTO `ds_admin_log` VALUES ('71', '1', 'admin', '/index.php/admin/addon/config?name=loginvideo&dialog=1', '插件管理 配置', '{\"name\":\"loginvideo\",\"dialog\":\"1\",\"row\":{\"background-color\":\"\",\"background-image\":\"https:\\/\\/wx2.sinaimg.cn\\/large\\/0060lm7Tly1fvblyjxs3dj31hc0u0tc1.jpg\",\"background-video\":\"https:\\/\\/t1.aixinxi.net\\/o_1cnh2rofs19skpcq11u6g921qm9a.mp4\"}}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36', '1537448067');
+INSERT INTO `ds_admin_log` VALUES ('72', '1', 'admin', '/index.php/admin/index/login', '登录', '{\"__token__\":\"245d26b53f9ab4474203277187a6625b\",\"username\":\"admin\",\"keeplogin\":\"1\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36', '1537448078');
+INSERT INTO `ds_admin_log` VALUES ('73', '1', 'admin', '/index.php/admin/auth/rule/edit/ids/12?dialog=1', '权限管理 规则管理 编辑', '{\"dialog\":\"1\",\"row\":{\"ismenu\":\"1\",\"pid\":\"5\",\"name\":\"auth\\/rule\",\"title\":\"\\u83dc\\u5355\\u7ba1\\u7406\",\"icon\":\"fa fa-bars\",\"weigh\":\"104\",\"condition\":\"\",\"remark\":\"Rule tips\",\"status\":\"normal\"},\"ids\":\"12\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36', '1537450307');
+INSERT INTO `ds_admin_log` VALUES ('74', '1', 'admin', '/index.php/admin/index/index', '', '{\"action\":\"refreshmenu\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36', '1537450308');
+INSERT INTO `ds_admin_log` VALUES ('75', '1', 'admin', '/index.php/admin/goods/spec/add?dialog=1', '精选管理 规格管理 添加', '{\"dialog\":\"1\",\"row\":{\"name\":\"\\u5c3a\\u5bf8\",\"item\":\"\\u5927\\r\\n\\u4e2d\\r\\n\\u5c0f\",\"status\":\"1\"}}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36', '1537450423');
+INSERT INTO `ds_admin_log` VALUES ('76', '1', 'admin', '/index.php/admin/goods/spec/add?dialog=1', '精选管理 规格管理 添加', '{\"dialog\":\"1\",\"row\":{\"name\":\"\\u989c\\u8272\",\"item\":\"\\u767d\\u8272\\r\\n\\u9ed1\\u8272\\r\\n\\u84dd\\u8272\\r\\n\\u7d2b\\u8272\",\"status\":\"1\"}}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36', '1537450443');
 
 -- ----------------------------
 -- Table structure for ds_apply_goods
@@ -268,7 +285,7 @@ CREATE TABLE `ds_auth_rule` (
   UNIQUE KEY `name` (`name`) USING BTREE,
   KEY `pid` (`pid`),
   KEY `weigh` (`weigh`)
-) ENGINE=InnoDB AUTO_INCREMENT=168 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='节点表';
+) ENGINE=InnoDB AUTO_INCREMENT=174 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='节点表';
 
 -- ----------------------------
 -- Records of ds_auth_rule
@@ -284,7 +301,7 @@ INSERT INTO `ds_auth_rule` VALUES ('8', 'file', '2', 'general/profile', 'Profile
 INSERT INTO `ds_auth_rule` VALUES ('9', 'file', '5', 'auth/admin', 'Admin', 'fa fa-user', '', 'Admin tips', '1', '1497429920', '1497430320', '118', 'normal');
 INSERT INTO `ds_auth_rule` VALUES ('10', 'file', '5', 'auth/adminlog', 'Admin log', 'fa fa-list-alt', '', 'Admin log tips', '1', '1497429920', '1497430307', '113', 'normal');
 INSERT INTO `ds_auth_rule` VALUES ('11', 'file', '5', 'auth/group', 'Group', 'fa fa-group', '', 'Group tips', '1', '1497429920', '1497429920', '109', 'normal');
-INSERT INTO `ds_auth_rule` VALUES ('12', 'file', '5', 'auth/rule', 'Rule', 'fa fa-bars', '', 'Rule tips', '1', '1497429920', '1497430581', '104', 'normal');
+INSERT INTO `ds_auth_rule` VALUES ('12', 'file', '5', 'auth/rule', '菜单管理', 'fa fa-bars', '', 'Rule tips', '1', '1497429920', '1537450307', '104', 'normal');
 INSERT INTO `ds_auth_rule` VALUES ('13', 'file', '1', 'dashboard/index', 'View', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '136', 'normal');
 INSERT INTO `ds_auth_rule` VALUES ('14', 'file', '1', 'dashboard/add', 'Add', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '135', 'normal');
 INSERT INTO `ds_auth_rule` VALUES ('15', 'file', '1', 'dashboard/del', 'Delete', 'fa fa-circle-o', '', '', '0', '1497429920', '1497429920', '133', 'normal');
@@ -346,11 +363,11 @@ INSERT INTO `ds_auth_rule` VALUES ('70', 'file', '67', 'user/user/add', '添加'
 INSERT INTO `ds_auth_rule` VALUES ('71', 'file', '67', 'user/user/del', '删除', 'fa fa-circle-o', '', '', '0', '1516374729', '1537442409', '0', 'normal');
 INSERT INTO `ds_auth_rule` VALUES ('72', 'file', '67', 'user/user/multi', '批量更新', 'fa fa-circle-o', '', '', '0', '1516374729', '1537442409', '0', 'normal');
 INSERT INTO `ds_auth_rule` VALUES ('85', 'file', '66', 'user/address', '用户地址', 'fa fa-circle-o', '', '', '1', '1537442427', '1537442477', '0', 'normal');
-INSERT INTO `ds_auth_rule` VALUES ('86', 'file', '85', 'user/address/index', '查看', 'fa fa-circle-o', '', '', '0', '1537442428', '1537442428', '0', 'normal');
-INSERT INTO `ds_auth_rule` VALUES ('87', 'file', '85', 'user/address/add', '添加', 'fa fa-circle-o', '', '', '0', '1537442428', '1537442428', '0', 'normal');
-INSERT INTO `ds_auth_rule` VALUES ('88', 'file', '85', 'user/address/edit', '编辑', 'fa fa-circle-o', '', '', '0', '1537442428', '1537442428', '0', 'normal');
-INSERT INTO `ds_auth_rule` VALUES ('89', 'file', '85', 'user/address/del', '删除', 'fa fa-circle-o', '', '', '0', '1537442428', '1537442428', '0', 'normal');
-INSERT INTO `ds_auth_rule` VALUES ('90', 'file', '85', 'user/address/multi', '批量更新', 'fa fa-circle-o', '', '', '0', '1537442428', '1537442428', '0', 'normal');
+INSERT INTO `ds_auth_rule` VALUES ('86', 'file', '85', 'user/address/index', '查看', 'fa fa-circle-o', '', '', '0', '1537442428', '1537447237', '0', 'normal');
+INSERT INTO `ds_auth_rule` VALUES ('87', 'file', '85', 'user/address/add', '添加', 'fa fa-circle-o', '', '', '0', '1537442428', '1537447237', '0', 'normal');
+INSERT INTO `ds_auth_rule` VALUES ('88', 'file', '85', 'user/address/edit', '编辑', 'fa fa-circle-o', '', '', '0', '1537442428', '1537447237', '0', 'normal');
+INSERT INTO `ds_auth_rule` VALUES ('89', 'file', '85', 'user/address/del', '删除', 'fa fa-circle-o', '', '', '0', '1537442428', '1537447237', '0', 'normal');
+INSERT INTO `ds_auth_rule` VALUES ('90', 'file', '85', 'user/address/multi', '批量更新', 'fa fa-circle-o', '', '', '0', '1537442428', '1537447237', '0', 'normal');
 INSERT INTO `ds_auth_rule` VALUES ('91', 'file', '66', 'user/coupon', '会员优惠券', 'fa fa-circle-o', '', '', '1', '1537442441', '1537442495', '0', 'normal');
 INSERT INTO `ds_auth_rule` VALUES ('92', 'file', '91', 'user/coupon/index', '查看', 'fa fa-circle-o', '', '', '0', '1537442441', '1537442441', '0', 'normal');
 INSERT INTO `ds_auth_rule` VALUES ('93', 'file', '91', 'user/coupon/add', '添加', 'fa fa-circle-o', '', '', '0', '1537442441', '1537442441', '0', 'normal');
@@ -365,11 +382,11 @@ INSERT INTO `ds_auth_rule` VALUES ('101', 'file', '98', 'dish/dish/edit', '编�
 INSERT INTO `ds_auth_rule` VALUES ('102', 'file', '98', 'dish/dish/del', '删除', 'fa fa-circle-o', '', '', '0', '1537442533', '1537442533', '0', 'normal');
 INSERT INTO `ds_auth_rule` VALUES ('103', 'file', '98', 'dish/dish/multi', '批量更新', 'fa fa-circle-o', '', '', '0', '1537442533', '1537442533', '0', 'normal');
 INSERT INTO `ds_auth_rule` VALUES ('104', 'file', '97', 'dish/spec', '套餐模型', 'fa fa-circle-o', '', '', '1', '1537442578', '1537442830', '0', 'normal');
-INSERT INTO `ds_auth_rule` VALUES ('105', 'file', '104', 'dish/spec/index', '查看', 'fa fa-circle-o', '', '', '0', '1537442578', '1537442578', '0', 'normal');
-INSERT INTO `ds_auth_rule` VALUES ('106', 'file', '104', 'dish/spec/add', '添加', 'fa fa-circle-o', '', '', '0', '1537442578', '1537442578', '0', 'normal');
-INSERT INTO `ds_auth_rule` VALUES ('107', 'file', '104', 'dish/spec/edit', '编辑', 'fa fa-circle-o', '', '', '0', '1537442578', '1537442578', '0', 'normal');
-INSERT INTO `ds_auth_rule` VALUES ('108', 'file', '104', 'dish/spec/del', '删除', 'fa fa-circle-o', '', '', '0', '1537442578', '1537442578', '0', 'normal');
-INSERT INTO `ds_auth_rule` VALUES ('109', 'file', '104', 'dish/spec/multi', '批量更新', 'fa fa-circle-o', '', '', '0', '1537442578', '1537442578', '0', 'normal');
+INSERT INTO `ds_auth_rule` VALUES ('105', 'file', '104', 'dish/spec/index', '查看', 'fa fa-circle-o', '', '', '0', '1537442578', '1537449790', '0', 'normal');
+INSERT INTO `ds_auth_rule` VALUES ('106', 'file', '104', 'dish/spec/add', '添加', 'fa fa-circle-o', '', '', '0', '1537442578', '1537449790', '0', 'normal');
+INSERT INTO `ds_auth_rule` VALUES ('107', 'file', '104', 'dish/spec/edit', '编辑', 'fa fa-circle-o', '', '', '0', '1537442578', '1537449790', '0', 'normal');
+INSERT INTO `ds_auth_rule` VALUES ('108', 'file', '104', 'dish/spec/del', '删除', 'fa fa-circle-o', '', '', '0', '1537442578', '1537449790', '0', 'normal');
+INSERT INTO `ds_auth_rule` VALUES ('109', 'file', '104', 'dish/spec/multi', '批量更新', 'fa fa-circle-o', '', '', '0', '1537442578', '1537449790', '0', 'normal');
 INSERT INTO `ds_auth_rule` VALUES ('110', 'file', '0', 'goods', '精选管理', 'fa fa-list', '', '', '1', '1537442619', '1537442841', '0', 'normal');
 INSERT INTO `ds_auth_rule` VALUES ('111', 'file', '110', 'goods/goods', '精选列表', 'fa fa-circle-o', '', '', '1', '1537442619', '1537442853', '0', 'normal');
 INSERT INTO `ds_auth_rule` VALUES ('112', 'file', '111', 'goods/goods/index', '查看', 'fa fa-circle-o', '', '', '0', '1537442619', '1537442619', '0', 'normal');
@@ -391,11 +408,11 @@ INSERT INTO `ds_auth_rule` VALUES ('127', 'file', '123', 'goods/comment/del', '�
 INSERT INTO `ds_auth_rule` VALUES ('128', 'file', '123', 'goods/comment/multi', '批量更新', 'fa fa-circle-o', '', '', '0', '1537442686', '1537442686', '0', 'normal');
 INSERT INTO `ds_auth_rule` VALUES ('129', 'file', '0', 'order', '订单管理', 'fa fa-list', '', '', '1', '1537442734', '1537442890', '0', 'normal');
 INSERT INTO `ds_auth_rule` VALUES ('130', 'file', '129', 'order/dish', '早餐订单', 'fa fa-circle-o', '', '', '1', '1537442734', '1537442899', '0', 'normal');
-INSERT INTO `ds_auth_rule` VALUES ('131', 'file', '130', 'order/dish/index', '查看', 'fa fa-circle-o', '', '', '0', '1537442734', '1537442734', '0', 'normal');
-INSERT INTO `ds_auth_rule` VALUES ('132', 'file', '130', 'order/dish/add', '添加', 'fa fa-circle-o', '', '', '0', '1537442734', '1537442734', '0', 'normal');
-INSERT INTO `ds_auth_rule` VALUES ('133', 'file', '130', 'order/dish/edit', '编辑', 'fa fa-circle-o', '', '', '0', '1537442734', '1537442734', '0', 'normal');
-INSERT INTO `ds_auth_rule` VALUES ('134', 'file', '130', 'order/dish/del', '删除', 'fa fa-circle-o', '', '', '0', '1537442734', '1537442734', '0', 'normal');
-INSERT INTO `ds_auth_rule` VALUES ('135', 'file', '130', 'order/dish/multi', '批量更新', 'fa fa-circle-o', '', '', '0', '1537442734', '1537442734', '0', 'normal');
+INSERT INTO `ds_auth_rule` VALUES ('131', 'file', '130', 'order/dish/index', '查看', 'fa fa-circle-o', '', '', '0', '1537442734', '1537447016', '0', 'normal');
+INSERT INTO `ds_auth_rule` VALUES ('132', 'file', '130', 'order/dish/add', '添加', 'fa fa-circle-o', '', '', '0', '1537442734', '1537447016', '0', 'normal');
+INSERT INTO `ds_auth_rule` VALUES ('133', 'file', '130', 'order/dish/edit', '编辑', 'fa fa-circle-o', '', '', '0', '1537442734', '1537447016', '0', 'normal');
+INSERT INTO `ds_auth_rule` VALUES ('134', 'file', '130', 'order/dish/del', '删除', 'fa fa-circle-o', '', '', '0', '1537442734', '1537447016', '0', 'normal');
+INSERT INTO `ds_auth_rule` VALUES ('135', 'file', '130', 'order/dish/multi', '批量更新', 'fa fa-circle-o', '', '', '0', '1537442734', '1537447016', '0', 'normal');
 INSERT INTO `ds_auth_rule` VALUES ('136', 'file', '129', 'order/goods', '精选订单', 'fa fa-circle-o', '', '', '1', '1537442744', '1537442909', '0', 'normal');
 INSERT INTO `ds_auth_rule` VALUES ('137', 'file', '136', 'order/goods/index', '查看', 'fa fa-circle-o', '', '', '0', '1537442744', '1537442744', '0', 'normal');
 INSERT INTO `ds_auth_rule` VALUES ('138', 'file', '136', 'order/goods/add', '添加', 'fa fa-circle-o', '', '', '0', '1537442744', '1537442744', '0', 'normal');
@@ -428,6 +445,12 @@ INSERT INTO `ds_auth_rule` VALUES ('164', 'file', '162', 'coupon/giveout/add', '
 INSERT INTO `ds_auth_rule` VALUES ('165', 'file', '162', 'coupon/giveout/edit', '编辑', 'fa fa-circle-o', '', '', '0', '1537444015', '1537444015', '0', 'normal');
 INSERT INTO `ds_auth_rule` VALUES ('166', 'file', '162', 'coupon/giveout/del', '删除', 'fa fa-circle-o', '', '', '0', '1537444015', '1537444015', '0', 'normal');
 INSERT INTO `ds_auth_rule` VALUES ('167', 'file', '162', 'coupon/giveout/multi', '批量更新', 'fa fa-circle-o', '', '', '0', '1537444015', '1537444015', '0', 'normal');
+INSERT INTO `ds_auth_rule` VALUES ('168', 'file', '2', 'general/crontab', '定时任务', 'fa fa-tasks', '', '类似于Linux的Crontab定时任务,可以按照设定的时间进行任务的执行,目前仅支持三种任务:请求URL、执行SQL、执行Shell', '1', '1537447879', '1537447879', '0', 'normal');
+INSERT INTO `ds_auth_rule` VALUES ('169', 'file', '168', 'general/crontab/index', '查看', 'fa fa-circle-o', '', '', '0', '1537447879', '1537447879', '0', 'normal');
+INSERT INTO `ds_auth_rule` VALUES ('170', 'file', '168', 'general/crontab/add', '添加', 'fa fa-circle-o', '', '', '0', '1537447879', '1537447879', '0', 'normal');
+INSERT INTO `ds_auth_rule` VALUES ('171', 'file', '168', 'general/crontab/edit', '编辑 ', 'fa fa-circle-o', '', '', '0', '1537447879', '1537447879', '0', 'normal');
+INSERT INTO `ds_auth_rule` VALUES ('172', 'file', '168', 'general/crontab/del', '删除', 'fa fa-circle-o', '', '', '0', '1537447879', '1537447879', '0', 'normal');
+INSERT INTO `ds_auth_rule` VALUES ('173', 'file', '168', 'general/crontab/multi', '批量更新', 'fa fa-circle-o', '', '', '0', '1537447880', '1537447880', '0', 'normal');
 
 -- ----------------------------
 -- Table structure for ds_banner
@@ -441,11 +464,13 @@ CREATE TABLE `ds_banner` (
   `updatetime` int(11) NOT NULL DEFAULT '0' COMMENT '更新时间',
   `status` enum('1','0') DEFAULT '1' COMMENT '状态:0=隐藏,1=正常',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ds_banner
 -- ----------------------------
+INSERT INTO `ds_banner` VALUES ('4', '早餐轮播图', '首页早餐轮播图', '1537447694', '1537447694', '1');
+INSERT INTO `ds_banner` VALUES ('5', '精选轮播图', '商城精选轮播图', '1537447722', '1537447722', '1');
 
 -- ----------------------------
 -- Table structure for ds_banner_item
@@ -611,11 +636,13 @@ CREATE TABLE `ds_crontab` (
   `weigh` int(10) NOT NULL DEFAULT '0' COMMENT '权重',
   `status` enum('completed','expired','hidden','normal') NOT NULL DEFAULT 'normal' COMMENT '状态',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='定时任务表';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='定时任务表';
 
 -- ----------------------------
 -- Records of ds_crontab
 -- ----------------------------
+INSERT INTO `ds_crontab` VALUES ('1', 'url', '请求FastAdmin', 'http://www.fastadmin.net', '* * * * *', '0', '0', '13548', '1497070825', '1501253101', '1483200000', '1546272000', '1501253101', '1', 'normal');
+INSERT INTO `ds_crontab` VALUES ('2', 'sql', '查询一条SQL', 'SELECT 1;', '* * * * *', '0', '0', '13548', '1497071095', '1501253101', '1483200000', '1546272000', '1501253101', '2', 'normal');
 
 -- ----------------------------
 -- Table structure for ds_dish
@@ -655,10 +682,7 @@ CREATE TABLE `ds_dish_order` (
   `coupon_id` int(11) NOT NULL DEFAULT '0' COMMENT '优惠券',
   `coupon_price` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '优惠券金额',
   `consignee` varchar(50) NOT NULL DEFAULT '' COMMENT '收货人',
-  `province` varchar(20) NOT NULL DEFAULT '' COMMENT '省',
-  `city` varchar(20) NOT NULL DEFAULT '' COMMENT '市',
-  `district` varchar(20) NOT NULL DEFAULT '' COMMENT '区',
-  `detail_address` varchar(100) NOT NULL DEFAULT '' COMMENT '详细地址',
+  `address` varchar(100) NOT NULL DEFAULT '' COMMENT '地址',
   `mobile` varchar(11) NOT NULL DEFAULT '' COMMENT '手机号',
   `pay_time` int(11) DEFAULT NULL COMMENT '支付时间',
   `prepay_id` varchar(100) DEFAULT '' COMMENT 'prepayID',
@@ -696,7 +720,6 @@ CREATE TABLE `ds_dish_order_item` (
 DROP TABLE IF EXISTS `ds_dish_spec`;
 CREATE TABLE `ds_dish_spec` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID',
-  `dish_id` int(11) NOT NULL DEFAULT '0' COMMENT '所属餐品',
   `name` varchar(50) NOT NULL DEFAULT '' COMMENT '名称',
   `choose_num` int(11) NOT NULL DEFAULT '1' COMMENT '可选择数量',
   `status` enum('1','0') NOT NULL DEFAULT '1' COMMENT '状态:0=隐藏,1=正常',
@@ -912,11 +935,13 @@ CREATE TABLE `ds_spec` (
   `createtime` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
   `updatetime` int(11) NOT NULL DEFAULT '0' COMMENT '更新时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ds_spec
 -- ----------------------------
+INSERT INTO `ds_spec` VALUES ('8', '尺寸', '1', '1537450423', '1537450423');
+INSERT INTO `ds_spec` VALUES ('9', '颜色', '1', '1537450443', '1537450443');
 
 -- ----------------------------
 -- Table structure for ds_spec_goods_price
@@ -952,11 +977,18 @@ CREATE TABLE `ds_spec_item` (
   `createtime` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
   `updatetime` int(11) NOT NULL DEFAULT '0' COMMENT '更新时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ds_spec_item
 -- ----------------------------
+INSERT INTO `ds_spec_item` VALUES ('17', '8', '大\r', '0', '1', '1537450423', '1537450423');
+INSERT INTO `ds_spec_item` VALUES ('18', '8', '中\r', '0', '1', '1537450423', '1537450423');
+INSERT INTO `ds_spec_item` VALUES ('19', '8', '小', '0', '1', '1537450423', '1537450423');
+INSERT INTO `ds_spec_item` VALUES ('20', '9', '白色\r', '0', '1', '1537450443', '1537450443');
+INSERT INTO `ds_spec_item` VALUES ('21', '9', '黑色\r', '0', '1', '1537450443', '1537450443');
+INSERT INTO `ds_spec_item` VALUES ('22', '9', '蓝色\r', '0', '1', '1537450443', '1537450443');
+INSERT INTO `ds_spec_item` VALUES ('23', '9', '紫色', '0', '1', '1537450443', '1537450443');
 
 -- ----------------------------
 -- Table structure for ds_user
@@ -990,9 +1022,7 @@ CREATE TABLE `ds_user_address` (
   `user_id` int(11) NOT NULL DEFAULT '0' COMMENT '所属用户',
   `consignee` varchar(50) NOT NULL DEFAULT '' COMMENT '收货人',
   `mobile` varchar(11) NOT NULL DEFAULT '' COMMENT '手机号',
-  `province` varchar(20) NOT NULL DEFAULT '' COMMENT '省',
-  `city` varchar(20) NOT NULL DEFAULT '' COMMENT '市',
-  `district` varchar(20) NOT NULL DEFAULT '' COMMENT '区',
+  `city` varchar(20) NOT NULL DEFAULT '' COMMENT '省/市/区',
   `detail` varchar(100) NOT NULL DEFAULT '' COMMENT '详细地址',
   `is_default` enum('1','0') NOT NULL DEFAULT '0' COMMENT '是否默认:0=否,1=是',
   `status` enum('1','0') NOT NULL DEFAULT '1' COMMENT '状态:0=隐藏,1=正常',

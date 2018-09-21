@@ -85,7 +85,7 @@ class DishOrderService extends OrderService
 
     public function setAddress($address_id)
     {
-        $address = UserAddress::get($address_id)->toArray();
+        $address = UserAddress::get($address_id);
         if ($address['user_id'] != $this->uid)
         {
             throw new ApiException(['msg' => '你没有该地址使用权限']);
@@ -145,7 +145,8 @@ class DishOrderService extends OrderService
                 throw new ApiException(['msg' => '不存在id为'.$item['product_id'].'的商品',]);
             }
 
-            $products[$key] = $model->hidden(['id','type','num','desc'])->toArray();
+            $products[$key] = $model->hidden(['id','type','desc'])->toArray();
+            unset($products[$key]['num']);
             $products[$key]['dish_id'] = $item['product_id'];
             $products[$key]['count'] = $item['count'];
             $products[$key]['spec_name'] = $item['key'];

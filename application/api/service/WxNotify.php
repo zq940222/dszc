@@ -17,28 +17,30 @@ Loader::import('WxPay.WxPay',EXTEND_PATH,'.Api.php');
 
 class WxNotify extends \WxPayNotify
 {
+
+    protected $model;
+
     public function NotifyProcess($data, &$msg)
     {
         if ($data['result_code'] == 'SUCCESS')
         {
+            if ($data['attach'] == 'dish')
+            {
+                $this->model = model('DishOrder');
+            }else if($data['attach'] == 'goods')
+            {
+                $this->model = model('Order');
+            }
             $orderNo = $data['out_trade_no'];
             Db::startTrans();
             try
             {
-                $order = OrderModel::where('order_no','=',$orderNo)
+                $order = $this->model->where('order_no','=',$orderNo)
                     ->lock(true)
                     ->find();
                 if ($order->status == 1)
                 {
-                    $service = new OrderService();
-                    $stockStatus = $service->checkOrderStock($order->id);
-                    if ($stockStatus['pass']) {
-                        $this->updateOrderStatus($order->id, true);
-                        $this->reduceStock($stockStatus);
-                    }
-                    else{
-                        $this->updateOrderStatus($order->id,false);
-                    }
+                    $this->updateOrderStatus($order->id);
                 }
                 Db::commit();
                 return true;
@@ -56,19 +58,27 @@ class WxNotify extends \WxPayNotify
         }
     }
 
-    private function reduceStock($stockStatus)
-    {
-        foreach ($stockStatus['pStatusArray'] as $singlePStatus)
-        {
-            Product::where('id','=',$singlePStatus['id'])
-                ->setDec('stock',$singlePStatus['count']);
-        }
-    }
+//    private function reduceStock($stockStatus)
+//    {
+//        foreach ($stockStatus['pStatusArray'] as $singlePStatus)
+//        {
+//            Product::where('id','=',$singlePStatus['id'])
+//                ->setDec('stock',$singlePStatus['count']);
+//        }
+//    }
+//
+//    private function updateOrderStatus($orderID, $success)
+//    {
+//        $status = $success ? OrderStatusEnum::PAID : OrderStatusEnum::PAID_BUT_OUT_OF;
+//        OrderModel::where('id','=',$orderID)
+//            ->update(['status'=>$status]);
+//    }
 
-    private function updateOrderStatus($orderID, $success)
+    private function updateOrderStatus($orderID)
     {
-        $status = $success ? OrderStatusEnum::PAID : OrderStatusEnum::PAID_BUT_OUT_OF;
-        OrderModel::where('id','=',$orderID)
-            ->update(['status'=>$status]);
+        $this->model->save([
+            'status' => 2,
+            'pay_time' => time()
+        ],['id' => $orderID]);
     }
 }

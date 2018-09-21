@@ -70,8 +70,7 @@ class Goods extends Backend
             {
                 try
                 {
-                    $files = $this->request->file();
-                    return $files;exit;
+                    
                     if ($result !== false)
                     {
                         $this->success();
