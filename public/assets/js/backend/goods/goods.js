@@ -24,22 +24,23 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                 columns: [
                     [
                         {checkbox: true},
-                        {field: 'id', title: __('Id')},
-                        {field: 'name', title: __('Name')},
-                        {field: 'intro', title: __('Intro')},
-                        {field: 'cover_image', title: __('Cover_image'), formatter: Table.api.formatter.image},
-                        {field: 'goods_images', title: __('Goods_images'), formatter: Table.api.formatter.images},
+                        {field: 'id', title: __('Id'), operate:false},
+                        {field: 'name', title: __('Name'),operate:'LIKE'},
+                        {field: 'intro', title: __('Intro'), operate:false},
+                        {field: 'cover_image', title: __('Cover_image'), operate:false, formatter: Table.api.formatter.image},
+                        {field: 'goods_images', title: __('Goods_images'), operate:false, formatter: Table.api.formatter.images},
                         {field: 'price', title: __('Price'), operate:'BETWEEN'},
-                        {field: 'sales_sum', title: __('Sales_sum')},
+                        {field: 'sales_sum', title: __('Sales_sum'), operate:false},
                         {field: 'is_recommend', title: __('Is_recommend'), visible:false, searchList: {"0":__('Is_recommend 0'),"1":__('Is_recommend 1')}},
                         {field: 'is_recommend_text', title: __('Is_recommend'), operate:false},
-                        {field: 'category_id', title: __('Category_id')},
-                        {field: 'freight', title: __('Freight'), operate:'BETWEEN'},
-                        {field: 'keywords', title: __('Keywords')},
-                        {field: 'comment_count', title: __('Comment_count')},
+                        {field: 'category_id', title: __('Category_id'), visible:false, operate:false},
+                        {field: 'category.name', title: __('分类'), operate:false},
+                        {field: 'freight', title: __('Freight'), operate:false},
+                        {field: 'keywords', title: __('Keywords'), operate:false},
+                        {field: 'comment_count', title: __('Comment_count'), operate:false},
                         {field: 'is_on_sale', title: __('Is_on_sale'), visible:false, searchList: {"0":__('Is_on_sale 0'),"1":__('Is_on_sale 1')}},
                         {field: 'is_on_sale_text', title: __('Is_on_sale'), operate:false},
-                        {field: 'weigh', title: __('Weigh')},
+                        {field: 'weigh', title: __('Weigh'), operate:false},
                         {field: 'status', title: __('Status'), visible:false, searchList: {"0":__('Status 0'),"1":__('Status 1')}},
                         {field: 'status_text', title: __('Status'), operate:false},
                         {field: 'createtime', title: __('Createtime'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
@@ -70,10 +71,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
         detail: function () {
             ajaxGetSpecInput();
 
-            $(".plupload").data("upload-success", function(data, ret){
-                //这里进行后续操作
-                console.log(data);
-            });
+
             // 规格按钮切换 class
             $("button[type=button]").click(function(){
                 if($(this).hasClass('btn-success'))
@@ -131,6 +129,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     success: function (data) {
                         $("#goods_spec_table2").html('').append(data);
                         hbdyg();  // 合并单元格
+
                         Controller.api.bindevent();
                     }
                 });

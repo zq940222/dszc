@@ -1,0 +1,112 @@
+<div>
+    <table class="table-bordered table">
+        <h4>基本信息</h4>
+        <tr>
+            <td>订单 ID：</td>
+            <td>{$order.id}</td>
+            <td>订单号：</td>
+            <td>{$order.order_sn}</td>
+        </tr>
+        <tr>
+            <td>电话：</td>
+            <td>{$order.mobile}</td>
+            <td>应付金额：</td>
+            <td>{$order.pay_price}</td>
+        </tr>
+        <tr>
+            <td>下单时间：</td>
+            <td>{$order.createtime|date='Y-m-d H:i',###}</td>
+            <td>支付时间：</td>
+            <td>
+                {if condition="$order.pay_time neq 0"}{$order.pay_time|date='Y-m-d H:i',###}
+                    {else/}
+                    N
+                {/if}
+            </td>
+        </tr>
+    </table>
+    <table class="table-bordered table">
+        <h4>收货信息</h4>
+        <tr>
+            <td>收货人：</td>
+            <td>{$order.consignee}</td>
+            <td>联系方式：</td>
+            <td>{$order.mobile}</td>
+        </tr>
+        <tr>
+            <td>收货地址：</td>
+            <td colspan="3">{$order.address}</td>
+        </tr>
+    </table>
+    <div>
+        <h4>商品信息</h4>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th >商品编号</th>
+                <th colspan="2">商品</th>
+                <th>规格属性</th>
+                <th>数量</th>
+                <th>单品价格</th>
+            </tr>
+            </thead>
+            <tbody>
+            {volist name="$order.item" id="item"}
+                <tr>
+                    <td class="w60">{$item.goods_id}</td>
+                    <td class="w30"><img alt="" src="{$item.goods_image}" width="40px" height="40px" /></td>
+                    <td style="text-align: left;">{$item.goods_name}</td>
+                    <td class="w80">{$item.spec_key_name}</td>
+                    <td class="w60">{$item.goods_num}</td>
+                    <td class="w100">{$item.goods_price}</td>
+                </tr>
+            {/volist}
+        </table>
+    </div>
+    <div>
+        <h4>订单总额：￥{$order.product_total_price}</h4>
+    </div>
+
+    <table class="table table-bordered">
+        <h4>费用信息 </h4>
+        <tr>
+            <td>小计：</td>
+            <td>{$order.product_total_price}</td>
+        </tr>
+        <tr>
+            <td>优惠券抵扣：</td>
+            <td>-{$order.coupon_price}</td>
+        </tr>
+        <tr>
+            <td>运费：</td>
+            <td>+{$order.shipping_price}</td>
+        </tr>
+        <tr>
+            <td>应付：</td>
+            <td><strong class="red_common">{$order.pay_price}</strong></td>
+        </tr>
+    </table>
+</div>
+<form id="detail-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label for="c-status" class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            {foreach name="statusList" item="vo"}
+            <label for="row[status]-{$key}"><input id="row[status]-{$key}" name="row[status]" type="radio" value="{$key}" {in name="key" value="$order.status"}checked{/in} /> {$vo}</label>
+            {/foreach}
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

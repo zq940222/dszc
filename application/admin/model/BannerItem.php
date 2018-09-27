@@ -37,6 +37,9 @@ class BannerItem extends Model
     }
 
 
-
+    public function banner()
+    {
+        return $this->belongsTo('Banner','banner_id','id');
+    }
 
 }

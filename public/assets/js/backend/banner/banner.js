@@ -8,7 +8,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     index_url: 'banner/banner/index',
                     add_url: 'banner/banner/add',
                     edit_url: 'banner/banner/edit',
-                    del_url: 'banner/banner/del',
+                    del_url: '',
                     multi_url: 'banner/banner/multi',
                     table: 'banner',
                 }
@@ -47,7 +47,12 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
         api: {
             bindevent: function () {
                 Form.api.bindevent($("form[role=form]"));
-            }
+            },
+            formatter: {
+                browser: function (value, row, index) {
+                    return '<a class="btn btn-xs btn-browser">' + row.useragent.split(" ")[0] + '</a>';
+                },
+            },
         }
     };
     return Controller;

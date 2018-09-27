@@ -23,5 +23,8 @@ class SpecItem extends Model
     protected $createTime = 'createtime';
     protected $updateTime = 'updatetime';
 
-
+    public function spec()
+    {
+        return $this->belongsTo('Spec','spec_id','id');
+    }
 }

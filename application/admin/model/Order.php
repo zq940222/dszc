@@ -3,9 +3,11 @@
 namespace app\admin\model;
 
 use think\Model;
+use traits\model\SoftDelete;
 
 class Order extends Model
 {
+    use SoftDelete;
     // 表名
     protected $name = 'order';
     
@@ -15,6 +17,7 @@ class Order extends Model
     // 定义时间戳字段名
     protected $createTime = 'createtime';
     protected $updateTime = 'updatetime';
+    protected $deleteTime = 'deletetime';
     
     // 追加属性
     protected $append = [
@@ -22,7 +25,7 @@ class Order extends Model
         'pay_time_text',
         'delivery_time_text'
     ];
-    
+
 
     
     public function getStatusList()
@@ -62,5 +65,8 @@ class Order extends Model
         return $value && !is_numeric($value) ? strtotime($value) : $value;
     }
 
-
+    public function item()
+    {
+        return $this->hasMany('OrderGoods','order_id','id');
+    }
 }

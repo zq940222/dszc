@@ -24,15 +24,15 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                 columns: [
                     [
                         {checkbox: true},
-                        {field: 'id', title: __('Id')},
+                        {field: 'id', title: __('Id'), operate:false},
                         {field: 'type', title: __('Type'), visible:false, searchList: {"1":__('Type 1'),"2":__('Type 2')}},
                         {field: 'type_text', title: __('Type'), operate:false},
                         {field: 'price', title: __('Price'), operate:'BETWEEN'},
                         {field: 'coupon_type', title: __('Coupon_type'), visible:false, searchList: {"1":__('Coupon_type 1'),"2":__('Coupon_type 2')}},
                         {field: 'coupon_type_text', title: __('Coupon_type'), operate:false},
                         {field: 'name', title: __('Name')},
-                        {field: 'desc', title: __('Desc')},
-                        {field: 'expiry_date', title: __('Expiry_date')},
+                        {field: 'desc', title: __('Desc'), operate:false},
+                        {field: 'expiry_date', title: __('Expiry_date'), operate:false},
                         {field: 'status', title: __('Status'), visible:false, searchList: {"0":__('Status 0'),"1":__('Status 1')}},
                         {field: 'status_text', title: __('Status'), operate:false},
                         {field: 'createtime', title: __('Createtime'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},

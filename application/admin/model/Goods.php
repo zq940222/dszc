@@ -73,6 +73,9 @@ class Goods extends Model
     }
 
 
-
+    public function specGoodsPrice()
+    {
+        return $this->hasMany('SpecGoodsPrice','goods_id','id');
+    }
 
 }

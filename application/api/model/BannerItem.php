@@ -15,4 +15,5 @@ class BannerItem extends BaseModel
     {
         return $this->prefixImgUrl($value);
     }
+
 }

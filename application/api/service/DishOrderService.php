@@ -147,6 +147,7 @@ class DishOrderService extends OrderService
 
             $products[$key] = $model->hidden(['id','type','desc'])->toArray();
             unset($products[$key]['num']);
+            unset($products[$key]['dish_spec_ids']);
             $products[$key]['dish_id'] = $item['product_id'];
             $products[$key]['count'] = $item['count'];
             $products[$key]['spec_name'] = $item['key'];

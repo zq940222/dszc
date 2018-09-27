@@ -3,9 +3,11 @@
 namespace app\admin\model;
 
 use think\Model;
+use traits\model\SoftDelete;
 
 class DishOrder extends Model
 {
+    use SoftDelete;
     // 表名
     protected $name = 'dish_order';
     
@@ -15,6 +17,7 @@ class DishOrder extends Model
     // 定义时间戳字段名
     protected $createTime = 'createtime';
     protected $updateTime = 'updatetime';
+    protected $deleteTime = 'deletetime';
     
     // 追加属性
     protected $append = [
@@ -49,5 +52,8 @@ class DishOrder extends Model
         return $value && !is_numeric($value) ? strtotime($value) : $value;
     }
 
-
+    public function item()
+    {
+        return $this->hasMany('DishOrderItem','order_id','id');
+    }
 }

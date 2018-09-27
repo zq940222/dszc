@@ -31,16 +31,19 @@ class WxNotify extends \WxPayNotify
             {
                 $this->model = model('Order');
             }
-            $orderNo = $data['out_trade_no'];
+            $orderSn = $data['out_trade_no'];
             Db::startTrans();
             try
             {
-                $order = $this->model->where('order_no','=',$orderNo)
+                $order = $this->model->where('order_sn','=',$orderSn)
                     ->lock(true)
                     ->find();
                 if ($order->status == 1)
                 {
-                    $this->updateOrderStatus($order->id);
+                    $order->save([
+                        'status' => 2,
+                        'pay_time' => time()
+                    ]);
                 }
                 Db::commit();
                 return true;
@@ -58,27 +61,4 @@ class WxNotify extends \WxPayNotify
         }
     }
 
-//    private function reduceStock($stockStatus)
-//    {
-//        foreach ($stockStatus['pStatusArray'] as $singlePStatus)
-//        {
-//            Product::where('id','=',$singlePStatus['id'])
-//                ->setDec('stock',$singlePStatus['count']);
-//        }
-//    }
-//
-//    private function updateOrderStatus($orderID, $success)
-//    {
-//        $status = $success ? OrderStatusEnum::PAID : OrderStatusEnum::PAID_BUT_OUT_OF;
-//        OrderModel::where('id','=',$orderID)
-//            ->update(['status'=>$status]);
-//    }
-
-    private function updateOrderStatus($orderID)
-    {
-        $this->model->save([
-            'status' => 2,
-            'pay_time' => time()
-        ],['id' => $orderID]);
-    }
 }

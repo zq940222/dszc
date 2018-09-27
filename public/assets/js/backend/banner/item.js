@@ -24,10 +24,10 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                 columns: [
                     [
                         {checkbox: true},
-                        {field: 'id', title: __('Id')},
-                        {field: 'image', title: __('Image'), formatter: Table.api.formatter.image},
-                        {field: 'dish_id', title: __('Dish_id')},
-                        {field: 'banner_id', title: __('Banner_id')},
+                        {field: 'id', title: __('Id'), operate:false},
+                        {field: 'image', title: __('Image'), operate:false, formatter: Table.api.formatter.image},
+                        {field: 'banner_id', title: __('Banner_id'), visible:false, operate:false},
+                        {field: 'banner.name', title: __('Banner_id'), operate:false},
                         {field: 'createtime', title: __('Createtime'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
                         {field: 'updatetime', title: __('Updatetime'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
                         {field: 'status', title: __('Status'), visible:false, searchList: {"0":__('Status 0'),"1":__('Status 1')}},
@@ -52,5 +52,18 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
             }
         }
     };
+    $("#c-banner_id").on('change',function () {
+        if ($("#c-banner_id").val() == 1){
+            $("#c-goods_id").parent('div').parent('div').parent('div').css('display','none');
+            $("#c-dish_id").parent('div').parent('div').parent('div').css('display','block');
+        }else if($("#c-banner_id").val() == 2){
+            $("#c-dish_id").parent('div').parent('div').parent('div').css('display','none');
+            $("#c-goods_id").parent('div').parent('div').parent('div').css('display','block');
+        }else{
+            $("#c-goods_id").attr('disabled',true);
+            $("#c-dish_id").attr('disabled',true);
+        }
+    })
     return Controller;
+
 });

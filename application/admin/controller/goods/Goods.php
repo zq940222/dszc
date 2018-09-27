@@ -3,6 +3,7 @@
 namespace app\admin\controller\goods;
 
 use app\admin\logic\GoodsLogic;
+use app\admin\model\SpecItem;
 use app\common\controller\Backend;
 
 /**
@@ -16,9 +17,11 @@ class Goods extends Backend
     /**
      * Goods模型对象
      */
+
+
     protected $model = null;
 
-    protected $noNeedRight = ['ajaxGetGoods'];
+    protected $noNeedRight = ['ajaxGetGoods','getKeyNameByKey'];
 
     public function _initialize()
     {
@@ -70,7 +73,22 @@ class Goods extends Backend
             {
                 try
                 {
-
+                    $items = $params['item'];
+                    foreach ($items as $key => $value) {
+                        if ($value['price'] <= 0) {
+                            unset($items[$key]);
+                        }else{
+                            $items[$key]['key'] = $key;
+                            $items[$key]['key_name'] = $this->getKeyNameByKey($key);
+                            if (!$value['image'])
+                            {
+                                unset($items[$key]['image']);
+                            }
+                        }
+                    }
+                    $product = model('Goods')->find($ids);
+                    $product->specGoodsPrice()->delete();
+                    $result =$product->specGoodsPrice()->saveAll($items);
                     if ($result !== false)
                     {
                         $this->success();
@@ -101,5 +119,19 @@ class Goods extends Backend
         $goods_id = input('goods_id/d') ? input('goods_id/d') : 0;
         $str = $GoodsLogic->getSpecInput($goods_id ,input('post.spec_arr/a',[[]]));
         return $str;
+    }
+
+    private function getKeyNameByKey($key)
+    {
+        $keyArray = explode(',',$key);
+        $data = SpecItem::all($keyArray,['spec']);
+        $keyName = '';
+        foreach ($data as $v) {
+            $keyName .= $v['spec']['name'];
+            $keyName .= ':';
+            $keyName .= $v['name'];
+            $keyName .= ' ';
+        }
+        return $keyName;
     }
 }

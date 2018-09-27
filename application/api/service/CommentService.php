@@ -30,6 +30,7 @@ class CommentService
         {
             $this->comment($comment);
         }
+        return true;
     }
 
     protected function comment($comment)

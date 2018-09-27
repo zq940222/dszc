@@ -14,6 +14,7 @@ use app\api\library\ApiException;
 class CommentNew extends BaseValidate
 {
     protected $rule = [
+        'order_id' => 'require|isPositiveInteger',
         'comments' => 'checkComments'
     ];
 

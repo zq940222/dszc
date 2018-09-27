@@ -7,6 +7,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                 extend: {
                     index_url: 'order/goods/index',
                     add_url: 'order/goods/add',
+                    detail_url: 'order/goods/detail',
                     edit_url: 'order/goods/edit',
                     del_url: 'order/goods/del',
                     multi_url: 'order/goods/multi',
@@ -28,22 +29,31 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'order_sn', title: __('Order_sn')},
                         {field: 'status', title: __('Status'), visible:false, searchList: {"0":__('Status 0'),"1":__('Status 1'),"2":__('Status 2'),"3":__('Status 3'),"4":__('Status 4'),"5":__('Status 5')}},
                         {field: 'status_text', title: __('Status'), operate:false},
-                        {field: 'user_id', title: __('User_id')},
-                        {field: 'goods_count', title: __('Goods_count')},
-                        {field: 'product_total_price', title: __('Product_total_price'), operate:'BETWEEN'},
-                        {field: 'order_total_price', title: __('Order_total_price'), operate:'BETWEEN'},
-                        {field: 'shipping_price', title: __('Shipping_price'), operate:'BETWEEN'},
-                        {field: 'pay_price', title: __('Pay_price'), operate:'BETWEEN'},
+                        {field: 'user_id', title: __('User_id'), visible:false, operate:false},
+                        {field: 'goods_count', title: __('Goods_count'), operate:false},
+                        {field: 'product_total_price', title: __('Product_total_price'), operate:false},
+                        {field: 'order_total_price', title: __('Order_total_price'), operate:false},
+                        {field: 'shipping_price', title: __('Shipping_price'), operate:false},
+                        {field: 'pay_price', title: __('Pay_price'), operate:false},
                         {field: 'consignee', title: __('Consignee')},
                         {field: 'address', title: __('Address')},
                         {field: 'mobile', title: __('Mobile')},
-                        {field: 'pay_time', title: __('Pay_time'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
-                        {field: 'delivery_time', title: __('Delivery_time'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
-                        {field: 'coupon_id', title: __('Coupon_id')},
-                        {field: 'coupon_price', title: __('Coupon_price'), operate:'BETWEEN'},
+                        {field: 'pay_time', title: __('Pay_time'), operate:false, addclass:'datetimerange', formatter: Table.api.formatter.datetime},
+                        {field: 'delivery_time', title: __('Delivery_time'), visible:false, operate:false, addclass:'datetimerange', formatter: Table.api.formatter.datetime},
+                        {field: 'coupon_id', title: __('Coupon_id'), visible:false, operate:false},
+                        {field: 'coupon_price', title: __('Coupon_price'), operate:false},
                         {field: 'createtime', title: __('Createtime'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
                         {field: 'updatetime', title: __('Updatetime'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
-                        {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
+                        {field: 'operate', title: __('Operate'), table: table,
+                            events: Table.api.events.operate,
+                            buttons: [{
+                                name: 'detail',
+                                text: __('Detail'),
+                                icon: 'fa fa-list',
+                                classname: 'btn btn-info btn-xs btn-detail btn-dialog',
+                                url: 'order/goods/detail'
+                            }],
+                            formatter: Table.api.formatter.operate}
                     ]
                 ]
             });
@@ -55,6 +65,9 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
             Controller.api.bindevent();
         },
         edit: function () {
+            Controller.api.bindevent();
+        },
+        detail: function () {
             Controller.api.bindevent();
         },
         api: {

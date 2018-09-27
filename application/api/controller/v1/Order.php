@@ -80,7 +80,7 @@ class Order extends BaseController
             throw new ApiException(['msg' => '此订单不存在']);
         }
         return $orderDetail
-            ->hidden(['prepay_id','pay_time','item.id','item.order_id','item.goods_id','item.createtime','item.updatetime']);
+            ->hidden(['prepay_id','pay_time','item.id','item.order_id','item.createtime','item.updatetime']);
     }
 
     public function placeGoodsOrder()
@@ -105,6 +105,7 @@ class Order extends BaseController
     {
         (new CommentNew())->goCheck();
         $comments = input('post.comments/a');
+        $order_id = input('post.order_id/d');
         $uid = TokenService::getCurrentUid();
         $commentService = new CommentService();
         $commentService->setUser($uid);
@@ -113,6 +114,7 @@ class Order extends BaseController
         {
             throw new ApiException(['msg' => '评论失败']);
         }else{
+            OrderModel::update(['status'=> 5],['id'=>['=',$order_id]]);
             return json(new Success(['msg' => '评论成功']));
         }
     }
