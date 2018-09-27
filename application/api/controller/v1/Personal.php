@@ -102,6 +102,7 @@ class Personal extends BaseController
         $model->save();
 
         //TODO:: 赠送优惠券
+        UserCoupon::getBindMobileSendCoupon($uid);
 
         return json(new Success(['msg' => '绑定成功']));
     }

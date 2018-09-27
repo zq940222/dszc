@@ -8,6 +8,7 @@
 
 namespace app\api\service;
 
+use app\api\model\UserCoupon;
 use think\Db;
 use think\Exception;
 use think\Loader;
@@ -44,6 +45,11 @@ class WxNotify extends \WxPayNotify
                         'status' => 2,
                         'pay_time' => time()
                     ]);
+                    //TODO::赠送优惠券
+                    if ($data['attach'] == 'dish') {
+
+                        UserCoupon::getOrderSendCoupon($order->user_id);
+                    }
                 }
                 Db::commit();
                 return true;

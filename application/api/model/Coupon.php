@@ -12,4 +12,6 @@ namespace app\api\model;
 class Coupon extends BaseModel
 {
     protected $hidden = ['id','type','status','createtime','updatetime'];
+
+
 }

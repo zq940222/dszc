@@ -30,7 +30,7 @@ class Comment extends BaseModel
         foreach ($value as &$v)
         {
             Upload::move($v);
-            $v = 'uploads/'.$v;
+            $v = '/uploads/'.$v;
         }
         return implode(',',$value);
     }

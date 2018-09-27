@@ -99,3 +99,5 @@ Route::post('api/:version/pay/dish_order','api/:version.Pay/getDishPreOrder');
 Route::post('api/:version/pay/goods_order','api/:version.Pay/getGoodsPreOrder');
 //支付回调
 Route::post('api/:version/pay/notify','api/:version.Pay/receiveNotify');
+//定时更新优惠券
+Route::any('api/:version/crontab/coupon','api/:version.Crontab/coupon');
