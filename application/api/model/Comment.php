@@ -13,6 +13,12 @@ use app\api\controller\v1\Upload;
 
 class Comment extends BaseModel
 {
+    protected $autoWriteTimestamp = true;
+
+    protected $createTime = 'createtime';
+
+    protected $updateTime = 'updatetime';
+
     protected $hidden = ['updatetime','status'];
 
     public function getImagesAttr($value)

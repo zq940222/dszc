@@ -28,13 +28,18 @@ class Crontab extends BaseController
         $beforeYestoday = mktime(0,0,0,date('m'),date('d')-2,date('Y'));;//前天
         $model = UserCoupon::where('type',1)
             ->where('status',1)
-            ->where('createtime','<',$yestoday)
+            ->where('createtime','<=',$yestoday)
             ->where('createtime','>',$beforeYestoday)
             ->column('id,price');
         foreach ($model as $value)
         {
             UserCoupon::update(['price' => round($value['price']/2,2)],['id'=> $value['id']]);
         }
+        UserCoupon::where('type',1)
+            ->where('status',1)
+            ->where('createtime','<=',$beforeYestoday)
+            ->isUpdate()
+            ->saveAll(['status' => 0]);
         return true;
     }
 
