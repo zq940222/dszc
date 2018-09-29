@@ -1,0 +1,7 @@
+/* pages/commonweal/commonweal.wxss */
+.commonweal-wrap{
+ background: #f6f4f3;
+ text-align: center;
+ line-height: 100vh;
+ height: 100vh;  
+}

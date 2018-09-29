@@ -1,0 +1,33 @@
+/* pages/component/contactus/contactus.wxss */
+.contactus-wrap{
+  height: 100vh;
+  background: #f6f4f3;
+}
+.contactus-head{
+  height: 80rpx;
+  line-height: 80rpx; 
+  margin-left: 32rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+.contactus-content{
+  background: #fff;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.contactus-content-left{
+  margin-left: 32rpx;
+  font-size: 32rpx;
+}
+.contactus-content-right{
+  margin-right: 32rpx;
+}
+.contactus-content-right image{
+  width: 44rpx;
+  height: 44rpx;
+  vertical-align: middle;
+}

@@ -1,0 +1,473 @@
+<view class="container">
+   <view class='scroll-left-item'>
+      <block wx:for="{{menus}}" wx:key="{{item.id}}">
+        <view class='  {{item.active?"content-left-item active":"content-left-item"}}' id="{{item.id}}" bindtap='tapname' data-index="{{index}}">{{item.name}}</view>
+      </block>
+    </view>
+  <view class="page-body">
+    <view class="page-section">
+      <view class="page-section-spacing">
+        <scroll-view scroll-y="true" style="height: 700rpx;" scroll-into-view="{{itemsid}}">
+        <!--  bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll"  scroll-top="{{scrollTop}}" -->
+          <view id="demo1" class="scroll-view-item demo-text-1">
+           <view class="nav-right" id="tty1">鲜包系列</view>
+              
+             
+              <block wx:for="{{goodslist}}" wx:key="{{item.id}}">
+                <view class="demo1-content">
+                  <view class="demo1-left">
+                    <image src="{{item.imgurl}}" bindtap='detailpopup'/>
+                  </view>
+
+                  <view class="demo1-right">
+                    <view class="demo1-right-title">
+                      {{item.title}}
+                    </view>
+                    <view class="demo1-right-item">
+                      {{item.content}}
+                    </view>
+                    <view class="demo1-right-price">
+                      <view class="demo1-right-price-left">{{item.price}}</view>
+                      <view class="demo1-right-price-right">
+                      <image class="demo1-right-price-image demo1-right-price-image1" src="{{item.redurl}}"  hidden='{{item.isdisable}}' bindtap='redcart' id="{{item.id}}" data-index="{{index}}"/>
+                      <view  hidden='{{item.isdisable}}'>
+                      <text>{{item.num}}</text>
+                      </view>
+                      <image class="demo1-right-price-image demo1-right-price-image2" src="{{item.addurl}}" bindtap='addcart' id="{{item.id}}" data-index="{{index}}"/>
+                      </view>
+                    </view>
+                  </view>
+
+
+
+                </view>
+              </block>
+
+          </view>
+          <view id="demo2"  class="scroll-view-item demo-text-2">
+          <view class="nav-right" id="tty2">粗粮系列</view>
+             <view class="demo1-content">
+               <view class="demo1-left">
+                <image src="../../../images/Rectangle8.png"/>
+              </view>
+              <view class="demo1-right">
+                <view class="demo1-right-title">
+                  皮蛋瘦肉粥
+                </view>
+                <view class="demo1-right-item">
+                  皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈
+                </view>
+                <view class="demo1-right-price">
+                  <view class="demo1-right-price-left">￥18.9</view>
+                  <view class="demo1-right-price-right"><image class="demo1-right-price-image" src="../../../images/symbols-icon-add.png"/></view>
+                </view>
+              </view>
+            </view>
+               <view class="demo1-content">
+               <view class="demo1-left">
+                <image src="../../../images/Rectangle8.png"/>
+              </view>
+              <view class="demo1-right">
+                <view class="demo1-right-title">
+                  皮蛋瘦肉粥
+                </view>
+                <view class="demo1-right-item">
+                  皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈
+                </view>
+                <view class="demo1-right-price">
+                  <view class="demo1-right-price-left">￥18.9</view>
+                  <view class="demo1-right-price-right"><image class="demo1-right-price-image" src="../../../images/symbols-icon-add.png"/></view>
+                </view>
+              </view>
+            </view>
+           
+               <view class="demo1-content">
+               <view class="demo1-left">
+                <image src="../../../images/Rectangle8.png"/>
+              </view>
+              <view class="demo1-right">
+                <view class="demo1-right-title">
+                  皮蛋瘦肉粥
+                </view>
+                <view class="demo1-right-item">
+                  皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈
+                </view>
+                <view class="demo1-right-price">
+                  <view class="demo1-right-price-left">￥18.9</view>
+                  <view class="demo1-right-price-right"><image class="demo1-right-price-image" src="../../../images/symbols-icon-add.png"/></view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view id="demo3" class="scroll-view-item demo-text-3">
+          <view class="nav-right" id="tty3">豆浆系列</view>
+             <view class="demo1-content">
+               <view class="demo1-left">
+                <image src="../../../images/Rectangle8.png"/>
+              </view>
+              <view class="demo1-right">
+                <view class="demo1-right-title">
+                  皮蛋瘦肉粥
+                </view>
+                <view class="demo1-right-item">
+                  皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈
+                </view>
+                <view class="demo1-right-price">
+                  <view class="demo1-right-price-left">￥18.9</view>
+                  <view class="demo1-right-price-right"><image class="demo1-right-price-image" src="../../../images/symbols-icon-add.png"/></view>
+                </view>
+              </view>
+            </view>
+               <view class="demo1-content">
+               <view class="demo1-left">
+                <image src="../../../images/Rectangle8.png"/>
+              </view>
+              <view class="demo1-right">
+                <view class="demo1-right-title">
+                  皮蛋瘦肉粥
+                </view>
+                <view class="demo1-right-item">
+                  皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈
+                </view>
+                <view class="demo1-right-price">
+                  <view class="demo1-right-price-left">￥18.9</view>
+                  <view class="demo1-right-price-right"><image class="demo1-right-price-image" src="../../../images/symbols-icon-add.png"/></view>
+                </view>
+              </view>
+            </view>
+           
+               <view class="demo1-content">
+               <view class="demo1-left">
+                <image src="../../../images/Rectangle8.png"/>
+              </view>
+              <view class="demo1-right">
+                <view class="demo1-right-title">
+                  皮蛋瘦肉粥
+                </view>
+                <view class="demo1-right-item">
+                  皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈
+                </view>
+                <view class="demo1-right-price">
+                  <view class="demo1-right-price-left">￥18.9</view>
+                  <view class="demo1-right-price-right"><image class="demo1-right-price-image" src="../../../images/symbols-icon-add.png"/></view>
+                </view>
+              </view>
+            </view>
+
+
+          </view>
+          <view id="demo4" class="scroll-view-item demo-text-1">
+          <view class="nav-right" id="tty4">好粥系列</view>
+             <view class="demo1-content">
+               <view class="demo1-left">
+                <image src="../../../images/Rectangle8.png"/>
+              </view>
+              <view class="demo1-right">
+                <view class="demo1-right-title">
+                  皮蛋瘦肉粥
+                </view>
+                <view class="demo1-right-item">
+                  皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈
+                </view>
+                <view class="demo1-right-price">
+                  <view class="demo1-right-price-left">￥18.9</view>
+                  <view class="demo1-right-price-right"><image class="demo1-right-price-image" src="../../../images/symbols-icon-add.png"/></view>
+                </view>
+              </view>
+            </view>
+               <view class="demo1-content">
+               <view class="demo1-left">
+                <image src="../../../images/Rectangle8.png"/>
+              </view>
+              <view class="demo1-right">
+                <view class="demo1-right-title">
+                  皮蛋瘦肉粥
+                </view>
+                <view class="demo1-right-item">
+                  皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈
+                </view>
+                <view class="demo1-right-price">
+                  <view class="demo1-right-price-left">￥18.9</view>
+                  <view class="demo1-right-price-right"><image class="demo1-right-price-image" src="../../../images/symbols-icon-add.png"/></view>
+                </view>
+              </view>
+            </view>
+           
+               <view class="demo1-content">
+               <view class="demo1-left">
+                <image src="../../../images/Rectangle8.png"/>
+              </view>
+              <view class="demo1-right">
+                <view class="demo1-right-title">
+                  皮蛋瘦肉粥
+                </view>
+                <view class="demo1-right-item">
+                  皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈
+                </view>
+                <view class="demo1-right-price">
+                  <view class="demo1-right-price-left">￥18.9</view>
+                  <view class="demo1-right-price-right"><image class="demo1-right-price-image" src="../../../images/symbols-icon-add.png"/></view>
+                </view>
+              </view>
+            </view>
+
+
+          </view>
+          <view id="demo5"  class="scroll-view-item demo-text-2">
+          <view class="nav-right" id="tty5">点心系列</view>
+             <view class="demo1-content">
+               <view class="demo1-left">
+                <image src="../../../images/Rectangle8.png"/>
+              </view>
+              <view class="demo1-right">
+                <view class="demo1-right-title">
+                  皮蛋瘦肉粥
+                </view>
+                <view class="demo1-right-item">
+                  皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈
+                </view>
+                <view class="demo1-right-price">
+                  <view class="demo1-right-price-left">￥18.9</view>
+                  <view class="demo1-right-price-right"><image class="demo1-right-price-image" src="../../../images/symbols-icon-add.png"/></view>
+                </view>
+              </view>
+            </view>
+               <view class="demo1-content">
+               <view class="demo1-left">
+                <image src="../../../images/Rectangle8.png"/>
+              </view>
+              <view class="demo1-right">
+                <view class="demo1-right-title">
+                  皮蛋瘦肉粥
+                </view>
+                <view class="demo1-right-item">
+                  皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈
+                </view>
+                <view class="demo1-right-price">
+                  <view class="demo1-right-price-left">￥18.9</view>
+                  <view class="demo1-right-price-right"><image class="demo1-right-price-image" src="../../../images/symbols-icon-add.png"/></view>
+                </view>
+              </view>
+            </view>
+           
+               <view class="demo1-content">
+               <view class="demo1-left">
+                <image src="../../../images/Rectangle8.png"/>
+              </view>
+              <view class="demo1-right">
+                <view class="demo1-right-title">
+                  皮蛋瘦肉粥
+                </view>
+                <view class="demo1-right-item">
+                  皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈
+                </view>
+                <view class="demo1-right-price">
+                  <view class="demo1-right-price-left">￥18.9</view>
+                  <view class="demo1-right-price-right"><image class="demo1-right-price-image" src="../../../images/symbols-icon-add.png"/></view>
+                </view>
+              </view>
+            </view>
+
+
+          </view>
+          <view id="demo6" class="scroll-view-item demo-text-3">
+          <view class="nav-right" id="tty6">鲜包系列</view>
+             <view class="demo1-content">
+               <view class="demo1-left">
+                <image src="../../../images/Rectangle8.png"/>
+              </view>
+              <view class="demo1-right">
+                <view class="demo1-right-title">
+                  皮蛋瘦肉粥
+                </view>
+                <view class="demo1-right-item">
+                  皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈
+                </view>
+                <view class="demo1-right-price">
+                  <view class="demo1-right-price-left">￥18.9</view>
+                  <view class="demo1-right-price-right"><image class="demo1-right-price-image" src="../../../images/symbols-icon-add.png"/></view>
+                </view>
+              </view>
+            </view>
+               <view class="demo1-content">
+               <view class="demo1-left">
+                <image src="../../../images/Rectangle8.png"/>
+              </view>
+              <view class="demo1-right">
+                <view class="demo1-right-title">
+                  皮蛋瘦肉粥
+                </view>
+                <view class="demo1-right-item">
+                  皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈
+                </view>
+                <view class="demo1-right-price">
+                  <view class="demo1-right-price-left">￥18.9</view>
+                  <view class="demo1-right-price-right"><image class="demo1-right-price-image" src="../../../images/symbols-icon-add.png"/></view>
+                </view>
+              </view>
+            </view>
+           
+               <view class="demo1-content">
+               <view class="demo1-left">
+                <image src="../../../images/Rectangle8.png"/>
+              </view>
+              <view class="demo1-right">
+                <view class="demo1-right-title">
+                  皮蛋瘦肉粥
+                </view>
+                <view class="demo1-right-item">
+                  皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈
+                </view>
+                <view class="demo1-right-price">
+                  <view class="demo1-right-price-left">￥18.9</view>
+                  <view class="demo1-right-price-right"><image class="demo1-right-price-image" src="../../../images/symbols-icon-add.png"/></view>
+                </view>
+              </view>
+            </view>
+
+
+          </view>
+          <view id="demo7" class="scroll-view-item demo-text-1">
+          <view class="nav-right" id="tty7">套餐系列</view>
+             
+           
+               <view class="demo1-content">
+               <view class="demo1-left">
+                <image src="../../../images/Rectangle8.png" bindtap='opensetmeal'/>
+              </view>
+              <view class="demo1-right">
+                <view class="demo1-right-title">
+                  皮蛋瘦肉粥
+                </view>
+                <view class="demo1-right-item">
+                  皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈
+                </view>
+                <view class="demo1-right-price">
+                  <view class="demo1-right-price-left">￥18.9</view>
+                  <view class="demo1-right-price-right"><image class="demo1-right-price-image" src="../../../images/symbols-icon-add.png"/></view>
+                </view>
+              </view>
+            </view>
+
+
+          </view>
+        </scroll-view>
+        <!-- 右边联动 -->
+        <view class='gwc' hidden='{{disabled}}' bindtap='gwcpopup'>
+            <view class='gwc-left'>
+            <image src='../../../images/symbols-icon-gwc.png'></image>
+            <view class='gwc-left-num'>{{goodsCount}}</view>
+            </view>
+            <view class='gwc-right'>￥37.8</view>
+        </view>
+        <!-- 购物车 -->
+         
+      </view>
+    </view>
+  </view>
+     
+</view>
+    <view class='gwc-bck'  hidden='{{iscart}}' bindtap='gwcbck' catchtouchmove="preventTouchMove">
+      </view>
+      <!-- 蒙层 -->
+    <view class='gwc-popup' hidden='{{iscart}}' catchtouchmove="preventTouchMove">
+          <view class='gwc-title'>
+             购物车
+          </view>
+
+          <block wx:for="{{cart}}" wx:key="{{item.id}}">
+          <view class='gwc-content'>
+          <view class='gwc-content1'><text>{{item.title}}</text></view>
+          <view class='gwc-content2'><text>{{item.price}}</text></view>
+          <view class='gwc-content3'> <image src='../../../images/symbols-icon-reduce.png' bindtap="delCount"></image></view>
+          <view class='gwc-content4'><text>{{count}}</text></view>
+          <view class='gwc-content5'><image src='../../../images/symbols-icon-add.png' bindtap="addCount"></image></view>
+          </view>
+          </block>
+          <view class='gwc-bottom'>
+           <view class='gwc-bottom-left'>￥38.9</view>
+           <view class='gwc-bottom-right' bindtap='submitorder'>去结算</view>
+          </view>
+        </view>
+      <!-- 购物车弹窗 -->
+      <view class='detail-bck'  wx:if='{{isdetail}}' bindtap='detailcolse' catchtouchmove="preventTouchMove">
+      </view>
+      <!-- 蒙层 -->
+      <view class='detail-popup' wx:if='{{isdetail}}'  catchtouchmove="preventTouchMove">
+        <view class='detail-head'>
+          <image src='../../../images/Rectangle7Copy4.png' class='detail-head1'></image>
+          <image src='../../../images/symbols-icon-close.png' class='detail-head2' bindtap='detailcolse'></image>
+        </view>
+        <view class='detail-content'>
+         <view class='detail-content-title'>皮蛋瘦肉粥</view>
+         <view class='detail-content-detail'>皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈皮蛋的Q谈</view>
+        </view>
+        <view class='detail-bottom'>
+         <view class='detail-bottom-left'>￥18.9</view>
+         <view class='detail-bottom-right'>
+         <image src='../../../images/symbols-icon-add.png'></image>
+         </view>
+        </view>
+      </view>
+      <!-- 早餐详情弹窗 -->
+       <view class='set-meal' wx:if='{{issetmeal}}' bindtap='setmealcolse' catchtouchmove="preventTouchMove"></view>
+       <!-- 蒙层 -->
+       <view class='set-meal-content' wx:if='{{issetmeal}}' catchtouchmove="preventTouchMove">
+          <view class='set-meal-head'>
+            <view class='set-meal-head-left'>
+              <image src='../../../images/Rectangle3.png'></image>
+            </view>
+            <view class='set-meal-head-right'>
+              <view class='set-meal-head-right-title'>
+                安心套餐A
+              </view>
+              <view class='set-meal-head-right-content'>
+                已选： <text>皮蛋瘦肉粥 菜包×1 肉包×1 咸豆浆</text>
+              </view>
+              <view class='set-meal-head-right-price'>
+                ￥10
+              </view>
+            </view>
+          </view>
+          <!-- 顶部 -->
+          <view class='setmeal-content'>
+            <view class='porridge'>
+             <view class='porridge-head'>好粥</view>
+             <view class='porridge-content'>
+             <view class='porridge-content-item'>皮蛋瘦肉粥</view>
+             <view class='porridge-content-item'>青菜香菇粥</view>
+             <view class='porridge-content-item'>南瓜粥</view>
+             </view>
+            </view>
+            <!-- 好粥 -->
+            <view class='bag'>
+                <view class='bag-head'>鲜包 <text>(任选2个)</text></view>
+                <view class='bag-content'>
+                <view class='bag-content-head'>
+                  <view class='bag-content-head-left'>肉包</view>
+                  <view class='bag-content-head-right'><image src='../../../images/symbols-icon-add.png'></image></view>
+                </view>
+                <view class='bag-content-head'>
+                   <view class='bag-content-head-left bag-content-head-left1'>菜包</view>
+                  <view class='bag-content-head-right'><image src='../../../images/symbols-icon-add.png'></image></view>
+                </view>
+
+                </view>
+            </view>
+            <!-- 鲜包 -->
+            <view class='porridge'>
+             <view class='porridge-head'>豆浆</view>
+             <view class='porridge-content'>
+             <view class='porridge-content-item'>咸豆浆</view>
+             <view class='porridge-content-item'>甜豆浆</view>
+             </view>
+            </view>
+            <!-- 豆浆 -->
+          </view>
+          <!-- 内容 -->
+          <view class='setmeal-bottom' bindtap='submitorder'>
+            选好了
+          </view>
+          <!-- 底部 -->
+       </view>
+      <!-- 套餐弹窗 -->

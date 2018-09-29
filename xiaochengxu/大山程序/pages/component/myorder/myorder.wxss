@@ -1,0 +1,180 @@
+/* pages/component/myorder/myorder.wxss */
+view , page {
+  padding: 0px;
+  margin: 0px;
+  
+}
+/* page{
+  height: 100vh;
+} */
+.page {
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.navbar {
+    display: flex;
+    position: absolute;
+    z-index: 500;
+    top: 0;
+    width: 100%;
+}
+
+.navbar__item {
+    position: relative;
+    display: block;
+    flex: 1;
+    padding: 10rpx 0;
+    text-align: center;
+    font-size: 0;
+    height: 48rpx;
+    line-height: 48rpx;
+}
+
+.navbar__item_on {
+    color: #FF9021 ;
+}
+
+.navbar__slider {
+    position: absolute;
+    display: block;
+    content: " ";
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #FF9021;
+    transition: transform .3s;
+    text-align: center;
+}
+
+.navbar__title{
+    display: inline-block;
+    font-size: 15px;
+    max-width: 8em;
+    text-align: center;
+}
+
+
+.content{
+  height: 100vh;
+  overflow-y: auto;
+  background: #f6f4f3;
+}
+swiper {
+  height: 100%;
+}
+.zcorder{
+  margin-top: 20rpx;
+  width: 100%;
+  background: #fff;
+  height: 468rpx;
+  overflow: hidden
+}
+.zcorder-dzf{
+  margin-left: 32rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 96rpx;
+  line-height: 96rpx;
+  border-bottom: 1px solid #ebebeb;
+  box-sizing: border-box;
+}
+.zcorder-tl{
+ 
+  font-size: 24rpx;
+  color: #999;
+}
+.zcorder-tr{
+  margin-right: 32rpx;
+  font-size: 28rpx;
+  color: #C7151C;
+}
+.zcorder-m{
+  margin-left: 32rpx;
+  margin-top: 40rpx;
+  margin-bottom: 42rpx;
+  white-space:nowrap;
+}
+.zcorder-m image{
+  width: 120rpx;
+  height:120rpx;
+  margin-left: 20rpx;
+}
+.zcorder-m image:nth-of-type(1){
+  margin-left: 0rpx;
+}
+.zcorder-b{
+  margin-left: 32rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom:30rpx;
+  border-bottom: 1px solid #ebebeb;
+}
+.zcorder-bl{
+  font-size: 28rpx;
+  color: #666;
+}
+.zcorder-br{
+  margin-right: 32rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+.zcorder-br text{
+  font-size: 32rpx;
+  color: #151515;
+}
+.zcorder-d{
+  margin-top: 18rpx;
+  margin-bottom: 18rpx;
+  width: 156rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  background: #FF9021;
+  color: #fff;
+  font-size: 28rpx;
+  border-radius: 50rpx;
+  margin-left: 562rpx;
+  }
+.zcorder-d-xq{
+  width: 156rpx;
+  height: 60rpx;
+  border: 1px solid #999;
+  color: #999;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 60rpx;
+  border-radius: 50rpx;
+  margin-left: 562rpx;
+  margin-top: 18rpx;
+ }
+.zcorder-del{
+  margin-top: 18rpx;
+  display: flex;
+  flex-direction: row;
+}
+.zcorder-dell{
+  text-align:center;
+  line-height: 60rpx;
+  width: 156rpx;
+  height: 60rpx;
+  border: 1px solid #ccc;
+  font-size: 28rpx;
+  color: #666;
+  border-radius: 50rpx;
+  margin-left: 386rpx;
+}
+.zcorder-delr{
+  margin-left: 20rpx;
+  text-align:center;
+  line-height: 60rpx;
+  width: 156rpx;
+  height: 60rpx;
+  border: 1px solid #ccc;
+  font-size: 28rpx;
+  color: #666;
+  border-radius: 50rpx;
+}

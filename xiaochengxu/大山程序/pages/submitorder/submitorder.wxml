@@ -1,0 +1,66 @@
+<!--pages/submitorder/submitorder.wxml-->
+<!--pages/component/submitorder/submitorder.wxml-->
+<view class='submitorder'>
+  <view class='submitorder-head'>
+    <view class='submitorder-head-address' bindtap='armanage'>
+      <view class='submitorder-head-address-top'><image src='../../../images/symbols-icon-address.png'></image><text>取餐地址</text></view>
+      <view class='submitorder-head-address-bottom'>{{order_address.citys}}{{order_address.detai}}</view>
+    </view>
+    <view class='submitorder-head-link'>
+      <view class='submitorder-head-link-left'>
+        <view class='submitorder-head-link-left-title'>联系人</view>
+        <view class='submitorder-head-link-left-name'>{{order_address.consignee}}</view>
+      </view>
+      <view class='submitorder-head-link-right'>
+        <view class='submitorder-head-link-left-title'>预留电话</view>
+        <view class='submitorder-head-link-left-name'>{{order_address.mobile}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 头部 -->
+  <view class='submitorder-content'>
+    <view class='submitorder-content-top' wx:for="{{array}}" wx:key="*this">
+      <view class='submitorder-content-topl'>
+        <image src='{{item.picture}}'></image>
+      </view>
+      <view class='submitorder-content-topm'>
+       <view class='submitorder-content-topmt'>{{item.names}}</view>
+       <view class='submitorder-content-topmb'><text decode='{{true}}'>{{item.desc}}&nbsp;&nbsp;&nbsp;&nbsp;</text>×{{item.num}}</view>
+      </view>
+      <view class='submitorder-content-topr'>￥{{item.price}}</view>
+    </view>
+    <view class='submitorder-content-middle'  bindtap='coupon'>
+      <view class='submitorder-content-middlel'>优惠劵</view>
+       <view class='jporder-content-yhjr' ><text wx:if="{{coupon_price!==''}}">-</text>{{coupon_price}}</view>
+      <view class='jporder-content-yhjr-r' wx:if="{{coupon_price==''}}"><image src='../../images/symbols-tiaozhuan-1010.png'></image></view>
+    </view>
+    <view class='submitorder-content-bottom'>
+    <text>￥{{order_total}}</text> 小计 
+    </view>
+  </view>
+ <!-- 中间内容 -->
+  <view class='submitorder-bottom'>
+   <view class='submitorder-bottomt'>
+    <view class='submitorder-bottomtl'>支付方式</view>
+    <view class='submitorder-bottomtr'>在线支付</view>
+   </view>
+   <view class='submitorder-bottomb'>
+   <view class='submitorder-bottombl'>备注<text>(选填)</text></view>
+   <view class='submitorder-bottombr'><input placeholder='请输入您的备注内容'></input></view>
+   </view>
+  </view>
+<!-- 支付 -->
+<view class='submitorder-fixed'>
+ <view class='submitorder-fixedl'>合计： <text>￥{{order_total}}</text></view>
+ <view class='submitorder-fixedr' bindtap='paycomplete'>提交订单</view>
+</view>
+<!-- 固定底部 -->
+
+
+
+
+
+
+
+</view>
+

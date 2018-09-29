@@ -1,0 +1,179 @@
+/* pages/component/jpgwc/jpgwc.wxss */
+.jpgwc{
+  background: #f6f4f3;
+  height: 100vh;
+  width: 100vw;
+}
+.jpgwc-box{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 172rpx;
+  padding-left: 32rpx;
+  background: #fff;
+  border-bottom: 1px solid #ebebeb;
+  box-sizing:border-box;
+}
+
+
+.header_text {
+  display: inline-block;
+  width: 95%;
+  font-size: 30rpx;
+  line-height: 90rpx;
+  padding: 0 6rpx;
+  color: #ff9600;
+  text-align: right;
+
+}
+.deleteshop{
+  font-size: 30rpx;
+  line-height: 98rpx;
+  color: #ff9600;
+  margin-left: 450rpx;
+}
+
+/* 未选中的 背景样式 */
+/* checkbox .wx-checkbox-input{
+   border-radius: 50%;
+   width: 32rpx; 
+   height: 32rpx; 
+} */
+/* 选中后的 背景样式 */
+/* checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+   border: 1px solid #FF9021;
+   background: #FF9021;
+}  */
+/* 选中后的 对勾样式 */
+/* checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+   border-radius: 50%;
+   width: 32rpx;
+   height: 32rpx;
+   line-height: 32rpx;
+   text-align: center;
+   font-size:32rpx;
+   color:#fff;
+   background: transparent;
+   transform:translate(-50%, -50%) scale(1);
+   -webkit-transform:translate(-50%, -50%) scale(1);
+} */
+/* 复选框样式 */
+
+
+.jpgwc-boxr{
+  display: flex;
+  flex-direction: row;
+  margin-left: 16rpx;
+ 
+}
+.jpgwc-boxr-l image{
+  width: 124rpx;
+  height: 124rpx;
+}
+.jpgwc-boxr-m{
+  width: 330rpx;
+  margin-left: 20rpx;
+}
+.jpgwc-boxr-mt{
+  font-size: 28rpx;
+}
+.jpgwc-boxr-mm{
+  margin-top: 2rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+.jpgwc-boxr-mb{
+  margin-top: 8rpx;
+  font-size: 28rpx;
+  color: #C7151C;
+}
+.jpgwc-boxr-b{
+  margin-top: 76rpx;
+  margin-left: 20rpx;
+}
+.jpgwc-boxr-b text{
+  display: inline-block;
+  font-size: 28rpx;
+  vertical-align: middle;
+  width: 56rpx;
+  text-align: center;
+}
+.jpgwc-boxr-b image{
+  width: 48rpx;
+  height: 48rpx;
+  vertical-align: middle;
+}
+.jpgwc-boxr-del{
+  line-height: 172rpx;
+  text-align: center;
+  width: 200rpx;
+  height: 172rpx;
+  background: #664E16;
+  color: #fff;
+  font-size: 32rpx;
+  position: absolute;
+  top: 0;
+  right: -200rpx;
+}
+.jpgwcBox{
+  position: relative;
+  padding-bottom: 98rpx;
+}
+/* .jpgwcBox:hover .jpgwc-boxr-del{
+  -webkit-transform: translateX(-200rpx);
+ transform: translateX(-200rpx);
+ -webkit-transition: all 0.4s;
+ transition: all 0.4s;
+} */
+
+
+.jpgwc-fixed{
+  width: 100%;
+  background: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 98rpx;
+  line-height: 98rpx;
+}
+.jpgwc-fixed-l{
+  font-size: 24rpx;
+  margin-left: 20rpx;
+}
+/* .checkbox{
+  width: 160rpx;
+} */
+.check_img {
+  width: 34rpx;
+  height: 33rpx;
+}
+.checkbox1{
+   display: flex;
+   align-items: center;
+}
+.check_text {
+  width: 50rpx;
+  display: inline-block;
+  margin-left: 10rpx;
+}
+
+.jpgwc-fixed-m{
+  width: 140rpx;
+  font-size: 32rpx;
+  color: #C7151C;
+  margin-left: 240rpx;
+}
+.jpgwc-fixed-r{
+  background: #FF9021;
+  width: 240rpx;
+  height: 98rpx;
+  text-align: center;
+  color: #fff;
+  margin-left: 20rpx;
+}
+/* 底部部分 */
+
+

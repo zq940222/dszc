@@ -1,0 +1,132 @@
+/* pages/component/bdphone/bdphone.wxss */
+.bdphone-wrap{
+  height: 100vh;
+  width: 100vw;
+  background: #f6f4f3;
+}
+.bdphone{
+  width: 100%rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #fff;
+}
+.bdphone input{
+  height: 100rpx;
+  width: 686rpx;
+  margin-left: 32rpx;
+  line-height: 100rpx;
+  font-size: 32rpx;
+  color: #999;
+  border-bottom: 2rpx solid #ebebeb;
+  box-sizing: border-box;
+}
+.bdyzm{
+  width: 686rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 32rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+}
+.bdyzm-l{
+  font-size: 32rpx;
+}
+.bdyzm-r{
+  width: 192rpx;
+}
+.bdyzm-r button{
+  width: 160rpx;
+  font-size: 32rpx;
+  background-color: #fff;
+  padding: 0;
+}
+button::after{
+  border: none;
+  outline: 0;
+}
+.complete{
+  margin-left: 76rpx;
+  margin-top: 40rpx;
+   width: 600rpx;
+   height: 88rpx;
+   line-height: 88rpx;
+   text-align:center;
+   background: #FF9021;
+   border-radius: 50rpx;
+   color: #fff;
+   font-size: 32rpx;
+}
+/*  */
+.homeup-wrap{
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  background:rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.home{
+  margin: 250rpx 0 0 72rpx;
+  width: 606rpx;
+  height: 560rpx;
+  background: #fff; 
+}
+.homeup-head{
+  width: 606rpx;
+  font-size: 40rpx;
+  padding-top: 40rpx;
+  text-align: center;
+  color: #664E16;
+}
+.homeup-content{
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  width: 470rpx;
+  height: 154rpx;
+  border: 1px dashed #FF7117;
+  border-radius: 15rpx;
+  margin-left: 68rpx;
+  margin-top: 100rpx;
+}
+.homeup-content-left{
+  width: 80rpx;
+  height: 80rpx;
+  margin-top: 38rpx;
+  margin-left: 20rpx;
+  color: #FF4821;
+  font-size: 24rpx;
+  border-right:1rpx solid #EBEBEB;
+  padding-right: 20rpx;  
+}
+.homeup-content-left-head text{
+  font-size: 36rpx;
+}
+.homeup-content-right{
+  margin-top: 38rpx;
+  margin-left: 20rpx;
+}
+.homeup-content-right-head{
+  text-align: left;
+  font-size: 28rpx;
+}
+.homeup-content-right-bottom{
+  text-align: left;
+  font-size: 20rpx;
+  color: #999;
+}
+.button{
+  margin-top: 80rpx;
+  margin-left: 204rpx;
+  width: 200rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  text-align: center;
+  background: #FF7117;
+  color: #fff;
+  border-radius: 50rpx;
+}

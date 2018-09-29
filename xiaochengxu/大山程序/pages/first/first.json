@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "大山早餐",
+  "usingComponents": {
+    "swiper": "../component/swiper/swiper"
+  }
+}

@@ -1,0 +1,12 @@
+<!--pages/component/ridersuc/ridersuc.wxml-->
+<view class='ghphone-wrap'>
+<view class='ghphone'>
+    <view class='ghphone-l'>姓名</view>
+    <view class='ghphone-r'>{{nickname}}</view>
+  </view>
+  <view class='ghphone'>
+    <view class='ghphone-l'>手机号</view>
+    <view class='ghphone-r'>{{mobile}}</view>
+  </view>
+  
+</view>

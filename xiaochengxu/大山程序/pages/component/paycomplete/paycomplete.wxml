@@ -1,0 +1,47 @@
+<!--pages/component/paycomplete/paycomplete.wxml-->
+<view class='paycomplete'>
+  <view class='paycomplete1'>
+    <image src='../../../images/Group3@2x.png'></image>
+  </view>
+  <view class='paycomplete2'>
+    支付完成
+  </view>
+  <view class='paycomplete3'>
+    大约10分钟可以到店取餐哦
+  </view>
+  <view class='paycomplete4' bindtap='extract'>
+    查看订单详情
+  </view>
+</view>
+<!--  -->
+<view class='homeup-wrap' hidden="{{isdialoge}}" catchtouchmove="preventTouchMove">
+    <view class='home'>
+      <view class='homeup-head'>
+        优惠劵已入账
+      </view>
+      <view class='homeup-content'>
+        <view class='homeup-content-left'>
+          <view class='homeup-content-left-head'>
+            ￥<text>{{zc.price}}</text>
+          </view>
+          <view class='homeup-content-left-bottom'>
+            优惠劵
+          </view>
+        </view>
+        <view class='homeup-content-right'>
+          <view class='homeup-content-right-head'>
+         {{zc.name}}
+          </view>
+          <view class='homeup-content-right-bottom'>
+               {{zc.coupon_type=="2"?zc.stime+"一"+zc.etime:zc.desc}}
+          </view>
+
+        </view>
+      </view>
+      <view class='button' bindtap='cancle'>
+        知道了
+      </view>
+    </view>
+
+  </view>
+  <!-- 弹窗 -->

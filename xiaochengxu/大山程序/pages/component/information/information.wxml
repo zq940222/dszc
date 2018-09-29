@@ -1,0 +1,45 @@
+<!--pages/component/information/information.wxml-->
+<view class='information-wrap'>
+  <view class='information-tx'>
+    <view class='information-tx-left'>头像</view>
+    <view class='information-tx-right'>
+      <open-data class="bbb" type="userAvatarUrl"></open-data>
+    </view>
+  </view>
+  <!-- 头像 -->
+  <view class='information-nc'>
+    <view class='information-nc-left'>昵称</view>
+    <view class='information-nc-right'><open-data type="userNickName" lang="zh_CN"></open-data></view>
+  </view>
+  <!-- 昵称 -->
+  <view class='information-tx'>
+    <view class='information-tx-left'>性别</view>
+    <view class='information-xb-right'>
+      <open-data type="userGender" lang="zh_CN"></open-data>
+  </view>
+  </view>
+  <!-- 性别 -->
+  <view class='information-tx' bindtap='bdphone'>
+    <view class='information-tx-left'>手机号</view>
+    <view class='information-xb-right'>
+      <text>{{mobile}}</text><image src='../../../images/symbols-tiaozhuan-1010.png'></image>
+    </view>
+  </view>
+  <!-- 手机号 -->
+  <picker mode="date" value="{{date}}" start="1978-01-01" end="2018-8-23" bindchange="bindDateChange" > 
+  <view class='information-tx'>
+        <view class='information-tx-left'>生日</view>
+        <view class='information-xb-right'>        
+          <text>{{birthday}}</text><image src='../../../images/symbols-tiaozhuan-1010.png'></image>
+        </view>
+  </view>
+  </picker>
+  <!-- 生日 -->
+  <view class='information-tx' bindtap='myaddress'>
+    <view class='information-tx-left'>我的地址</view>
+    <view class='information-xb-right'>
+      <image src='../../../images/symbols-tiaozhuan-1010.png'></image>
+    </view>
+  </view>
+  <!-- 我的地址 -->
+</view>

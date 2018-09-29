@@ -1,0 +1,15 @@
+<!--pages/component/comment/comment.wxml-->
+<view class='comment-content' wx:for="{{comment}}" wx:key="*this">
+        <view class='comment-content-head'>
+          <view class='comment-content-head-left'>
+           <image src='{{item.avatar}}'></image><text>{{item.nickname}}</text>
+          </view>
+          <view class='comment-content-head-right'>{{ontime}}</view>
+        </view>
+        <view class='comment-content-middle'>{{item.details}}</view>
+        <view class='comment-content-bottom'>
+          <view class='comment-content-bottom-img' wx:for="{{item.images}}" wx:key="*this">
+          <image src='{{item}}'></image>
+          </view>
+        </view>
+      </view>

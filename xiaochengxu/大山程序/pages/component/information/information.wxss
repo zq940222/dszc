@@ -1,0 +1,52 @@
+/* pages/component/information/information.wxss */
+.information-tx,.information-nc{
+  margin-left: 32rpx;
+  width: 722rpx;
+  height: 148rpx;
+  line-height: 148rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.information-tx-left,.information-nc-left{
+  font-size: 32rpx;
+}
+.information-tx-right{
+  margin-top: 28rpx;
+  width: 92rpx;
+  height: 92rpx;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 32rpx;
+  overflow: hidden;
+}
+.bbb{
+   width: 92rpx;
+  height: 92rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+/* 头像 */
+.information-nc-right{
+  font-size: 32rpx;
+  color: #999;
+  margin-right: 32rpx;
+}
+/* 昵称 */
+.information-xb-right{
+   margin-right: 32rpx;
+   color: #999;
+}
+.information-xb-right text{
+   font-size: 32rpx;
+   margin-right: 10rpx;
+   color: #999;
+}
+.information-xb-right image{
+   width: 44rpx;
+   height: 44rpx;
+   vertical-align: middle;
+}
+/* 性别 */
+

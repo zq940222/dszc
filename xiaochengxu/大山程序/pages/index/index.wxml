@@ -1,0 +1,282 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="head">
+    <swiper></swiper>
+  </view>
+  <!-- 轮播 -->
+  <view class="content">
+    <view class="container" style="height:calc(100vh - 380rpx);">
+      <!--左侧栏-->
+      <scroll-view class='scroll_left' scroll-y="true" style="height:calc(100vh - 380rpx);" scroll-with-animation="true" scroll-top="{{scrollTop}}">
+        <view class="nav_left">
+          <block wx:for="{{name}}" wx:key="{{index}}">
+            <!--当前项的id等于item项的id，那个就是当前状态-->
+            <!--用data-index记录这个数据在数组的下标位置，使用data-id设置每个item的id值，供打开2级页面使用-->
+            <view class='nav_left_items {{leftindex == index ? "leftchoice" : "leftnochoice"}}' bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.id}}">{{item.name}}</view>
+          </block>
+        </view>
+      </scroll-view>
+
+      <!--右侧栏-->
+      <scroll-view scroll-y="true" class="scroll_right" style="height:calc(100vh - 380rpx);" scroll-into-view="{{scrollTopId}}" scroll-with-animation="true" bindscroll="scroll">
+        <view class="nav_right">
+          <view class='mink' wx:for="{{name}}" wx:key="{{index}}" id='scroll-item_{{index}}'>
+            <view class='minl'>{{item.name}}系列</view>
+            <block wx:for="{{item.dish}}" wx:key="{{index}}">
+              <view class="nav_right_items">
+                <view class="demo1-content">
+                  <view class="demo1-left">
+                    <image src="{{item.dish_image}}" bindtap="{{item.type=='1'?'detailpopup1':'detailpopup'}}" data-src="{{item.dish_image}}" data-title="{{item.name}}" data-content="{{item.desc}}" data-price="{{item.price}}" data-num="{{item.num}}" data-id='{{item.id}}'
+                    />
+                  </view>
+                  <view class="demo1-right">
+                    <view class="demo1-right-title">
+                      {{item.name}}
+                    </view>
+                    <view class="demo1-right-item">
+                      {{item.desc}}
+                    </view>
+                    <view class="demo1-right-price">
+                      <view class="demo1-right-price-left">￥{{item.price}}</view>
+                      <view class="demo1-right-price-right">
+                        <image class="demo1-right-price-image demo1-right-price-image1" wx:if="{{item.num>0}}" src="../../images/symbols-icon-reduce.png" bindtap='numoperation' data-method='minu' data-id="{{item.id}}" data-type="{{item.types}}" data-index="{{index}}" />
+                        <view wx:if="{{item.num>0}}">
+                          <text class='demo1-right-price-right-text'>{{item.num}}</text>
+                        </view>
+                        <image class="demo1-right-price-image demo1-right-price-image2" src="../../images/symbols-icon-add.png" bindtap="{{item.type=='1'?'detailpopup1':'numoperation'}}" data-method='add' data-id="{{item.id}}" data-src="{{item.dish_image}}" data-title="{{item.name}}"
+                          data-content="{{item.desc}}" data-price="{{item.price}}" data-index="{{index}}" data-num="{{item.num}}" />
+                        <view class='set-meal' wx:if='{{issetmeal}}' bindtap='setmealcolse' catchtouchmove="preventTouchMove"></view>
+                        <!-- 蒙层 -->
+                        <scroll-view scroll-y="true" class='set-meal-content' wx:if='{{issetmeal}}' catchtouchmove="preventTouchMove">
+                          <view class='set-meal-head'>
+                            <view class='set-meal-head-left'>
+                              <image src='{{tcimgsrc}}'></image>
+                            </view>
+                            <view class='set-meal-head-right'>
+                              <view class='set-meal-head-right-title'>
+                                {{title}}
+                              </view>
+                              <view class='set-meal-head-right-content'>
+                                {{content}}
+                              </view>
+                              <view class='set-meal-head-right-price'>
+                                ￥{{price}}
+                              </view>
+                            </view>
+                          </view>
+                          <!-- 顶部 -->
+                          <!-- <view class='setmeal-content'>
+    <view class='porridge' wx:for="{{tcarr}}" wx:if="{{item.choose_num=='1'}}" wx:key="*this">
+      <view class='porridge-head'>{{item.name}}</view>
+      <view class='porridge-content'>
+        <text class='porridge-content-item'  wx:for="{{item.item}}" wx:key="*this">{{item.name}}</text>
+      </view>
+    </view> -->
+                          <!-- 好粥 -->
+                          <!-- <view class='bag' wx:for="{{tcarr}}" wx:if="{{item.choose_num=='2'}}" wx:key="*this">
+      <view class='bag-head'>{{item.name}}
+        <text>(任选2个)</text>
+      </view>
+      <view class='bag-content' wx:for="{{item.item}}" wx:key="*this">
+        <view class='bag-content-head'>
+          <view class='bag-content-head-left'>{{item.name}}</view>
+          <view class='bag-content-head-right'>
+            <image src='../../images/symbols-icon-reduce.png' wx:if="{{tcnum>0}}" bindtap='tctop' data-method='minu'></image>
+            <view wx:if="{{tcnum>0}}">
+              <text>{{item.num}}</text>
+            </view>
+            <image src='../../images/symbols-icon-add.png' bindtap='tctop' data-method='add'></image>
+          </view>
+        </view>
+
+      </view>
+    </view> -->
+                          <!-- 鲜包 -->
+                          <!-- </view> -->
+                          <!-- 内容 -->
+
+
+                          <view class='setmeal-content'>
+                          <view  wx:for="{{tcarr}}" wx:key="{{index}}">
+                          <view class='porridge'  wx:if="{{item.choose_num=='1'}}">
+                              <view class='porridge-head'>{{item.name}}</view>
+                              <view class='porridge-content'>
+                                 <block wx:for="{{item.spec_item}}" wx:key="{{item.id}}" wx:for-item="item2" wx:for-index="index2">
+                                    <view class='{{item2.isselect==1?"porridge-content-item_active":"porridge-content-item_"}}' id="{{item2.id}}" data-index="{{index}}" data-indextwo='{{index2}}' catchtap='clickAttr'>{{item2.name}}</view>
+                                </block>
+                              </view>
+                            </view>
+                            <!-- 好粥 -->
+                            <view class='bag' wx:if="{{item.choose_num=='2'}}" >
+                              <view class='bag-head'>
+                                <text>{{item.name}}</text>
+                                <text>(任选2个)</text>
+                              </view>
+                                <view class='bag-content' wx:for="{{item.spec_item}}" wx:key="{{item.id}}" wx:for-item="item2" wx:for-index="index2">
+                                <view class='bag-content-head'>
+
+                                  <view class='bag-content-head-left {{item2.isselect==1?"porridge-content-item_active":"porridge-content-item_"}}'  id="{{item2.id}}" data-index="{{index}}" data-indextwo='{{index2}}'     bindtap='clickAttr'>{{item2.name}}</view>
+                                  <view class='bag-content-head-right'>
+                                    <image src='../../images/symbols-icon-reduce.png' wx:if="{{item2.num>0}}" bindtap='tcminu' data-index="{{index2}}"></image>
+                                    <view wx:if="{{item2.num>0}}">
+                                      <text>{{item2.num}}</text>
+                                    </view>
+                                    <image src='../../images/symbols-icon-add.png' bindtap='tcadd' data-index="{{index2}}" wx:if="{{number<2}}"></image>
+                                    <image src='../../images/symbols-icon-add.png' wx:if="{{number>=2}}"></image>
+                                  </view>
+                               
+                                </view>
+
+                              </view>
+                            </view>
+                            <!-- 鲜包 -->
+                          </view>
+                            
+                            <view class='setmeal-bottom' bindtap='numoperation' data-method='tcadd' data-title="{{title}}" data-price="{{price}}" data-num="{{numnum}}" data-content="{{content}}" data-src='{{tcimgsrc}}' data-id='{{id}}'>
+                              选好了
+                            </view>
+                          </view>
+                          <!-- 内容 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                          <!-- 底部 -->
+                        </scroll-view>
+                        <!-- 套餐弹窗 -->
+
+
+
+
+
+
+
+
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </block>
+          </view>
+          <view style="width:100%;height:30rpx;background:#f0f4f7"></view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <!-- 内容 -->
+ <view class='homeup-wrap' hidden="{{isdialoge}}" catchtouchmove="preventTouchMove">
+    <view class='home'>
+      <view class='homeup-head'>
+        优惠劵已入账
+      </view>
+      <view class='homeup-content' wx:for='{{zc}}' wx:key="{{index}}">
+        <view class='homeup-content-left'>
+          <view class='homeup-content-left-head'>
+            ￥<text>{{item.price}}</text>
+          </view>
+          <view class='homeup-content-left-bottom'>
+            优惠劵
+          </view>
+        </view>
+        <view class='homeup-content-right'>
+          <view class='homeup-content-right-head'>
+         {{item.name}}
+          </view>
+          <view class='homeup-content-right-bottom'>
+               {{item.coupon_type=="2"?item.stime+"一"+item.etime:item.desc}}
+          </view>
+
+        </view>
+      </view>
+      <view class='button' bindtap='cancle'>
+        知道了
+      </view>
+    </view>
+
+  </view>
+  <!-- 弹窗 -->
+  <view class='gwc' wx:if="{{array.length>0}}" bindtap='gwcpopup'>
+    <view class='gwc-left'>
+      <image src='../../images/symbols-icon-gwc.png'></image>
+      <view class='gwc-left-num'>{{array.length}}</view>
+    </view>
+    <view class='gwc-right'>{{total}}</view>
+  </view>
+  <!-- 购物车 -->
+</view>
+<view class='gwc-bck' hidden='{{iscart}}' wx:if="{{array.length>0}}" bindtap='gwcbck' catchtouchmove="preventTouchMove">
+</view>
+<!-- 蒙层 -->
+<scroll-view class='gwc-popup' hidden='{{iscart}}' wx:if="{{array.length>0}}" catchtouchmove="preventTouchMove" scroll-y="true">
+  <view class='gwc-title'>
+    购物车
+  </view>
+  <block wx:for="{{array}}" wx:key="{{item.id}}">
+    <view class='gwc-content'>
+      <view class='gwc-content1'>
+        <text>{{item.names}}</text>
+      </view>
+      <view class='gwc-content2'>
+        <text>{{item.price}}</text>
+      </view>
+      <view class='gwc-content3'>
+        <image src='../../images/symbols-icon-reduce.png' bindtap='numoperation' data-method='minu' data-id="{{item.id}}" data-type="{{item.types}}"></image>
+      </view>
+      <view class='gwc-content4'>
+        <text>{{item.num}}</text>
+      </view>
+      <view class='gwc-content5'>
+        <image src='../../images/symbols-icon-add.png' bindtap='numoperation' data-method='add' data-id="{{item.id}}" data-type="{{item.types}}"></image>
+      </view>
+    </view>
+  </block>
+  <view class='gwc-bottom'>
+    <view class='gwc-bottom-left'>￥{{total}}</view>
+    <view class='gwc-bottom-right' bindtap='submitorder'>去结算</view>
+  </view>
+</scroll-view>
+<!-- 购物车弹窗 -->
+<view class='detail-bck' wx:if='{{isdetail}}' bindtap='detailcolse' catchtouchmove="preventTouchMove">
+</view>
+<!-- 蒙层 -->
+<scroll-view class='detail-popup' wx:if='{{isdetail}}' catchtouchmove="preventTouchMove" scroll-y="true">
+  <view class='detail-head'>
+    <image src='{{imgsrc}}' class='detail-head1'></image>
+    <image src='../../images/symbols-icon-close.png' class='detail-head2' bindtap='detailcolse'></image>
+  </view>
+  <view class='detail-content'>
+    <view class='detail-content-title'>{{title}}</view>
+    <view class='detail-content-detail'>{{content}}</view>
+  </view>
+  <view class='detail-bottom'>
+    <view class='detail-bottom-left'>￥{{price}}</view>
+    <view class='detail-bottom-right'>
+      <image wx:if="{{numnum>0}}" src="../../images/symbols-icon-reduce.png" bindtap='numoperation' data-id='{{id}}' data-type='{{types}}' data-method='minu' />
+      <view wx:if="{{numnum>0}}" class="detail-bottom-right-c">
+        <text>{{numnum}}</text>
+      </view>
+      <image src="../../images/symbols-icon-add.png" bindtap='numoperation' data-id='{{id}}' data-type='{{types}}' data-method='add' data-num='{{num}}' />
+    </view>
+  </view>
+</scroll-view>
+<!-- 早餐详情弹窗 -->
+<!-- <cover-view class='welcomemodle'  wx:if="{{!hasUserInfo}}">
+    <cover-view class='welcome'>
+      <cover-view class='welcometitle'>欢迎来到大山早餐!</cover-view>
+      <button  open-type="getUserInfo" bindtap='welcome' class='welcomebtn'> 确定 </button>
+    </cover-view>
+  </cover-view> -->
+<!-- 用户授权 -->

@@ -1,0 +1,12 @@
+<!--pages/component/contactus/contactus.wxml-->
+<view class='contactus-wrap'>
+  <view class='contactus-head'>
+     客服电话
+  </view>
+  <view class='contactus-content' bindtap='tel'>
+    <view class='contactus-content-left'>{{customer_service}}</view>
+    <view class='contactus-content-right'>
+      <image src='../../../images/symbols-icon-lxwm.png'></image>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,49 @@
+<!--pages/component/selectionsuc/selectionsuc.wxml-->
+<view class='jxapp-wrap'>
+ <view class='jxapp'>
+   <view class='jxapp1'>
+      <view class='jxapp1-l'>姓名</view>
+      <view class='jxapp1-r'>
+       {{nickname}}
+      </view>
+   </view>
+   <!-- 姓名 -->
+   <view class='jxapp1'>
+      <view class='jxapp1-l'>地址</view>
+      <view class='jxapp1-r'>
+       {{address}}
+      </view>
+   </view>
+   <!-- 地址 -->
+     <view class='jxapp1'>
+      <view class='jxapp1-l'>联系号码</view>
+      <view class='jxapp1-r'>
+       {{mobile}}
+      </view>
+   </view>
+   <!-- 联系号码 -->
+   <view class='jxapp1'>
+      <view class='jxapp1-l'>公司名称</view>
+      <view class='jxapp1-r'>
+       {{company_name}}
+      </view>
+   </view>
+   <!-- 公司名称 -->
+    <view class='jxapp1'>
+      <view class='jxapp1-l'>产品名称</view>
+      <view class='jxapp1-r'>
+       {{goods_name}}
+      </view>
+    </view>
+   <!-- 产品名称 -->
+    <view class='jxapp2'>
+     <view class='jxapp2-t'>产品简介</view>
+     <view class='jxapp2-m'>{{goods_intro}}</view>
+     <view class='jxapp2-b'><image src='{{item}}' wx:for="{{goods_images}}"></image>
+     </view>
+    </view>
+   <!-- 产品简介 -->
+  
+ </view>
+</view>
+

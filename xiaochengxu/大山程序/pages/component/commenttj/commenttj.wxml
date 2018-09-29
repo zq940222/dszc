@@ -1,0 +1,31 @@
+<!--pages/component/commenttj/commenttj.wxml-->
+<view class='evaluate'>
+<view wx:for="{{comment_arr}}" wx:key="{{index}}" class='danbottom' wx:for-item="itemone">
+ <view class='evaluate-t'>
+   <view class='evaluate-tl'>
+     <image src='{{itemone.goods_image}}'></image>
+   </view>
+   <view class='evaluate-tr'>
+    {{itemone.goods_name}}
+   </view>
+ </view>
+ <view class='evaluate-textarea' >
+   <textarea placeholder='说说你的使用心得，分享给想买的他们吧' class='content' bindinput="goods_intro" data-id='{{itemone.goods_id}}'></textarea>
+   <view  class='tjpic'>
+   <view class='tjpic1' wx:for="{{itemone.pics}}"  wx:key="{{index}}" >
+      <image src="{{item}}" ></image>
+      <image src='../../../images/symbols-icon-close.png' bindtap='clearImg' data-index="{{index}}" class='deltel' data-id='{{itemone.goods_id}}'></image>
+   </view>
+  
+   </view>
+   
+ </view>
+ <view class='chooseimg'   bindtap="joinPicture" data-index="{{0}}" data-id='{{itemone.goods_id}}'>
+  <image src='../../../images/symbols-tianjia.png'></image>
+ </view>
+</view>
+
+ <view class='submit' bindtap='submitClick'>
+  提交
+ </view>
+</view>

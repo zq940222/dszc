@@ -1,0 +1,25 @@
+<!--pages/component/search/search.wxml-->
+<!--pages/search/search.wxml-->
+<view class='page_row'>
+    <view class="search">
+      <view class="df search_arr">
+        <icon class="searchcion" size='15' type='search' bindtap="suo"></icon>
+        <input class="df_1" placeholder-class='aaa' placeholder="关键词搜索" value="{{searchValue}}"  bindinput="searchValueInput" />
+      </view>
+    </view>
+    <view class='sousuo' bindtap="suo">搜索</view>
+    
+
+
+    
+  </view>
+  <view class='host-search'>
+     热门搜索
+    </view>
+    <view class='host-search-list'>
+     <text wx:for="{{ssarr}}" wx:key="*this">{{item}}</text>
+    </view>
+
+
+
+

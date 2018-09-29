@@ -1,0 +1,361 @@
+/* pages/component/listxq/listxq.wxss */
+swiper{
+  width: 750rpx;
+  height: 500rpx;
+  overflow: hidden;
+}
+.slide-image{
+  width: 100%;
+  height: 500rpx;
+}
+.listxq-wrap{
+  background: #f8f8f8;
+  margin-bottom: 96rpx;
+}
+.listxq-jj{
+   background: #fff;
+   padding: 20rpx 0 32rpx 0;
+}
+.listxq-jj-head{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.listxq-jj-head-left{
+  margin-left: 28rpx;
+  font-size: 32rpx;
+  color: #C7151C; 
+}
+.listxq-jj-head-left text{
+  font-size: 48rpx;
+}
+.listxq-jj-head-right{
+  margin-right: 32rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+.listxq-middle{
+  font-size: 36rpx;
+  margin: 16rpx 0 0 28rpx;
+}
+.listxq-bottom{
+  font-size: 28rpx;
+  margin-left: 28rpx;
+  color: #999;
+}
+/* 物品简介 */
+.standard{
+  margin-top: 20rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 96rpx;
+  line-height: 96rpx;
+}
+.standard-left{
+  display: flex;
+  flex-direction: row;
+}
+.standard-left-l{
+   font-size: 28rpx;
+   color: #999;
+   margin-left: 32rpx; 
+}
+.standard-left-r{
+   font-size: 28rpx;
+   margin-left: 10rpx; 
+    color: #999;
+}
+.standard-right image{
+  margin-right: 32rpx;
+  width: 44rpx;
+  height: 44rpx;
+  vertical-align: middle;
+}
+/* 规格 */
+.standard-popup{
+  width: 100vw;
+  height: 100vh;
+  background:rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.standard-content{
+  width: 100%;
+  position: fixed;
+  bottom: 96rpx;
+  height: 774rpx;
+  background: #fff;
+}
+.standard-head{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 28rpx;
+}
+.standard-head-left{
+  display: flex;
+  flex-direction: row;
+  margin-left: 32rpx;
+}
+.standard-head-left-l image{
+  width: 178rpx;
+  height: 178rpx;
+ 
+}
+.standard-head-left-r{
+  margin-left: 20rpx;
+  margin-top: 94rpx;
+
+}
+.standard-head-left-r-head{
+  font-size: 28rpx;
+  color: #C7151C;
+}
+.standard-head-left-r-bottom{
+  font-size: 28rpx;
+  color: #666;  
+}
+
+
+.standard-head-right{
+  margin-right: 32rpx;
+}
+.standard-head-right image{
+  width: 44rpx;
+  height: 44rpx;
+}
+.standard-style{
+  margin-top: 48rpx;
+  margin-left: 28rpx;
+}
+.standard-style-head{
+  font-size: 28rpx;
+}
+.standard-style-content{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.standard-style-content-item{
+  width: 322rpx;
+  height: 68rpx;
+  border: 1px solid #ccc;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 68rpx;
+  margin-right: 12rpx;
+  margin-top: 20rpx;
+}
+.standard-style-content-item.active{
+  border: 1px solid #FF9021;
+}
+
+
+
+.standard-color{
+  margin-top: 40rpx;
+  margin-left: 28rpx;
+}
+.standard-color-head{
+  font-size: 28rpx;
+}
+.standard-color-content{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.standard-color-content-item{
+  width: 168rpx;
+  height: 68rpx;
+  border: 1px solid #ccc;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 68rpx;
+  margin-right: 12rpx;
+  margin-top: 20rpx;
+}
+.standard-color-content-item.active1{
+  border: 1px solid #FF9021;
+}
+
+
+
+.standard-number{
+   margin-top: 44rpx;
+   margin-left: 28rpx;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+.standard-number-left{
+  font-size: 28rpx;
+}
+.standard-number-right{
+  margin-right: 32rpx;
+}
+.standard-number-right image{
+  width: 48rpx;
+  height: 48rpx;
+  vertical-align: middle;
+}
+.standard-number-right text{
+  font-size: 28rpx;
+  display: inline-block;
+  width: 56rpx;
+  text-align: center;
+}
+
+
+
+/* 规格弹窗 */
+.comment{
+  margin-top: 20rpx;
+  background: #fff;
+}
+.comment-head{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 96rpx;
+  line-height: 96rpx;
+  margin-left: 32rpx;
+  border-bottom: 1px solid #ebebeb;
+  box-sizing: border-box;
+}
+.comment-head-left{
+  font-size: 28rpx;
+
+}
+.comment-head-right{
+  font-size: 28rpx;
+  color: #999;
+  margin-right: 32rpx;
+}
+.comment-head-right text{
+  display: inline-block;
+  margin-right: 5rpx;
+}
+.comment-head-right image{
+  width: 44rpx;
+  height: 44rpx;
+  vertical-align: middle
+}
+.comment-content{
+  margin-left: 32rpx;
+  margin-right: 32rpx;
+}
+.comment-content-head{
+  margin-top: 28rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.comment-content-head image{
+  width: 60rpx;
+  height: 60rpx;
+  vertical-align:middle;
+  border-radius: 50%;
+}
+.comment-content-head text{
+  display: inline-block;
+  margin-left: 20rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+.comment-content-head-right{
+  font-size: 24rpx;
+  color: #999;
+}
+.comment-content-middle{
+  margin-top: 18rpx;
+  font-size: 28rpx;
+}
+.comment-content-bottom{
+  display: flex;
+  flex-direction: row;
+  margin-top: 24rpx;
+}
+.comment-content-bottom-img image{
+  margin-left: 20rpx;
+  width: 150rpx;
+  height: 150rpx;
+}
+/* 评论 */
+.details{
+ margin-top: 20rpx;
+ background: #fff;
+}
+.details-head{
+ width: 100%;
+ height: 96rpx;
+ line-height: 96rpx;
+ text-align: center;
+ font-size: 32rpx;  
+}
+.details-content-img{
+  margin-left: 32rpx;
+}
+.details-content-img image{
+  width: 686rpx;
+  height: 416rpx;
+}
+/* 商品详情 */
+.menu{
+  width: 100%;
+  height: 98rpx;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+}
+.menu-left{
+  width: 136rpx;
+  height: 98rpx;
+  line-height: 98rpx;
+  text-align: center;
+  background: #fff;
+  position: relative;
+}
+.menu-left-num{
+  width: 32rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  font-size: 24rpx;
+  text-align: center;
+  color: #fff;
+  background: #FF1D1D;
+  position: absolute;
+  left: 66rpx;
+  top:20rpx;
+  border-radius: 50%;
+}
+.menu-left image{
+  margin-top:30rpx; 
+  width: 52rpx;
+  height: 52rpx;
+}
+.menu-middle{
+  width: 308rpx;
+  height: 98rpx;
+  line-height: 98rpx;
+  background: #664E16;
+  text-align: center;
+  color: #fff;
+  font-size: 28rpx;
+}
+.menu-right{
+  width: 308rpx;
+  height: 98rpx;
+  line-height: 98rpx;
+  background: #FF9021;
+  text-align: center;
+  color: #fff;
+  font-size: 28rpx;
+}

@@ -1,0 +1,65 @@
+<!--pages/component/jporder/jporder.wxml-->
+<view class='jporder'>
+  <view class='jporder-top' bindtap='armanage' wx:if="{{len>0}}">
+   <view class='jporder-topl'>
+   <view class='jporder-toplt'>
+     <image src='../../../images/symbols-icon-address.png'></image><text>{{order_address.consignee}}</text><text>{{order_address.mobile}}</text>
+   </view>
+   <view class='jporder-toplb'>{{order_address.citys}}{{order_address.detai}}</view>
+   </view>
+   <view class='jporder-topr'>
+     <image src='../../../images/symbols-tiaozhuan-1010.png'></image>
+   </view>
+  </view>
+  <view class='jporder-top' bindtap='armanage' wx:if="{{len<=0}}">
+   <view class='jporder-topl'>
+   <view class='jporder-toplt'>
+     <image src='../../../images/symbols-icon-address.png'></image><text>请选择收货地址</text>
+   </view>
+   </view>
+   <view class='jporder-topr'>
+     <image src='../../../images/symbols-tiaozhuan-1010.png'></image>
+   </view>
+  </view>
+  <!-- top -->
+  <view class='jporder-content'>
+    <view class='jporder-content-head' wx:for="{{jporder}}" wx:key="*this">
+      <view class='jporder-content-headl'>
+       <image src='{{item.image}}'></image>
+      </view>
+      <view class='jporder-content-headm'>
+        <view class='jporder-content-headmt'>{{item.name}}</view>
+        <view class='jporder-content-headmm'>{{item.selectName}}</view>
+        <view class='jporder-content-headmb'>￥{{item.bhprice}}</view>
+      </view>
+      <view class='jporder-content-headr'>
+        ×{{item.num}}
+      </view>
+    </view>
+    <!-- 订单部分 -->
+    <view class='jporder-content-yf'>
+     <view class='jporder-content-yfl'>运费</view>
+     <view class='jporder-content-yfr'>￥{{freight_total}}</view>
+    </view>
+
+    <view class='jporder-content-yf' bindtap='coupon'>
+     <view class='jporder-content-yfl'>优惠劵</view>
+     <!-- <view class='jporder-content-yhjr' wx:if="{{types==2}}">{{price}}</view> -->
+      <view class='jporder-content-yhjr' ><text wx:if="{{coupon_price!==''}}">-</text>{{coupon_price}}</view>
+      <view class='jporder-content-yhjr-r' wx:if="{{coupon_price==''}}"><image src='../../../images/symbols-tiaozhuan-1010.png'></image></view>
+    </view>
+
+    <view class='jporder-content-yf'>
+     <view class='jporder-content-yfl'>合计</view>
+     <view class='jporder-content-hjr'>￥{{order_total}}</view>
+    </view>
+  </view>
+  <!-- 中间 -->
+
+  <view class='jporder-fixed'>
+    <view class='jporder-fixed-l'>
+     合计：<text>￥{{order_total}}</text>
+    </view>
+    <view class='jporder-fixed-r' bindtap='jppay'>提交订单</view>
+  </view>
+</view>

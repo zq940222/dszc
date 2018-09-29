@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "大山精选",
+  "usingComponents": {
+        "swiper": "../component/swiper1/swiper1"
+      }
+
+}

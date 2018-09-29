@@ -1,0 +1,95 @@
+<!--pages/person/person.wxml-->
+<view class='person-wrap'>
+   <view class='person-head'>
+     <view class='person-head-top'></view>
+     <view class='person-head-middle'>
+      <view class='person-head-middle-conent'>
+      <open-data class="bbb" type="userAvatarUrl"></open-data>
+      <!-- 获取头像 -->
+      </view>
+     </view>
+     <view class='person-head-bottom'>
+     <view class='person-head-bottom-conent'>
+      <open-data type="userNickName" lang="zh_CN"></open-data>
+      <!-- 获取名字 -->
+     </view>
+      </view>
+   </view>  
+   <!-- 头部 -->
+   <view class='person-content'>
+     <view class='person-content-list'>
+       <view class='person-content-list-1' bindtap='skip1'>
+         <view class='person-content-list-1eft'>
+         <image src='../../images/symbols-icon-wdzl.png'></image>
+         <text>我的资料</text>
+         </view>
+           <!-- 左边 -->
+          <view class='person-content-list-right'>
+              <image src='../../images/symbols-tiaozhuan-1010.png'></image>
+          </view>
+           <!-- 右边 -->
+       </view>
+       <!-- 1 -->
+       <view class='person-content-list-1' bindtap='skip2'>
+         <view class='person-content-list-1eft'>
+         <image src='../../images/symbols-icon-wddd.png'></image>
+         <text>我的订单</text>
+         </view>
+           <!-- 左边 -->
+          <view class='person-content-list-right'>
+              <image src='../../images/symbols-tiaozhuan-1010.png'></image>
+          </view>
+           <!-- 右边 -->
+       </view>
+       <!-- 2 -->
+       <view class='person-content-list-1' bindtap='skip3'>
+         <view class='person-content-list-1eft'>
+         <image src='../../images/symbols-icon-wdyhj.png'></image>
+         <text>我的优惠劵</text>
+         </view>
+           <!-- 左边 -->
+          <view class='person-content-list-right'>
+              <image src='../../images/symbols-tiaozhuan-1010.png'></image>
+          </view>
+           <!-- 右边 -->
+       </view>
+       <!-- 3 -->
+       <view class='person-content-list-1' bindtap='skip4'>
+         <view class='person-content-list-1eft'>
+         <image src='../../images/symbols-icon-cwqs.png'></image>
+         <text>骑手申请</text>
+         </view>
+           <!-- 左边 -->
+          <view class='person-content-list-right'>
+              <image src='../../images/symbols-tiaozhuan-1010.png'></image>
+          </view>
+           <!-- 右边 -->
+       </view>
+       <!-- 4 -->
+       <view class='person-content-list-1' bindtap='skip5'>
+         <view class='person-content-list-1eft'>
+         <image src='../../images/symbols-icon-jxsq.png'></image>
+         <text>精选申请</text>
+         </view>
+           <!-- 左边 -->
+          <view class='person-content-list-right'>
+              <image src='../../images/symbols-tiaozhuan-1010.png'></image>
+          </view>
+           <!-- 右边 -->
+       </view>
+       <!-- 5 -->
+       <view class='person-content-list-1' bindtap='skip6'>
+         <view class='person-content-list-1eft'>
+         <image src='../../images/symbols-icon-lxwm.png'></image>
+         <text>联系我们</text>
+         </view>
+           <!-- 左边 -->
+          <view class='person-content-list-right'>
+              <image src='../../images/symbols-tiaozhuan-1010.png'></image>
+          </view>
+           <!-- 右边 -->
+       </view>
+       <!-- 6 -->
+     </view>
+   </view>
+</view>

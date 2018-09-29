@@ -1,0 +1,26 @@
+<!--pages/component/mycoupon/mycoupon.wxml-->
+<view class='coupon-wrap'>
+  <view class='coupon' wx:for="{{obj}}" wx:key="*this" bindtap='jporder' data-coupon_price='{{item.price}}' data-coupon_id='{{item.id}}'>
+    <view class='coupon-l'>
+      <view class='coupon-lt'>￥<text>{{item.price}}</text></view>
+       <view class='coupon-lb'>优惠券</view>
+    </view>
+    <view class='coupon-r'>
+       <view class='coupon-rt'>{{item.name}}</view>
+       <view class='coupon-rb'>{{item.desc}}</view>
+    </view>
+  </view>
+  <!--  -->
+  <view class='coupon-hui' wx:for="{{obj1}}" wx:key="*this">
+  
+    <view class='coupon-l'>
+      <view class='coupon-lt'>￥<text>{{item.price}}</text></view>
+       <view class='coupon-lb'>优惠券</view>
+    </view>
+    <view class='coupon-r'>
+       <view class='coupon-rt'>{{item.name}}</view>
+       <view class='coupon-rb'>{{item.desc}}</view>
+    </view>
+  </view>
+ <!--  -->
+</view>

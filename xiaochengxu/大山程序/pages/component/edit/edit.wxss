@@ -1,0 +1,45 @@
+/* pages/component/myaddress/myaddress.wxss */
+.myaddress-wrap{
+  width: 100vw;
+  height: 100vh;
+  background: #f6f4f3;
+}
+.myaddress-head{
+  background: #fff;
+  border-top:1px solid #ccc;
+}
+.myaddress-head-shr{
+  width: 100%;
+  margin-left: 28rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #ebebeb;
+  box-sizing: border-box;
+  font-size: 32rpx;
+}
+.myaddress-head-shr-l{
+  width: 200rpx;
+}
+.myaddress-head-shr-r{
+  width: 100%;
+  font-size: 28rpx;
+}
+.myaddress-head-shr-r input{
+  width: 450rpx;
+}
+.myaddress-bottom{
+  width: 600rpx;
+  text-align: center;
+  border-radius: 50rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #FF9021;
+  color: #fff;
+  font-size: 32rpx; 
+  position: absolute;
+  left: 76rpx;
+  bottom: 40rpx;
+}

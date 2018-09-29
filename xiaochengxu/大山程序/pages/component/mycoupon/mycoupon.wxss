@@ -1,0 +1,64 @@
+/* pages/component/mycoupon/mycoupon.wxss */
+.coupon-wrap{
+  width: 100vw;
+  height: 100vh;
+  background: #f6f4f3;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+}
+.coupon{
+ margin-top: 20rpx;
+ width: 670rpx;
+ height: 200rpx;
+ background: #fff;
+ margin-left: 40rpx;
+ border-radius: 10rpx;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+}
+.coupon-l{
+  height: 110rpx;
+  width: 180rpx;
+  text-align: center;
+  border-right: 1px solid #ebebeb;
+  
+}
+.coupon-lt{
+ margin-top: 20rpx;
+  font-size: 24rpx;
+  color: #FF4821;
+}
+.coupon-lb{
+  font-size: 24rpx;
+  color: #FF4821;
+}
+.coupon-lt text{
+  font-size: 32rpx;
+}
+.coupon-r{
+  margin-left: 56rpx;
+}
+.coupon-rt{
+  font-size: 32rpx;
+}
+.coupon-rb{
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+.coupon-hui{
+ margin-top: 20rpx;
+ width: 670rpx;
+ height: 200rpx;
+ background: #ebebeb;
+ margin-left: 40rpx;
+ border-radius: 10rpx;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+}
+.coupon-hui .coupon-lt,.coupon-hui .coupon-lb,.coupon-hui .coupon-rb,.coupon-hui .coupon-rt{
+  color: #ccc
+}

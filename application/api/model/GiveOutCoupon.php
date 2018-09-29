@@ -8,7 +8,6 @@
 
 namespace app\api\model;
 
-
 use think\Db;
 
 class GiveOutCoupon extends BaseModel
@@ -17,24 +16,24 @@ class GiveOutCoupon extends BaseModel
 
     public static function drawCoupon($uid, $coupon_id)
     {
-        Db::name('CouponUser')->insert([
+        Db::name('GiveOutCouponUser')->insert([
             'user_id' => $uid,
-            'coupon_id' => $coupon_id
+            'give_out_coupon_id' => $coupon_id
         ]);
         $couponModel = self::get($coupon_id);
-        if ($couponModel->type == 1)
+        if ($couponModel['type'] == 1)
         {
             UserCoupon::where('user_id',$uid)->where('status',1)->save(['status'=>0]);
         }
-        $userCouponModel = new UserCoupon();
-        $userCouponModel->type = $couponModel->type;
-        $userCouponModel->user_id = $uid;
-        $userCouponModel->price = $couponModel->price;
-        $userCouponModel->stime = date('Y-m-d',time());
-        $userCouponModel->etime = date('Y-m-d',strtotime('+' .$couponModel->expiry_date.'day'));
-        $userCouponModel->name = $couponModel->name;
-        $userCouponModel->desc = $couponModel->desc;
-        $userCouponModel->save();
+        UserCoupon::create([
+            'type' => $couponModel['type'],
+            'user_id' => $uid,
+            'price' => $couponModel['price'],
+            'stime' => date('Y-m-d',time()),
+            'etime' => date('Y-m-d',strtotime('+' .$couponModel['expiry_date'].'day')),
+            'name' => $couponModel['name'],
+            'desc' => $couponModel['desc']
+        ]);
         return true;
     }
 }

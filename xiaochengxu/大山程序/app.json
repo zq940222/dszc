@@ -1,0 +1,83 @@
+{
+  "pages": [
+    "pages/first/first",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/component/swiper/swiper",
+    "pages/choice/choice",
+    "pages/commonweal/commonweal",
+    "pages/person/person",
+    "pages/component/search/search",
+    "pages/component/scroll-view/scroll-view",
+    "pages/component/swiper1/swiper1",
+    "pages/component/information/information",
+    "pages/component/myorder/myorder",
+    "pages/component/riderapplication/riderapplication",
+    "pages/component/selectionapp/selectionapp",
+    "pages/component/contactus/contactus",
+    "pages/component/xqlist/xqlist",
+    "pages/component/ingenuity/ingenuity",
+    "pages/component/comment/comment",
+    "pages/component/extract/extract",
+    "pages/component/jpgwc/jpgwc",
+    "pages/component/jporder/jporder",
+    "pages/component/jppay/jppay",
+    "pages/component/jpdetail/jpdetail",
+    "pages/component/bdphone/bdphone",
+    "pages/component/myaddress/myaddress",
+    "pages/component/armanage/armanage",
+    "pages/component/zcpay/zcpay",
+    "pages/component/zccomplete/zccomplete",
+    "pages/component/jxpay/jxpay",
+    "pages/component/jxcomplete/jxcomplete",
+    "pages/component/commenttj/commenttj",
+    "pages/component/ridersuc/ridersuc",
+    "pages/component/selectionsuc/selectionsuc",
+    "pages/submitorder/submitorder",
+    "pages/component/edit/edit",
+    "pages/component/searchdetail/searchdetail",
+    "pages/component/mycoupon/mycoupon",
+    "pages/component/paycomplete/paycomplete",
+    "pages/component/zcsubmitorder/zcsubmitorder",
+    "pages/component/jxdfh/jxdfh",
+    "pages/component/jxdsh/jxdsh",
+    "pages/component/jxdpj/jxdpj"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#7F8389",
+    "selectedColor": "#ff9021",
+    "borderStyle": "none",
+    "list": [
+      {
+        "selectedIconPath": "images/symbols-icon-home.png",
+        "iconPath": "images/symbols-icon-home-copy.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/symbols-icon-choice.png",
+        "iconPath": "images/symbols-icon-choice-copy.png",
+        "pagePath": "pages/choice/choice",
+        "text": "精选"
+      },
+      {
+        "selectedIconPath": "images/symbols-icon-commonweal.png",
+        "iconPath": "images/symbols-icon-commonweal-copy.png",
+        "pagePath": "pages/commonweal/commonweal",
+        "text": "公益助农"
+      },
+      {
+        "selectedIconPath": "images/symbols-icon-person.png",
+        "iconPath": "images/symbols-icon-person-copy.png",
+        "pagePath": "pages/person/person",
+        "text": "个人中心"
+      }
+    ]
+  }
+}

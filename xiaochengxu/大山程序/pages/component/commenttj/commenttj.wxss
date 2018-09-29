@@ -1,0 +1,84 @@
+/* pages/component/commenttj/commenttj.wxss */
+.evaluate-t{
+  display: flex;
+  flex-direction: row;
+   width: 100%;
+   height: 224rpx;
+   margin-left: 32rpx;
+   border-bottom:1px solid #ebebeb; 
+}
+.evaluate-tl{
+  margin-top: 28rpx;
+}
+.evaluate-tl image{
+  width: 168rpx;
+  height: 168rpx;
+}
+.evaluate-tr{
+  font-size: 36rpx;
+  margin: 28rpx 0 0 28rpx; 
+}
+/*  */
+.content{
+  width: 686rpx;
+  height: 300rpx;
+  margin-left: 32rpx;
+  margin-top: 20rpx;
+}
+.evaluate-textarea image{
+  width: 150rpx;
+  height: 150rpx;
+  display: flex;
+  flex-direction: row;
+  margin-left: 32rpx;
+
+ 
+}
+.chooseimg{
+  margin-top: 20rpx;
+  margin-left: 32rpx;
+  border: 1px dashed #ebebeb;
+  box-sizing: border-box;
+  width: 172rpx;
+  height: 172rpx;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+.chooseimg image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.submit{
+  width: 600rpx;
+  height: 88rpx;
+  text-align: center;
+  line-height: 88rpx;
+  background: #ff9021;
+  margin-left: 76rpx;
+  margin-top: 140rpx;
+  color: #fff;
+  font-size: 32rpx;
+  border-radius: 50rpx;
+}
+.tjpic{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+}
+.tjpic1{
+  position: relative;
+  margin-bottom: 20rpx;
+}
+.tjpic1 .deltel{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  right: -20rpx;
+  top:-20rpx;
+}
+/* .danbottom{
+  padding-bottom: 10rpx;
+  border-bottom: 1px solid #ff9021
+} */

@@ -1,0 +1,63 @@
+<!--pages/component/selectionapp/selectionapp.wxml-->
+<view class='jxapp-wrap'>
+ <view class='jxapp'>
+   <view class='jxapp1'>
+      <view class='jxapp1-l'>姓名</view>
+      <view class='jxapp1-r'>
+       <input type='text' bindinput="nickname"></input>
+      </view>
+   </view>
+   <!-- 姓名 -->
+   <view class='jxapp1'>
+      <view class='jxapp1-l'>地址</view>
+      <view class='jxapp1-r'>
+       <input type='text' bindinput="address"></input>
+      </view>
+   </view>
+   <!-- 地址 -->
+     <view class='jxapp1'>
+      <view class='jxapp1-l'>联系号码</view>
+      <view class='jxapp1-r'>
+       <input type='text'  bindinput="mobile"></input>
+      </view>
+   </view>
+   <!-- 联系号码 -->
+   <view class='jxapp1'>
+      <view class='jxapp1-l'>公司名称</view>
+      <view class='jxapp1-r'>
+       <input type='text'  bindinput="company_name"></input>
+      </view>
+   </view>
+   <!-- 公司名称 -->
+    <view class='jxapp1'>
+      <view class='jxapp1-l'>产品名称</view>
+      <view class='jxapp1-r'>
+       <input type='text'  bindinput="goods_name"></input>
+      </view>
+    </view>
+   <!-- 产品名称 -->
+    <view class='jxapp2'>
+     <view class='jxapp2-t'>产品简介</view>
+        <view class='evaluate-textarea' >
+   <textarea placeholder='说说你的使用心得，分享给想买的他们吧' class='content' bindinput="goods_intro"></textarea>
+   <view  class='tjpic'>
+   <view class='tjpic1' wx:for="{{evalList[0].tempFilePaths}}"  wx:key="index" >
+      <image src="{{item.pic}}" ></image>
+      <image src='../../../images/symbols-icon-close.png' bindtap='clearImg' data-index="{{index}}" class='deltel'></image>
+   </view>
+  
+   </view>
+   
+ </view>
+        <view class='chooseimg'  bindtap="joinPicture" data-index="{{0}}">
+          <image src='../../../images/symbols-tianjia.png'></image>
+        </view>
+    </view>
+   <!-- 产品简介 -->
+  
+ </view>
+ <!--  -->
+ <view class='submit' bindtap='submitClick'>
+  提交
+ </view>
+</view>

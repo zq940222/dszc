@@ -1,0 +1,47 @@
+/* pages/first/first.wxss */
+.welcomemodle{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  background: #fff
+}
+.logo image{
+  width: 400rpx;
+  height: 100rpx;
+}
+.welcome {
+  width: 400rpx;
+  height: 300rpx;
+  margin: 0 auto;
+  margin-top: 350rpx;
+  font-size: 15px;
+  color: #666;
+  text-align: center;
+}
+
+.welcometitle {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+
+button::after {
+  border: none;
+}
+
+button {
+  color: #fff;
+  width: 150rpx;
+  height: 150rpx;
+  text-align: center;
+  line-height: 150rpx;
+  border-radius: 50%;
+  border: 0px solid transparent;
+  outline: none;
+  background: #ffa72f;
+  font-size: 32rpx
+}

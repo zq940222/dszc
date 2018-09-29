@@ -1,0 +1,61 @@
+<!--pages/component/ingenuity/ingenuity.wxml-->
+<view class='ingenuity'>
+  <view class="header">
+    <view class="{{active?'active':''}}" bindtap="synthesize">上架时间</view>
+     <view class="{{priceactive?'active':''}}" bindtap="priceFun">
+      价格
+      <view class="priceArrow">
+        <image src="../../../images/cs.svg" mode="" wx:if="{{!pricedown}}" />
+        <image src="../../../images/zs.svg" mode="" wx:if="{{pricedown}}" />
+        <image src="../../../images/cx.svg" mode="" wx:if="{{!priceup}}" />
+        <image src="../../../images/zx.svg" mode="" wx:if="{{priceup}}" />
+      
+      </view>  
+    </view>
+    <view class="{{newactive?'active':''}}" bindtap="newFun">
+      销量
+      <view class="newArrow">
+        <image src="../../../images/zs.svg" mode="" wx:if="{{newup}}" />
+        <image src="../../../images/cs.svg" mode="" wx:if="{{!newup}}" />
+        <image src="../../../images/zx.svg" mode="" wx:if="{{newdown}}" />
+        <image src="../../../images/cx.svg" mode="" wx:if="{{!newdown}}" />
+      </view>
+    </view>
+   
+  </view>
+  <!-- 头部导航 -->
+   
+   <view class='ingenuity-content'>
+   
+     <view class='recommend-list'>
+    <view class='recommend-list-1' bindtap='skipxq' wx:for="{{flarray}}" wx:key="*this" data-id='{{item.id}}'>
+     <view class='recommend-list-connent'>
+       <view class='recommend-list-img'>
+       <image src='{{item.cover_image}}' />
+      </view>
+      <view class='recommend-list-title'>
+       {{item.name}}
+      </view>
+      <view class='recommend-list-item'>
+       {{item.intro}}
+      </view>
+      <view class='recommend-list-price'>
+       <view class='recommend-list-price-l'>
+       ￥{{item.price}}
+       </view>
+       <view class='recommend-list-price-r'>
+        <image src='../../../images/symbols-icon-gwc.png'/>
+       </view>
+      </view>
+
+     </view>
+     </view>
+    </view>
+     
+   </view>
+   
+
+
+
+
+</view>

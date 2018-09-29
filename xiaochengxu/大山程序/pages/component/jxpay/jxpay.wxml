@@ -1,0 +1,65 @@
+<!--pages/component/jxpay/jxpay.wxml-->
+<view class='jporder'>
+ <view class='jporder-H'>
+   <text class='jporder-hl'></text>
+    <text class='jporder-hm'>待支付</text>
+     <text class='jporder-hr'>剩2天23小时59分59秒自动关闭</text>
+  </view>
+  <view class='jporder-top'>                                      
+   <view class='jporder-topl'>
+   <view class='jporder-toplt'>
+     <image src='../../../images/symbols-icon-address.png'></image><text>{{jparr.consignee}}</text><text>{{jparr.mobile}}</text>
+   </view>
+   <view class='jporder-toplb'>{{jparr.address}}</view>
+   </view>
+   <view class='jporder-topr'>
+     <image src='../../../images/symbols-tiaozhuan-1010.png'></image>
+   </view>
+  </view>
+  <!-- top -->
+  <view class='jporder-content'>
+    <view class='jporder-content-head' wx:for="{{jparr.item}}" wx:key="{{index}}">
+      <view class='jporder-content-headl'>
+       <image src='{{item.goods_image}}'></image>
+      </view>
+      <view class='jporder-content-headm'>
+        <view class='jporder-content-headmt'>{{item.goods_name}}</view>
+        <view class='jporder-content-headmm'>{{item.spec_key_name}}</view>
+        <view class='jporder-content-headmb'>￥{{item.goods_price}}</view>
+      </view>
+      <view class='jporder-content-headr'>
+        ×{{item.goods_num}}
+      </view>
+    </view>
+    <!-- 订单部分 -->
+    <view class='jporder-content-yf'>
+     <view class='jporder-content-yfl'>运费</view>
+     <view class='jporder-content-yfr'>{{jparr.shipping_price}}</view>
+    </view>
+
+    <view class='jporder-content-yf'>
+     <view class='jporder-content-yfl'>优惠劵</view>
+     <view class='jporder-content-yhjr'>￥{{jparr.coupon_price}}</view>
+    </view>
+
+    <view class='jporder-content-yf'>
+     <view class='jporder-content-yfl'>合计</view>
+     <view class='jporder-content-hjr'>￥{{jparr.pay_price}}</view>
+    </view>
+  </view>
+  <!-- 中间 -->
+  <view class='extract-bottom'>
+    <view class='extract-bottomt'>
+      订单编号：{{jparr.order_sn}}
+    </view>
+    <view class='extract-bottomb'>
+      下单时间：{{ontime}}
+    </view>
+  </view>
+  <!-- 底部 -->
+  <view class='zcpay-wrap' bindtap='jxpay'>
+      <view class='zcpay'>
+        去支付
+      </view>
+    </view>
+</view>

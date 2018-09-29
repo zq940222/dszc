@@ -1,0 +1,20 @@
+<!--pages/component/riderapplication/riderapplication.wxml-->
+<view class='bdphone-wrap'>
+<view class="bdphone">
+      <input  type='number' placeholder="申请人" bindinput="nickname"/>
+    </view>
+   <view class="bdphone">
+      <input  type='number' placeholder="请输入手机号" bindinput='mobile'/>
+    </view>
+    <view class="bdyzm">
+      <view class='bdyzm-l'>
+        <input type='number' placeholder="请输入验证码" bindinput='code'/>
+      </view>
+      <view class='bdyzm-r'>
+        <button bindtap='send_code'>{{time}}</button>
+      </view>
+    </view>
+    <view class='complete' bindtap='ridersuc'>
+       提交
+    </view>
+</view>

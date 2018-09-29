@@ -1,0 +1,141 @@
+/* pages/component/jporder/jporder.wxss */
+.jporder{
+  background: #f6f4f3;
+  height: 100vh;
+  width: 100vw;
+}
+.jporder-top{
+  width: 100%;
+  height: 148rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.jporder-toplt image{
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: 44rpx;
+  vertical-align: middle;
+  margin-top: 10rpx;
+}
+.jporder-toplt text{
+  display: inline-block;
+  margin-left: 20rpx;
+  font-size: 28rpx;
+  vertical-align: middle;
+}
+.jporder-toplb{
+  margin-left: 92rpx;
+  color: #999;
+  font-size: 24rpx;
+}
+.jporder-topr {
+  margin-right: 28rpx;
+}
+.jporder-topr image{
+  width: 44rpx;
+  height: 44rpx;
+}
+/*  */
+.jporder-content{
+  width: 100%;
+  background: #fff;
+  margin-top: 20rpx;
+  overflow: auto;
+  margin-bottom: 98rpx;
+}
+.jporder-content-head{
+  margin-top: 28rpx;
+  margin-left: 32rpx;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 28rpx;
+  border-bottom: 1px solid #EBEBEB;
+}
+.jporder-content-headl image{
+  width: 156rpx;
+  height: 156rpx;
+}
+.jporder-content-headm{
+  margin-left: 20rpx;
+}
+.jporder-content-headmt{
+  font-size: 28rpx;
+}
+.jporder-content-headmm{
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 8rpx;
+}
+.jporder-content-headmb{
+  font-size: 28rpx;
+  margin-top: 14rpx;
+}
+.jporder-content-headr{
+  margin-left: 200rpx;
+  margin-top: 116rpx;
+  font-size: 28rpx;
+  margin-right: 32rpx;
+}
+.jporder-content-yf{
+   margin-left: 32rpx;
+   height: 96rpx;
+   line-height: 96px;
+   display: flex;
+   flex-direction: row;
+   font-size: 28rpx;
+   justify-content: space-between;
+   align-items: center;
+   border-bottom: 1px solid #EBEBEB;
+   padding-right: 32rpx;
+   color: #666;
+
+}
+.jporder-content-yhjr{
+  width: 100rpx;
+  text-align: right;
+  margin-left: 440rpx;
+  color: #999;
+}
+.jporder-content-yhjr-r image{
+  display: inline-block;
+  width: 44rpx;
+  height: 44rpx;
+  margin-top: 80rpx;
+}
+.jporder-content-hjr{
+  color: #C7151C;
+}
+/*  */
+.jporder-fixed{
+  width: 100%;
+  height: 98rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+.jporder-fixed-l{
+  font-size: 24rpx;
+  color: #999;
+  margin-left: 32rpx;
+}
+.jporder-fixed-l text{
+ font-size: 32rpx;
+ color: #C7151C;
+}
+.jporder-fixed-r{
+  width: 240rpx;
+  height: 98rpx;
+  line-height: 98rpx;
+  text-align: center;
+  font-size: 28rpx;
+  background: #FF9021;
+  color: #fff;
+}

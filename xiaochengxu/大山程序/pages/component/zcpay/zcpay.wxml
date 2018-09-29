@@ -1,0 +1,60 @@
+<!--pages/component/zcpay/zcpay.wxml-->
+<view class='extract'>
+  <view class='extract-top'>
+    <view class='extract-topt'>
+      <text class='extract-toptl'></text>
+      <text class='extract-toptr'>待支付</text>
+      <text class='extract-topt-r'>截至上午10:30关闭</text>
+    </view>
+    <view class='extract-topb'>
+      <view class='extract-topbl'>
+        <view class='extract-topblt'>
+         <image src='../../../images/symbols-icon-address.png'></image>
+         <text>{{zcarr.consignee}}</text>
+         <text>{{zcarr.mobile}}</text>
+        </view>
+        <view class='extract-topblb'>
+          {{zcarr.address}}
+        </view>
+      </view>
+      <view class='extract-topbr'>
+       <image src='../../../images/symbols-tiaozhuan-1010.png'></image>
+      </view>
+    </view>
+  </view>
+  <!-- 头部 -->
+  <view class='submitorder-content'>
+      <view class='submitorder-content-top' wx:for="{{zcarr.item}}" wx:key="{{index}}">
+        <view class='submitorder-content-topl'>
+          <image src='{{item.dish_image}}'></image>
+        </view>
+        <view class='submitorder-content-topm'>
+        <view class='submitorder-content-topmt'>{{item.name}}</view>
+        <view class='submitorder-content-topmb'><text>{{item.spec_name}}</text>×{{item.count}}</view>
+        </view>
+        <view class='submitorder-content-topr'>￥{{item.price}}</view>
+      </view>
+      <view class='submitorder-content-middle'>
+        <view class='submitorder-content-middlel'>优惠劵</view>
+        <view class='submitorder-content-middler'>{{zcarr.coupon_price}}</view>
+      </view>
+      <view class='submitorder-content-bottom'>
+      <text>￥{{zcarr.pay_price}}</text> 小计 
+      </view>
+    </view>
+  <!-- 中间内容 -->
+  <view class='extract-bottom'>
+    <view class='extract-bottomt'>
+      订单编号：{{zcarr.order_sn}}
+    </view>
+    <view class='extract-bottomb'>
+      下单时间：{{ontime}}
+    </view>
+  </view>
+  <!-- 底部 -->
+  <view class='zcpay-wrap'>
+    <view class='zcpay' bindtap='zcpay'>
+      去支付
+    </view>
+  </view>
+</view>

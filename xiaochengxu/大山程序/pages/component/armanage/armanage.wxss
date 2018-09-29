@@ -1,0 +1,90 @@
+/* pages/component/armanage/armanage.wxss */
+.armanage-wrap{
+  width: 100vw;
+  min-height: 100vh;
+  height: 100%;
+  background: #f6f4f3;
+  border-top: 1px solid #ccc;
+  padding-bottom: 128rpx;
+}
+.armanage{
+  width: 100%;
+  background: #fff;
+}
+.armanage-t{
+  height: 136rpx;
+  margin-left: 28rpx;
+  overflow: hidden;
+  border-bottom: 1px solid #ebebeb;
+  box-sizing: border-box;
+}
+.armanage-tt{
+  font-size: 28rpx;
+  margin-top: 30rpx;
+}
+.armanage-tt text:nth-of-type(2){
+  margin-left: 20rpx;
+}
+.armanage-tb{
+  margin-top: 4rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+.armanage-b{
+  height: 82rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.armanage-bl{
+  margin-left: 28rpx;
+  font-size: 24rpx;
+}
+.check_img{
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: middle;
+}
+.armanage-bl text{
+  vertical-align: middle;
+}
+.armanage-bm{
+ margin-left: 348rpx;
+}
+.armanage-bm text{
+  font-size: 24rpx;
+  color: #999;
+  vertical-align: middle;
+}
+.armanage-bm image{
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: middle
+}
+.armanage-br{
+  margin-left: 40rpx;
+}
+.armanage-br text{
+  font-size: 24rpx;
+  color: #999;
+  vertical-align: middle;
+}
+.armanage-br image{
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: middle
+  
+}
+.armanage-bottom{
+  width: 600rpx;
+  text-align: center;
+  border-radius: 50rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #FF9021;
+  color: #fff;
+  font-size: 32rpx; 
+  position: fixed;
+  left: 76rpx;
+  bottom: 40rpx;
+}

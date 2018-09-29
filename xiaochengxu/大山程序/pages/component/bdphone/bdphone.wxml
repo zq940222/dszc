@@ -1,0 +1,49 @@
+<!--pages/component/bdphone/bdphone.wxml-->
+<view class='bdphone-wrap'>
+   <view class="bdphone">
+      <input  type='number' placeholder="请输入手机号"  bindinput="mobile"/>
+    </view>
+    <view class="bdyzm">
+      <view class='bdyzm-l'>
+        <input type='number' placeholder="请输入验证码" bindinput="code"/>
+      </view>
+      <view class='bdyzm-r'>
+        <button bindtap='send_code' disabled='{{disabled}}'  >{{time}}</button>
+      </view>
+    </view>
+    <view class='complete' bindtap='complete_phone'>
+       完成
+    </view>
+</view>
+<!--  -->
+ <view class='homeup-wrap' hidden="{{isdialoge}}" catchtouchmove="preventTouchMove">
+    <view class='home'>
+      <view class='homeup-head'>
+        优惠劵已入账
+      </view>
+      <view class='homeup-content'>
+        <view class='homeup-content-left'>
+          <view class='homeup-content-left-head'>
+            ￥<text>{{tc.price}}</text>
+          </view>
+          <view class='homeup-content-left-bottom'>
+            优惠劵
+          </view>
+        </view>
+        <view class='homeup-content-right'>
+          <view class='homeup-content-right-head'>
+         {{tc.name}}
+          </view>
+          <view class='homeup-content-right-bottom'>
+               {{tc.coupon_type=="2"?tc.stime+"一"+tc.etime:tc.desc}}
+          </view>
+
+        </view>
+      </view>
+      <view class='button' bindtap='cancle'>
+        知道了
+      </view>
+    </view>
+
+  </view>
+  <!-- 弹窗 -->

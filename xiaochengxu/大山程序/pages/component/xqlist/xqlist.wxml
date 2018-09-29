@@ -1,0 +1,133 @@
+<!--pages/component/listxq/listxq.wxml-->
+<view class='listxq-wrap'>
+  <view class='listxq-head'>
+     <swiper indicator-dots="{{true}}"
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{true}}" class='swiper-container' indicator-color="{{beforeColor}}" indicator-active-color="{{afterColor}}">
+      <block wx:for="{{data.goods_images}}" wx:key="{{index}}">
+        <swiper-item class="aaa">
+          <image src="{{item}}" class="slide-image" width="100%" height="180"/>
+        </swiper-item>
+      </block>
+    </swiper>  
+  </view>
+<!-- 顶部轮播 -->
+  <view class='listxq-jj'>
+   <view class='listxq-jj-head'>
+    <view class='listxq-jj-head-left'>￥<text>{{data.price}}</text></view>
+    <view class='listxq-jj-head-right'>已售{{data.sales_sum}}件</view>
+   </view>
+   <view class='listxq-middle'>{{data.name}}</view>
+   <view class='listxq-bottom'>{{data.intro}}</view>
+  </view>
+<!-- 物品简介 -->
+  <view class='standard' bindtap='skippopup'>
+    <view class='standard-left'>
+      <view class='standard-left-l'>{{data.spec[0].name}}:{{data.spec[0].item[0].name}}</view>
+      <view class='standard-left-r'>{{data.spec[1].name}}:{{data.spec[1].item[0].name}}</view>
+    </view>
+    <view class='standard-right'>
+      <image src='../../../images/symbols-tiaozhuan-1010.png'></image>
+    </view>
+  </view>
+<!-- 规格 -->
+   <view class='standard-popup' hidden='{{isdialoge}}' catchtouchmove="preventTouchMove">
+     <view class='standard-content'>
+       <view class='standard-head'>
+         <view class='standard-head-left'>
+          <view class='standard-head-left-l'>
+            <image src='{{data.cover_image}}'></image>
+          </view>
+          <view class='standard-head-left-r'>
+           <view class='standard-head-left-r-head'>
+             价格：￥{{bhprice}}
+           </view>
+           <view class='standard-head-left-r-bottom'>
+            请选择规格属性
+           </view>
+          </view>
+         </view>
+          <!-- 左边 -->
+         <view class='standard-head-right' bindtap='skipcancle'>
+           <image src='../../../images/symbols-guanbi-1532.png'></image>
+         </view>
+       </view>
+        <!-- 头部 -->
+       <view class='standard-style' wx:for="{{data.spec}}">
+         <view class='standard-style-head'>
+           {{item.name}}
+         </view>
+         <view class='standard-style-content'>
+           <block wx:for="{{item.item}}" wx:key="{{item.id}}" wx:for-item="item2" wx:for-index="index2">
+              <view class='  {{item2.isselect==index2?"standard-style-content-item active":"standard-style-content-item"}}' id="{{item2.id}}" data-index="{{index}}" data-indextwo='{{index2}}' catchtap='ruler'>{{item2.name}}</view>
+           </block>
+         </view>
+       </view>
+    
+       <view class='standard-number'>
+         
+         <view class='standard-number-left'>
+          数量
+         </view>
+         <view class='standard-number-right'>
+          <image src='../../../images/symbols-icon-reduce.png' bindtap='reduce'></image>
+          <text>{{num}}</text>
+          <image src='../../../images/symbols-icon-add.png' bindtap='add'></image>
+         </view>
+       </view>
+     </view>
+   </view>
+<!-- 规格弹窗 -->
+   <view class='comment'>
+     <view class='comment-head' bindtap='skipcomment' data-id='{{item.id}}'>
+      <view class='comment-head-left'>用户评价（{{data.comment_count}}）</view>
+      <view class='comment-head-right'>
+      <text>查看全部</text><image src='../../../images/symbols-tiaozhuan-1010.png'></image>
+      </view>
+     </view>
+ <!-- 评论顶部 -->
+      
+      <view class='comment-content'>
+        <view class='comment-content-head'>
+          <view class='comment-content-head-left'>
+           <image src='{{comment[0].avatar}}'></image><text>{{comment[0].nickname}}</text>
+          </view>
+          <view class='comment-content-head-right'>{{ontime}}</view>
+        </view>
+        <view class='comment-content-middle'>{{comment[0].details}}</view>
+        <view class='comment-content-bottom'>
+          <view class='comment-content-bottom-img' wx:for="{{comment[0].images}}">
+          <image src='{{item}}'></image>
+          </view>
+        </view>
+      </view>
+   </view>
+<!-- 评论 -->
+      <view class='details'>
+        <view class='details-head'>
+         商品详情
+        </view>
+        <view class='details-content'>
+         <view class='details-content-img' wx:for="{{data.detail_images}}" wx:key="*this">
+          <image src='{{item}}'></image>
+         </view>
+
+        </view>
+      </view>
+    <!-- 商品详情 -->
+      
+    <view class='menu'>
+      <view class='menu-left' bindtap='jpgwc'>
+      <image src='../../../images/symbols-icon-gwc.png'></image>
+      <view class='menu-left-num' wx:if="{{catrarray_len>0}}">{{catrarray_len}}</view>
+      </view>
+      <view class='menu-middle' bindtap='addcart'>
+      加入购物车
+      </view>
+      <view class='menu-right'  bindtap='jpgwc'>立即购买</view>
+    </view>
+
+    <!-- 底部固定按钮 -->
+    
+
+
+</view>

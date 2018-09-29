@@ -1,0 +1,62 @@
+<!--pages/choice/choice.wxml-->
+<view class="container">
+  <view class='page_row' bindtap="suo">
+    <view class="search">
+      <view class="df search_arr">
+        <icon class="searchcion" size='15' type='search'></icon>
+        <input class="" disabled placeholder="关键词搜索" value="{{searchValue}}"/>
+      </view>
+    </view>
+  </view>
+<!-- 搜索框 -->
+<view class="head">
+  <swiper></swiper>
+</view>
+<!-- 轮播图 -->
+<view class='nav'>
+   <view class='nav-1'  wx:for="{{flarr}}" wx:key="*this" bindtap="ingenuity" data-id='{{item.id}}'>
+    <view>
+      <image src='{{item.image}}'/>
+    </view>
+    <view>
+      <text>{{item.name}}</text>
+    </view>
+   </view>
+</view>
+<!-- 选项部分 -->
+<view class='recommend'>
+  <view class='recommend-wrap'>
+   <view class='recommend-title'>
+     人气推荐
+   </view>
+   <!-- 头部 -->
+   <view class='recommend-list' >
+     <view class='recommend-list-1' wx:for="{{arr}}" wx:key="*this"  bindtap='skipxq' data-id='{{item.id}}'>
+     <view class='recommend-list-connent'>
+       <view class='recommend-list-img'>
+       <image src='{{item.cover_image}}' />
+      </view>
+      <view class='recommend-list-title'>
+       {{item.name}}
+      </view>
+      <view class='recommend-list-item'>
+       {{item.intro}}
+      </view>
+      <view class='recommend-list-price'>
+       <view class='recommend-list-price-l'>
+       ￥{{item.price}}
+       </view>
+       <view class='recommend-list-price-r'>
+        <image src='../../images/symbols-icon-gwc.png'/>
+       </view>
+      </view>
+
+     </view>
+      
+     </view>
+    </view>
+   <!-- 内容 -->
+</view>
+
+</view>
+</view>

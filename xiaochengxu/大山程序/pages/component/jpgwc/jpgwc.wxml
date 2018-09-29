@@ -1,0 +1,70 @@
+<!--pages/component/jpgwc/jpgwc.wxml-->
+<view class='jpgwc'>
+<view class='jpgwcBox'>
+ <view>
+  <text class='header_text' catchtap='adminTap'>{{adminShow?'取消管理':'商品管理'}}</text>
+ </view>
+  <view class='jpgwc-box' wx:for="{{shopcarData}}" wx:key="*this">
+    <view class='jpgwc-boxl'>
+      <view class="checkbox" data-index='{{index}}'  catchtap='checkTap'>
+        <image class='check_img' hidden='{{item.check}}' src='../../../images/duoxuan_copy.jpg'></image>
+        <image class='check_img' hidden='{{!item.check}}' src='../../../images/duoxuan.jpg'></image>
+      </view>
+    </view>
+    <!-- 复选框 -->
+    <view class='jpgwc-boxr'>
+      <view class='jpgwc-boxr-l'>
+       <image src='{{item.image}}' mode='aspectFill' catchtap='navshopdetailTap'></image>
+      </view>
+      <view class='jpgwc-boxr-m'>
+       <view class='jpgwc-boxr-mt'>{{item.name}}</view>
+       <view class='jpgwc-boxr-mm'>{{item.selectName}}</view>
+       <view class='jpgwc-boxr-mb'>￥{{item.bhprice}}</view>
+      </view>
+      <view class='jpgwc-boxr-b'>
+       <image hidden='{{item.num<2}}' src='../../../images/symbols-icon-reduce.png'   data-index='{{index}}' data-types='minus' catchtap='numchangeTap'></image>
+       <image hidden='{{item.num>=2}}' src='../../../images/symbols-icon-reduce.png' > </image>
+       <text>{{item.num}}</text>
+       <image data-index='{{index}}' data-types='add' catchtap='numchangeTap' src='../../../images/symbols-icon-add.png'></image>
+      </view>
+    </view>
+    <!-- 中间部分 -->
+  </view>
+  <view class='jpgwc-boxr-del'>
+        删除
+  </view>
+</view>
+ 
+
+<view class='jpgwc-fixed'>
+  <view class='jpgwc-fixed-l'>
+      <view class="checkbox checkbox1">
+          <image class='check_img' src='../../../images/duoxuan_copy.jpg' hidden='{{allsel}}' catchtap='allcheckTap'></image>
+          <image class='check_img' src='../../../images/duoxuan.jpg' hidden='{{!allsel}}' catchtap='allcheckTap'></image>
+          <text class='check_text' catchtap='allcheckTap'>全选</text>
+      </view>
+  </view>
+  <view class='jpgwc-fixed-m' hidden='{{adminShow}}'>
+       ￥{{total}}
+  </view>
+  <view class='jpgwc-fixed-r' bindtap='jporder'  hidden='{{adminShow}}' >
+    去结算
+  </view>
+  <view>
+   <text class='deleteshop' catchtap='deleteshopTap' hidden='{{!adminShow}}'>移除商品</text>
+  </view>
+</view>
+
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
